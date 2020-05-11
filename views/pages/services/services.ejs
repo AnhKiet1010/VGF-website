@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('../../partials/head') %>
+</head>
+
+<body>
+    <header>
+        <%- include ('../../partials/header') %>
+        <img src="/images/navbar-bg.jpg" alt="navbar-bg" style="width: 100%; height: 106px;">
+    </header>
+    <main>
+        <div class="container">
+            <h4 class="text-dark mt-4" style="background-color: #f3f3f3;padding: 0;margin: 0;">
+                Home /Our Services / <%= data %>
+            </h4>
+            <div class="row mt-4 mb-4">
+                <div class="col-lg-3">
+                    <h3>Our Services</h3>
+                    <ul class="service-list">
+                        <li><a tabindex="-1" href="/services/forex/1">Forex Market</a></li>
+                        <li><a tabindex="-1" href="/services/copy_trade">Copy Trade</a></li>
+                        <li><a tabindex="-1" href="/services/capital_markets">Capital Markets</a></li>
+                        <li><a tabindex="-1" href="/services/technology_advisory">Technology &amp;
+                                Advisory</a></li>
+                        <li><a tabindex="-1" href="/services/finance_risk">Finance &amp; Risk</a></li>
+                        <li><a tabindex="-1" href="/services/portfolio_management">Portfolio
+                                Management</a></li>
+                        <li><a tabindex="-1" href="/services/blockchain">Blockchain</a></li>
+                        <li><a tabindex="-1" href="/services/finance_training">Finance Training</a>
+                        </li>
+                    </ul>
+
+                    <div class="col-sm-12 need-help-box">
+                        <h3>Need Help ?</h3>
+                        <p>Please feel free to contact us. <br>
+                            We will get back to you with <br>
+                            1-2 business days.Or just call us now
+                        </p>
+                        <p><i class="glyphicon glyphicon-earphone"></i> +(84) 028 12345678</p>
+                        <p><i class="glyphicon glyphicon-envelope"></i> support@vinsglobal.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="mt-3 ml-3">
+                        <h1 style="color: rgb(43, 43, 119);font-weight: 600;font-size: 70px;">
+                            <%= data %></h1>
+                        <p style="text-transform: uppercase;">GLOBAL STRATEGIES, INSIGHT-DRIVEN TRANSFORMATION</p>
+                    </div>
+                    <% if(id !== undefined)  { %>
+                    <div class="page-header__menu_container">
+                        <div class="row text-center">
+                            <div class="col-lg-3">
+                                <a href="/services/forex/1"
+                                    class='menu-title <%= id === "1" ? "active" : "" %> '>Overview</a>
+                            </div>
+                            <div class="col-lg-3">
+                                <a href="/services/forex/2"
+                                    class='menu-title <%= id === "2" ? "active" : "" %> '>Forex</a>
+                            </div>
+                            <div class="col-lg-3">
+                                <a href="/services/forex/3"
+                                    class='menu-title <%= id === "3" ? "active" : "" %> '>Stock</a>
+                            </div>
+                            <div class="col-lg-3">
+                                <a href="/services/forex/4"
+                                    class='menu-title <%= id === "4" ? "active" : "" %> '>Futures</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <img src="/images/forex.png" alt="forex" width="100%" />
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer>
+        <%- include ('../../partials/footer') %>
+    </footer>
+</body>
+
+</html>
