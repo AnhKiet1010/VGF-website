@@ -26,9 +26,52 @@ $(document).ready(function () {
             el: '.swiper-pagination',
         },
         loop: true,
-        speed: 500,
+        speed: 1500,
         autoplay: {
-            delay: 2000,
+            delay: 7000,
         }
     });
+
+    TweenMax.from("#logo", 0.8, {
+        delay: 0.2,
+        y: 10,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+
+    TweenMax.from("#company-name", 1, {
+        delay: 0.2,
+        y: 10,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    TweenMax.from("#company-desc", 1.3, {
+        delay: 0.4,
+        y: 10,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    TweenMax.from("#btn-group", 1.6, {
+        delay: 0.6,
+        y: 10,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    TweenMax.from("#price-tag", 2.5, {
+        delay: 0.6,
+        y: 10,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    TweenMax.to("#slide1", 3, {
+        delay: 4,
+        scale: 1.1
+    });
+    TweenMax.staggerFrom(".navbar-nav > li", 1, {
+        delay: 0.2,
+        opacity: 0,
+        ease: Expo.easeInOut
+    }, 0.1);
+
+    new WOW().init();
 });

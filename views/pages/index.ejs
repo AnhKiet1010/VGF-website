@@ -15,18 +15,19 @@
             <!-- Slide Start -->
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide swiper-slide1">
+                    <div class="swiper-slide swiper-slide1" id="slide1">
                         <div class="wrap-slide">
                             <div class="content">
-                                <h1 class="text-white">Vins Global Fintech</h1>
-                                <p class="text-white">We help you managing asset, provide financial advise. Leave money
-                                    issue with us and
-                                    focus on your core business.</p>
+                                <h1 class="text-white" id="company-name">Vins Global Fintech</h1>
+                                <p class="text-white" id="company-desc">
+                                    <%= __('We help you managing asset, provide financial advise. Leave money issue with us and focus on your core business.') %>
+                                </p>
                             </div>
-                            <div class="btnGroup">
-                                <button type="button" class="btn btn-outline-info btn-lg"><a href="#">Learn
-                                        more</a></button>
-                                <button class="btn btn-primary btn-lg" type="submit"><a href="#">Contact Us</a></button>
+                            <div class="btnGroup" id="btn-group">
+                                <button type="button" class="btn btn-info btn-lg"><a
+                                        href="#"><%= __('Learn More') %></a></button>
+                                <button class="btn btn-primary btn-lg" type="submit"><a
+                                        href="#"><%= __('Contact Us') %></a></button>
                             </div>
                         </div>
                     </div>
@@ -40,8 +41,8 @@
                                     focus on your core business.</p>
                             </div>
                             <div class="btnGroup">
-                                <button type="button" class="btn btn-outline-info btn-lg"><a href="#">Learn
-                                        more</a></button>
+                                <button type="button" class="btn btn-info btn-lg"><a
+                                        href="#"><%= __('Learn More') %></a></button>
                             </div>
                         </div>
                     </div>
@@ -94,7 +95,7 @@
             <hr>
         </div>
         <div class="row justify-content-center m-0">
-            <div class="col-md-4 box">
+            <div class="col-lg-3 box">
                 <div class="card m-0">
                     <img src="images/forex.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -106,7 +107,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 box">
+            <div class="col-lg-3 box">
                 <div class="card m-0">
                     <img src="images/copytrade.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -117,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 box">
+            <div class="col-lg-3 box">
                 <div class="card m-0">
                     <img src="images/finance.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
