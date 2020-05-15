@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
@@ -22,7 +24,7 @@ i18n.configure({
 });
 
 // Mongoose
-mongoose.connect('mongodb://localhost:27017/VGF', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:' + process.env.DB_PORT || 27017 + '/VGF', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
@@ -32,6 +34,7 @@ db.once('open', function () {
 const servicesRouter = require('./routes/services.route');
 const supportRouter = require('./routes/support.route');
 const adminRouter = require('./routes/admin.route');
+const newtRouter = require('./routes/news.route');
 /*
     Default Page
 */
@@ -47,6 +50,12 @@ app.use('/change-lang/:lang', (req, res) => {
     res.redirect('back');
 });
 /*
+    Eror Page
+*/
+app.get('/:notfound', function (req, res) {
+    res.render('./pages/404');
+})
+/*
     Service Page
 */
 app.use('/services', servicesRouter);
@@ -55,11 +64,15 @@ app.use('/services', servicesRouter);
 */
 app.use('/support', supportRouter);
 /*
+    Search NEWs
+*/
+app.use('/news', newtRouter);
+/*
     FOR ADMIN
 */
 app.use('/admin', adminRouter);
 
 // Config Server Port
-server.listen(3000, function () {
-    console.log('Web start at port 3000!!!');
+server.listen(process.env.SERVER_PORT || 3000, function () {
+    console.log('Server started!!!');
 });

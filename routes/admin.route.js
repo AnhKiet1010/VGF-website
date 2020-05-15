@@ -30,6 +30,9 @@ const upload = multer({
         }
     }
 });
+router.get('/login', adminController.login);
+
+router.post('/login', adminController.postLogin);
 
 router.get('/news', adminController.getForm);
 
