@@ -24,12 +24,14 @@ i18n.configure({
 });
 
 // Mongoose
-mongoose.connect('mongodb://localhost:' + process.env.DB_PORT || 27017 + '/VGF', { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-    console.log("Database connected!");
-});
+mongoose.connect(process.env.MONGO_URL,
+    { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }, function (err) {
+        if (err) {
+            console.log("connect fail : " + err);
+        } else {
+            console.log("DB connected!!!");
+        }
+    });
 
 const servicesRouter = require('./routes/services.route');
 const supportRouter = require('./routes/support.route');

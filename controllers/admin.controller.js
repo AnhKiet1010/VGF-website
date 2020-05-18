@@ -25,7 +25,7 @@ module.exports.getForm = function (req, res) {
 
 module.exports.pushForm = function (req, res) {
     const date = new Date;
-    const time = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
+    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
     const desc = req.body.desc;
     const shortDesc = desc.split(' ').slice(0, 31).join(' ') + '...';
     let news = new News({
