@@ -1,6 +1,6 @@
 
 module.exports.index = function (req, res) {
-    res.render('./pages/services/services', { data: 'Forex Market' });
+    res.render('./pages/services/services', { data: 'Forex Market', title: "Services || VGF" });
 }
 
 module.exports.sub = function (req, res) {
@@ -11,10 +11,10 @@ module.exports.sub = function (req, res) {
     for (var i = 0; i < splitStr.length; i++) {
         splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
     }
-    res.render('./pages/services/services', { data: splitStr.join(" "), id: undefined });
+    res.render('./pages/services/services', { data: splitStr.join(" "), id: undefined, title: "Services || VGF" });
 }
 
 module.exports.forexPage = function (req, res) {
     const id = req.params.id;
-    res.render('./pages/services/services', { data: 'Forex Market', id: id });
+    res.render('./pages/services/services', { data: 'Forex Market', id: id, title: "Services || VGF" });
 }

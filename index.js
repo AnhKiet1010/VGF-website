@@ -42,7 +42,7 @@ const newtRouter = require('./routes/news.route');
 */
 app.get('/', function (req, res) {
     res.cookie('lang', 'vi', { maxAge: 900000 });
-    res.render('./pages/index');
+    res.render('./pages/index', { title: "Vins Global Fintech" });
 });
 app.get('/error', function (req, res) {
     res.render('./pages/404');

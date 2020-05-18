@@ -13,7 +13,7 @@ module.exports.getNews = function (req, res) {
                 if (err) {
                     res.send(err);
                 } else {
-                    res.render('./pages/support/helpAndResource/news/newsDetail', { news: data[0] });
+                    res.render('./pages/support/helpAndResource/news/newsDetail', { news: data[0], title: "News Detail || VGF" });
                 }
             })
         }
@@ -27,7 +27,7 @@ module.exports.getNewsByCategory = function (req, res) {
         if (err) {
             res.send(err);
         } else {
-            res.render('./pages/support/helpAndResource/news/listNews', { data: data });
+            res.render('./pages/support/helpAndResource/news/listNews', { data: data, title: "News Detail || VGF" });
         }
     })
 }

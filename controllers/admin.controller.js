@@ -3,11 +3,11 @@ const News = require('../models/news');
 const Admin = require('../models/admin');
 
 module.exports.login = function (req, res) {
-    res.render('./admin/login');
+    res.render('./admin/login', { title: "Login Form || Admin" });
 }
 
 module.exports.register = function (req, res) {
-    res.render('./admin/register');
+    res.render('./admin/register', { title: "Register Form || Admin" });
 }
 
 module.exports.postLogin = function (req, res) {
@@ -33,7 +33,7 @@ module.exports.postRegister = function (req, res) {
 }
 
 module.exports.getForm = function (req, res) {
-    res.render('./admin/news');
+    res.render('./admin/news', { title: "Add News || Admin" });
 }
 
 module.exports.pushForm = function (req, res) {

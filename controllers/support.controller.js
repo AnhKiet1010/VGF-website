@@ -2,11 +2,11 @@ const News = require('../models/news');
 
 
 module.exports.education = function (req, res) {
-    res.render('./pages/support/education/' + req.params.sub);
+    res.render('./pages/support/education/' + req.params.sub, { title: "Education || VGF" });
 }
 
 module.exports.help = function (req, res) {
-    res.render('./pages/support/helpAndResource/help-centre');
+    res.render('./pages/support/helpAndResource/help-centre', { title: "Help || VGF" });
 }
 
 module.exports.news = function (req, res) {
@@ -14,7 +14,7 @@ module.exports.news = function (req, res) {
         if (err) {
             res.send(err);
         } else {
-            res.render('./pages/support/helpAndResource/news/listNews', { data: data.reverse() })
+            res.render('./pages/support/helpAndResource/news/listNews', { data: data.reverse(), title: "News || VGF" })
         }
     });
 
