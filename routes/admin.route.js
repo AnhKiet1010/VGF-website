@@ -32,7 +32,11 @@ const upload = multer({
 });
 router.get('/login', adminController.login);
 
+router.get('/register', adminController.register);
+
 router.post('/login', adminController.postLogin);
+
+router.post('/register', adminController.postRegister);
 
 router.get('/news', adminController.getForm);
 

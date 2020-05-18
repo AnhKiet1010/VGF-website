@@ -6,10 +6,14 @@ module.exports.login = function (req, res) {
     res.render('./admin/login');
 }
 
+module.exports.register = function (req, res) {
+    res.render('./admin/register');
+}
+
 module.exports.postLogin = function (req, res) {
     const name = req.body.username;
     const password = req.body.password;
-
+    console.log(name, password);
     Admin.findOne({ name, password }, function (err, adventure) {
         if (err) {
             res.send(err);
@@ -17,6 +21,15 @@ module.exports.postLogin = function (req, res) {
             res.send(adventure);
         }
     });
+}
+
+module.exports.postRegister = function (req, res) {
+    const name = req.body.username;
+    const password = req.body.password;
+    const confirmPassword = req.body.confirmPassword;
+    const employeeId = req.body.employeeId;
+
+    console.log(name, password, confirmPassword, employeeId);
 }
 
 module.exports.getForm = function (req, res) {
