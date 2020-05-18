@@ -17,15 +17,18 @@
             <div class="fadeIn first">
                 <img src="/images/company-logo.png" id="icon" alt="Company-Icon" />
             </div>
+            <% if(error !== undefined) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+            <% } %>
             <form class="mt-3" action="/admin/register" method="POST">
-                <input type="text" id="employeeId" class="fadeIn second" name="employeeId" placeholder="Employee Id"
+                <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username" required>
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password"
                     required>
-                <input type="text" id="login" class="fadeIn third" name="username" placeholder="Username" required>
-                <input type="password" id="password" class="fadeIn fourth" name="password" placeholder="Password"
-                    required>
-                <input type="password" id="password" class="fadeIn fiveth" name="confirmpassword"
+                <input type="password" id="password" class="fadeIn fourth" name="confirmPassword"
                     placeholder="Confirm Password" required>
-                <input type="submit" class="fadeIn sixth" value="Create">
+                <input type="submit" class="fadeIn fiveth" value="Create">
             </form>
         </div>
     </div>

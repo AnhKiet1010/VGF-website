@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 
 const adminController = require('../controllers/admin.controller');
+const requireAuth = require('../middlewares/auth.controller');
 
 // UPLOAD IMAGE
 var storage = multer.diskStorage({
@@ -32,13 +33,15 @@ const upload = multer({
 });
 router.get('/login', adminController.login);
 
-router.get('/register', adminController.register);
+router.get('/register', requireAuth.requireAuth, adminController.register);
 
 router.post('/login', adminController.postLogin);
 
 router.post('/register', adminController.postRegister);
 
-router.get('/news', adminController.getForm);
+router.get('/todo', requireAuth.requireAuth, adminController.todo);
+
+router.get('/news', requireAuth.requireAuth, adminController.getForm);
 
 router.post("/news", upload.single('image'), adminController.pushForm);
 
