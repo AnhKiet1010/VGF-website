@@ -4,6 +4,9 @@ const saltRounds = 10;
 
 const News = require('../models/news');
 const Admin = require('../models/admin');
+const Menu = require('../models/menu');
+const Sub_menu_lv1 = require('../models/sub_menu_lv1');
+const Sub_menu_lv2 = require('../models/sub_menu_lv2');
 
 module.exports.login = function (req, res) {
     res.render('./admin/login', { title: "Login Form || Admin", error: undefined });
@@ -88,11 +91,11 @@ module.exports.postRegister = function (req, res) {
     });
 }
 
-module.exports.getForm = function (req, res) {
+module.exports.getNewsForm = function (req, res) {
     res.render('./admin/news', { title: "Add News || Admin" });
 }
 
-module.exports.pushForm = function (req, res) {
+module.exports.postNewsForm = function (req, res) {
     const date = new Date;
     const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
     const desc = req.body.desc;
@@ -112,6 +115,80 @@ module.exports.pushForm = function (req, res) {
             res.send(err);
         } else {
             res.redirect('/support/news');
+        }
+    });
+}
+
+module.exports.menu = function (req, res) {
+
+    Menu.find(function (err, data) {
+        if (err) {
+            res.redirect('./error');
+        } else {
+            Sub_menu_lv1.find(function (err, data2) {
+                if (err) {
+                    res.redirect('./error');
+                } else {
+                    res.render("./admin/add_menu.ejs", { list_parents1: data, list_parents2: data2 });
+                }
+            });
+        }
+    });
+}
+module.exports.postMenu = function (req, res) {
+    const menu = new Menu({
+        text: req.body.menu_text
+    });
+
+    menu.save(function (err) {
+        if (err) {
+            res.redirect('/error');
+        } else {
+            res.redirect('back');
+        }
+    })
+}
+
+module.exports.sub_menu_lv1 = function (req, res) {
+    let sub_menu_lv1 = new Sub_menu_lv1({
+        text: req.body.sub_menu_lv1_text
+    });
+    sub_menu_lv1.save(function (err) {
+        if (err) {
+            res.send(err);
+        } else {
+            Menu.findByIdAndUpdate(
+                { _id: req.body.parentsOfLv1 },
+                { $push: { kids: sub_menu_lv1._id } },
+                function (err) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        res.redirect("back");
+                    }
+                });
+        }
+    });
+}
+
+module.exports.sub_menu_lv2 = function (req, res) {
+    let sub_menu_lv2 = new Sub_menu_lv2({
+        text: req.body.sub_menu_lv2_text
+    });
+    sub_menu_lv2.save(function (err) {
+        if (err) {
+            res.send(err);
+        } else {
+            Menu.findByIdAndUpdate(
+                { _id: req.body.parentsOfLv2 },
+                { $push: { kids: sub_menu_lv2._id } },
+                function (err) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        res.redirect("back");
+                    }
+                });
         }
     });
 }

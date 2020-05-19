@@ -290,7 +290,33 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     padding: 20px;
     margin-bottom: 20px;
 }
-
+/* VIDEO */
+.home_section_c {
+    margin-bottom: 0px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.vidbacking-active-block-back {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+    z-index: -100;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.video-content {
+    padding: 100px 30px;
+}
+.video-content > p {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 20px;
+    color: #fff;
+}
 /* Something About Us */
 .about-us-wrapper {
     background: url("../images/about-us.jpg"), rgb(22, 21, 46);
@@ -1125,6 +1151,17 @@ div[aria-expanded="true"] {
 @media screen and (max-width: 400px) {
     ul.navbar-nav li {
         font-size: 22px;
+    }
+    /* VIDEO */
+    .video-content {
+        padding: 40px;
+    }
+    .video-content > p {
+        font-size: 16px;
+        font-weight: 300;
+        margin: 10px;
+        color: #fff;
+        line-height: 1.6em;
     }
 }
 
