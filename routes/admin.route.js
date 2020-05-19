@@ -47,6 +47,8 @@ router.post('/sub_menu_lv1', requireAuth.requireAuth, adminController.sub_menu_l
 
 router.post('/sub_menu_lv2', requireAuth.requireAuth, adminController.sub_menu_lv2);
 
+router.get('/menuData', requireAuth.requireAuth, adminController.menuData);
+
 router.post('/todo', requireAuth.requireAuth, adminController.todo);
 
 router.get('/news', requireAuth.requireAuth, adminController.getNewsForm);

@@ -192,3 +192,22 @@ module.exports.sub_menu_lv2 = function (req, res) {
         }
     });
 }
+
+module.exports.menuData = function (req, res) {
+    var result = Menu.aggregate([
+        {
+            $lookup: {
+                from: "sub_menu_lv1",
+                localField: "kids",
+                foreignField: "_id",
+                as: "menu-lv1"
+            }
+        }
+    ], function (err, data) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(data);
+        }
+    })
+}
