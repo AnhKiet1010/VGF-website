@@ -203,11 +203,24 @@ module.exports.menuData = function (req, res) {
                 as: "menu-lv1"
             }
         }
-    ], function (err, data) {
+    ], function (err, data1) {
         if (err) {
             res.send(err);
         } else {
-            res.send(data);
+            Sub_menu_lv1.aggregate([{
+                $lookup: {
+                    from: "sub_menu_lv2",
+                    localField: "kids",
+                    foreignField: "_id",
+                    as: "menu-lv2"
+                }
+            }], function (err, data2) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    res.render('./testNavbar', { title: "Test Navbar", data1, data2 });
+                }
+            })
         }
-    })
+    });
 }
