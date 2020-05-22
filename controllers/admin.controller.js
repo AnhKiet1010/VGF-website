@@ -8,16 +8,16 @@ const Menu = require('../models/menu');
 const Sub_menu_lv1 = require('../models/sub_menu_lv1');
 const Sub_menu_lv2 = require('../models/sub_menu_lv2');
 
+module.exports.admin = function (req, res) {
+    res.redirect('/admin/news/news_list/1');
+}
+
 module.exports.login = function (req, res) {
-    res.render('./admin/login', { title: "Login Form || Admin", error: undefined });
+    res.render('./admin/login', { title: "Login Form || Admin" });
 }
 
 module.exports.register = function (req, res) {
     res.render('./admin/register', { title: "Register Form || Admin", error: undefined });
-}
-
-module.exports.todo = function (req, res) {
-    res.render('./admin/todolist', { title: "TODOLIST || Admin" });
 }
 
 module.exports.postLogin = function (req, res) {
@@ -27,9 +27,6 @@ module.exports.postLogin = function (req, res) {
         if (err) {
             res.send(err);
         } else {
-            // const token = jwt.sign({ name: "Kiet" }, process.env.SECRET_KEY, { algorithm: "HS256", expiresIn: "3h" })
-            // res.cookie('access_token', token);
-            // res.redirect('/');
             if (data === null) {
                 res.render('./admin/login', { error: "User does not exist!!!" });
             } else {
@@ -38,8 +35,9 @@ module.exports.postLogin = function (req, res) {
                         res.send(err);
                     } else {
                         if (result) {
-                            const token = jwt.sign({ name: "Kiet" }, process.env.SECRET_KEY, { algorithm: "HS256", expiresIn: "3h" })
+                            const token = jwt.sign({ name: "Kiet" }, process.env.SECRET_KEY, { algorithm: "HS256", expiresIn: "3h" });
                             res.cookie('access_token', token);
+                            res.cookie('admin_id', data.employeeId);
                             res.redirect('/');
                         } else {
                             res.send('/error');
@@ -52,6 +50,7 @@ module.exports.postLogin = function (req, res) {
 }
 
 module.exports.postRegister = function (req, res) {
+    const employeeId = req.body.employeeId;
     const name = req.body.username;
     const password = req.body.password;
     const confirmPassword = req.body.confirmPassword;
@@ -73,6 +72,7 @@ module.exports.postRegister = function (req, res) {
                         res.send(err);
                     } else {
                         let admin = new Admin({
+                            employeeId,
                             name,
                             password: hash
                         });
@@ -91,30 +91,43 @@ module.exports.postRegister = function (req, res) {
     });
 }
 
+module.exports.logout = function (req, res) {
+    res.clearCookie('access_token');
+    res.clearCookie('admin_id');
+    res.redirect('/');
+}
+
 module.exports.getNewsForm = function (req, res) {
-    res.render('./admin/news', { title: "Add News || Admin" });
+    res.render('./admin/add_news', { title: "Add News || Admin", activeClass: 2 });
 }
 
 module.exports.postNewsForm = function (req, res) {
     const date = new Date;
     const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
-    const desc = req.body.desc;
-    const shortDesc = desc.split(' ').slice(0, 31).join(' ') + '...';
+    const content_en = req.body.content_en;
+    const content_vi = req.body.content_vi;
+    const content_cn = req.body.content_cn;
     let news = new News({
-        title: req.body.title,
-        desc,
-        shortDesc,
-        categoryId: req.body.category,
-        time: time,
+        title_en: req.body.title_en,
+        title_vi: req.body.title_vi,
+        title_cn: req.body.title_cn,
+        subtitle_en: req.body.subtitle_en,
+        subtitle_vi: req.body.subtitle_vi,
+        subtitle_cn: req.body.subtitle_cn,
+        content_en,
+        content_vi,
+        content_cn,
+        news_type: req.body.news_type,
+        created: time,
+        updated: "No Updated",
         image: req.file.filename,
-        views: 0,
-        prioritize: req.body.prioritize ? true : false
+        views: 200
     });
     news.save(function (err) {
         if (err) {
             res.send(err);
         } else {
-            res.redirect('/support/news');
+            res.redirect('/admin');
         }
     });
 }
@@ -135,6 +148,7 @@ module.exports.menu = function (req, res) {
         }
     });
 }
+
 module.exports.postMenu = function (req, res) {
     const menu = new Menu({
         text: req.body.menu_text
@@ -223,4 +237,79 @@ module.exports.menuData = function (req, res) {
             })
         }
     });
+}
+
+module.exports.getNewsList = function (req, res) {
+    const page = req.params.page || 1;
+    const perPage = 10;
+    News.find({})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function (err, data) {
+            if (err) res.send(err);
+            News.count().exec(function (err, count) {
+                if (err) res.send(err);
+                res.render('./admin/news_list', {
+                    data: data.reverse(),
+                    total: count,
+                    title: "News List || Admin",
+                    activeClass: 1,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                });
+            });
+        });
+}
+
+module.exports.getEditForm = function (req, res) {
+    const id = req.params.id;
+    News.findOne({ _id: id }, function (err, data) {
+        if (err) {
+            req.send(err);
+        } else {
+            res.render("./admin/edit_news", { title: "Edit News || Admin", data, activeClass: "no have" });
+        }
+    })
+}
+
+module.exports.postEditForm = function (req, res) {
+    const id = req.params.id;
+    const date = new Date;
+    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
+    const content_en = req.body.content_en;
+    const content_vi = req.body.content_vi;
+    const content_cn = req.body.content_cn;
+    const newNews = {
+        title_en: req.body.title_en,
+        title_vi: req.body.title_vi,
+        title_cn: req.body.title_cn,
+        subtitle_en: req.body.subtitle_en,
+        subtitle_vi: req.body.subtitle_vi,
+        subtitle_cn: req.body.subtitle_cn,
+        content_en,
+        content_vi,
+        content_cn,
+        news_type: req.body.news_type,
+        updated: time,
+        image: req.file ? req.file.filename : req.body.hidden_image
+    }
+    News.findOneAndUpdate({ _id: id }, { ...newNews }, function (err, data) {
+        if (err) {
+            req.send(err);
+        } else {
+            res.redirect("/admin");
+        }
+    });
+}
+
+module.exports.deleteNews = function (req, res) {
+    const id = req.params.id;
+
+    News.findOneAndDelete({ _id: id }, function (err) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.redirect('/admin');
+        }
+    })
 }

@@ -31,6 +31,8 @@ const upload = multer({
         }
     }
 });
+router.get('/', requireAuth.requireAuth, adminController.admin);
+
 router.get('/login', adminController.login);
 
 router.get('/register', requireAuth.requireAuth, adminController.register);
@@ -39,20 +41,30 @@ router.post('/login', adminController.postLogin);
 
 router.post('/register', adminController.postRegister);
 
+router.post('/logout', adminController.logout);
+
 router.get('/menu', requireAuth.requireAuth, adminController.menu);
 
-router.post('/menu', requireAuth.requireAuth, adminController.postMenu);
+router.post('/menu', adminController.postMenu);
 
-router.post('/sub_menu_lv1', requireAuth.requireAuth, adminController.sub_menu_lv1);
+router.post('/sub_menu_lv1', adminController.sub_menu_lv1);
 
-router.post('/sub_menu_lv2', requireAuth.requireAuth, adminController.sub_menu_lv2);
+router.post('/sub_menu_lv2', adminController.sub_menu_lv2);
 
 router.get('/menuData', requireAuth.requireAuth, adminController.menuData);
 
-router.post('/todo', requireAuth.requireAuth, adminController.todo);
+router.get('/news/add_news', requireAuth.requireAuth, adminController.getNewsForm);
 
-router.get('/news', requireAuth.requireAuth, adminController.getNewsForm);
+router.post("/news/postNewsForm", upload.single('image'), adminController.postNewsForm);
 
-router.post("/news", upload.single('image'), adminController.postNewsForm);
+router.get("/news/edit/:id", requireAuth.requireAuth, adminController.getEditForm);
+
+router.post("/news/edit/:id", upload.single('image'), adminController.postEditForm);
+
+router.get('/news/news_list/:page', requireAuth.requireAuth, adminController.getNewsList);
+
+router.get('/news/delete/:id', requireAuth.requireAuth, adminController.deleteNews);
+
+// router.post('/posts/:params', requireAuth.requireAuth, adminController.posts);
 
 module.exports = router;

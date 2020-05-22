@@ -23,7 +23,7 @@
                         </a>
                         <div class="top-content">
                             <a href="/news/search/1">
-                                <h4 class="cat-name">Tin Forex</h4>
+                                <h4 class="cat-name"><%= __('Tin Forex') %></h4>
                             </a>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         </a>
                         <div class="top-content">
                             <a href="/news/search/2">
-                                <h4 class="cat-name">Tin hàng hóa</h4>
+                                <h4 class="cat-name"><%= __('Tin Hàng Hóa') %></h4>
                             </a>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         </a>
                         <div class="top-content">
                             <a href="/news/search/3">
-                                <h4 class="cat-name">Tin kinh tế thế giới</h4>
+                                <h4 class="cat-name"><%= __('Tin Kinh Tế Thế Giới') %></h4>
                             </a>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         </a>
                         <div class="top-content">
                             <a href="/news/search/4">
-                                <h4 class="cat-name">Đời sống tài chính </h4>
+                                <h4 class="cat-name"><%= __('Đời Sống Tài Chính') %></h4>
                             </a>
                         </div>
                     </div>
@@ -77,22 +77,23 @@
             <div class="row news-bottom">
                 <div class="col-md-8 main-big">
                     <div class="main-news bg-white bd-top-yellow">
-                        <h1 data-toc-skip="" class="category-name m-3">Tin tức</h1>
+                        <h1 data-toc-skip="" class="category-name m-3"><%= __('Tin tức') %></h1>
                         <div class="box-list-news">
                             <% data.forEach(function(item) { %>
                             <div class="row" style="border-bottom: 1px solid #eee;margin-bottom: 15px;">
                                 <div class="col-md-5 article-img">
-                                    <a href="/news/<%= item.id %>"><img src='/upload/<%= item.image %>'
+                                    <a href="/news/<%= item._id %>"><img src='/upload/<%= item.image %>'
                                             width="100%"></a>
                                 </div>
                                 <div class="col-md-7 article-info">
-                                    <p class="article-title"><a href="/news/<%= item.id %>"><%= item.title %></a></p>
-                                    <p class="article-short-desc"><%= item.shortDesc %></p>
+                                    <p class="article-title"><a href="/news/<%= item._id %>"><%= item.mainTitle %></a>
+                                    </p>
+                                    <p class="article-short-desc"><%= item.mainSubtitle %></p>
                                     <p class="article-detail">
-                                        <span><a href="/news/search/<%= item.categoryId %>">
-                                                <%= item.categoryId === 1 ? "Tin Forex" : (item.categoryId === 2) ? "Tin Hàng Hóa" : (item.categoryId === 3) ? "Tin Kinh Tế Thế Giới" : (item.categoryId === 4) ? "Đời Sống Tài Chính" : "" %>
-                                            </a></span><span>|</span><span><%= item.time %></span><span>|</span><span>
-                                            <%= item.views %> Lượt xem</span>
+                                        <span><a href="/news/search/<%= item.news_type %>">
+                                                <%= item.news_type === "1" ? "Tin Forex" : (item.news_type === "2") ? "Tin Hàng Hóa" : (item.news_type === "3") ? "Tin Kinh Tế Thế Giới" : (item.news_type === "4") ? "Đời Sống Tài Chính" : "" %>
+                                            </a></span><span>|</span><span><%= item.created %></span><span>|</span><span>
+                                            <%= item.views %> <%= __('Lượt xem') %></span>
                                     </p>
                                 </div>
                             </div>
@@ -104,7 +105,7 @@
                     <div class="aside box-shadow">
                         <div class="content">
                             <h2 data-toc-skip="" class="title-right">
-                                Danh sách sàn ngoại hối
+                                <%= __('Danh sách sàn ngoại hối') %>
                             </h2>
                             <div class="top-broker bg-white">
                                 <ul>
@@ -117,7 +118,7 @@
                                                 </div>
                                                 <div class="item-content">
                                                     <h3 class="broker-name">IC Markets</h3>
-                                                    <p class="broker-info">10-15 năm</p>
+                                                    <p class="broker-info">10-15 <%= __('năm') %></p>
                                                 </div>
                                             </div>
                                         </a>
@@ -131,7 +132,7 @@
                                                 </div>
                                                 <div class="item-content">
                                                     <h3 class="broker-name">Think Markets</h3>
-                                                    <p class="broker-info">9 năm</p>
+                                                    <p class="broker-info">9 <%= __('năm') %></p>
                                                 </div>
                                             </div>
                                         </a>
@@ -145,7 +146,7 @@
                                                 </div>
                                                 <div class="item-content">
                                                     <h3 class="broker-name">Exness</h3>
-                                                    <p class="broker-info">5-10 năm</p>
+                                                    <p class="broker-info">5-10 <%= __('năm') %></p>
                                                 </div>
                                             </div>
                                         </a>
@@ -159,7 +160,7 @@
                                                 </div>
                                                 <div class="item-content">
                                                     <h3 class="broker-name">Pepperstone</h3>
-                                                    <p class="broker-info"> 5 - 10 năm</p>
+                                                    <p class="broker-info"> 5 - 10 <%= __('năm') %></p>
                                                 </div>
                                             </div>
                                         </a>
@@ -173,7 +174,7 @@
                                                 </div>
                                                 <div class="item-content">
                                                     <h3 class="broker-name">XM</h3>
-                                                    <p class="broker-info">5-10 năm</p>
+                                                    <p class="broker-info">5-10 <%= __('năm') %></p>
                                                 </div>
                                             </div>
                                         </a>
@@ -187,7 +188,7 @@
                                                 </div>
                                                 <div class="item-content">
                                                     <h3 class="broker-name">FxPro</h3>
-                                                    <p class="broker-info">10 - 15 năm</p>
+                                                    <p class="broker-info">10 - 15 <%= __('năm') %></p>
                                                 </div>
                                             </div>
                                         </a>
@@ -201,7 +202,7 @@
                                                 </div>
                                                 <div class="item-content">
                                                     <h3 class="broker-name">Go Markets</h3>
-                                                    <p class="broker-info">15-20 năm</p>
+                                                    <p class="broker-info">15-20 <%= __('năm') %></p>
                                                 </div>
                                             </div>
                                         </a>
@@ -215,7 +216,7 @@
                                                 </div>
                                                 <div class="item-content">
                                                     <h3 class="broker-name">Nord FX</h3>
-                                                    <p class="broker-info">1</p>
+                                                    <p class="broker-info">1 <%= __('năm') %></p>
                                                 </div>
                                             </div>
                                         </a>

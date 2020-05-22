@@ -26,7 +26,7 @@ i18n.configure({
 });
 
 // Mongoose
-mongoose.connect(process.env.MONGO_URL,
+mongoose.connect(process.env.MONGO_URL_LOCAL,
     { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }, function (err) {
         if (err) {
             console.log("connect fail : " + err);
@@ -56,11 +56,11 @@ app.use('/change-lang/:lang', (req, res) => {
 /*
     Eror Page
 */
-app.get('/:notfound', function (req, res) {
-    res.render('./pages/404');
-})
+// app.get('/:error', function (req, res) {
+//     res.render('./pages/404');
+// })
 /*
-    Service Page
+    Service Pages
 */
 app.use('/services', servicesRouter);
 /*
