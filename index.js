@@ -26,7 +26,7 @@ i18n.configure({
 });
 
 // Mongoose
-mongoose.connect(process.env.MONGO_URL_LOCAL,
+mongoose.connect(process.env.MONGO_URL,
     { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }, function (err) {
         if (err) {
             console.log("connect fail : " + err);
