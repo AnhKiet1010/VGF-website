@@ -13,7 +13,7 @@ module.exports.admin = function (req, res) {
 }
 
 module.exports.login = function (req, res) {
-    res.render('./admin/login', { title: "Login Form || Admin" });
+    res.render('./admin/login', { title: "Login Form || Admin", error: undefined });
 }
 
 module.exports.register = function (req, res) {
@@ -291,7 +291,8 @@ module.exports.postEditForm = function (req, res) {
         content_cn,
         news_type: req.body.news_type,
         updated: time,
-        image: req.file ? req.file.filename : req.body.hidden_image
+        image: req.file ? req.file.filename : req.body.hidden_image,
+        editBy: req.cookies ? req.cookies.admin_id : 'No Updated'
     }
     News.findOneAndUpdate({ _id: id }, { ...newNews }, function (err, data) {
         if (err) {

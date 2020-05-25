@@ -18,7 +18,8 @@ const news = new Schema({
     created: String,
     updated: String,
     image: String,
-    views: Number
+    views: Number,
+    editBy: String
 });
 
 module.exports = mongoose.model("news", news);

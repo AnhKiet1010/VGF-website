@@ -46,6 +46,7 @@
                             target="_blank"><%= item.title_en %></a></strong>
                     Created At: <%= item.created %>
                     | Updated At: <%= item.updated %>
+                    | Updated By: <%= item.editBy %>
                     | <a class="" href="/admin/news/edit/<%= item._id %>">Edit</a>
                     | <a class="del" href="/admin/news/delete/<%= item._id %>">Delete</a>
                 </p>

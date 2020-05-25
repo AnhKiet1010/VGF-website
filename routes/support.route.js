@@ -13,6 +13,6 @@ router.get('/education/:sub', supportController.education);
 router.get('/help', supportController.help);
 
 // NEWs page
-router.get('/news', supportController.news);
+router.get('/news/:page', supportController.news);
 
 module.exports = router;
