@@ -65,6 +65,6 @@ router.get('/news/news_list/:page', requireAuth.requireAuth, adminController.get
 
 router.get('/news/delete/:id', requireAuth.requireAuth, adminController.deleteNews);
 
-// router.post('/posts/:params', requireAuth.requireAuth, adminController.posts);
+router.get('/posts/add_posts', requireAuth.requireAuth, adminController.getPostsForm);
 
 module.exports = router;

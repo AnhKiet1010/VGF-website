@@ -11,7 +11,7 @@ module.exports.sub = function (req, res) {
     for (var i = 0; i < splitStr.length; i++) {
         splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
     }
-    res.render('./pages/services/services', { data: splitStr.join(" "), id: undefined, title: "Services || VGF" });
+    res.render('./pages/services/services', { data: splitStr.join(" "), id: undefined, title: "Services || VGF", lang: req.cookies.lang });
 }
 
 module.exports.forexPage = function (req, res) {

@@ -90,7 +90,7 @@
                                     </p>
                                     <p class="article-short-desc"><%= item.mainSubtitle %></p>
                                     <p class="article-detail">
-                                        <span><a href="/news/search/<%= item.news_type %>">
+                                        <span><a href="/news/search/<%= item.news_type %>/1">
                                                 <% if(lang === 'vi') { %>
                                                 <%= item.news_type === "1" ? "Tin Forex" : (item.news_type === "2") ? "Tin Hàng Hóa" : (item.news_type === "3") ? "Tin Kinh Tế Thế Giới" : (item.news_type === "4") ? "Đời Sống Tài Chính" : "" %>
                                                 <% } else if(lang === 'en') { %>

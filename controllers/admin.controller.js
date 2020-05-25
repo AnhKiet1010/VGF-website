@@ -314,3 +314,7 @@ module.exports.deleteNews = function (req, res) {
         }
     })
 }
+
+module.exports.getPostsForm = function (req, res) {
+    res.render('./admin/posts/add_posts', { activeClass: 4, title: "Add News || Admin" });
+}

@@ -5,5 +5,5 @@ const newsController = require('../controllers/news.controller');
 
 router.get('/:id', newsController.getNews);
 
-router.get('/search/:categoryId', newsController.getNewsByCategory);
+router.get('/search/:categoryId/:page', newsController.getNewsByCategory);
 module.exports = router;
