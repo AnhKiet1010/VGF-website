@@ -7,6 +7,8 @@ const Admin = require('../models/admin');
 const Menu = require('../models/menu');
 const Sub_menu_lv1 = require('../models/sub_menu_lv1');
 const Sub_menu_lv2 = require('../models/sub_menu_lv2');
+const Question_type = require('../models/question_type');
+const Question = require('../models/question');
 
 module.exports.admin = function (req, res) {
     res.redirect('/admin/news/news_list/1');
@@ -111,16 +113,16 @@ module.exports.postNewsForm = function (req, res) {
         title_en: req.body.title_en,
         title_vi: req.body.title_vi,
         title_cn: req.body.title_cn,
-        subtitle_en: req.body.subtitle_en,
-        subtitle_vi: req.body.subtitle_vi,
-        subtitle_cn: req.body.subtitle_cn,
+        subtitle_en: req.body.subtitle_en === '' ? req.body.subtitle_en : req.body.title_en + '...',
+        subtitle_vi: req.body.subtitle_vi === '' ? req.body.subtitle_vi : req.body.title_vi + '...',
+        subtitle_cn: req.body.subtitle_cn === '' ? req.body.subtitle_cn : req.body.title_cn + '...',
         content_en,
         content_vi,
         content_cn,
         news_type: req.body.news_type,
         created: time,
         updated: "No Updated",
-        image: req.file.filename,
+        image: req.file ? req.file.filename : '',
         views: 200
     });
     news.save(function (err) {
@@ -243,14 +245,15 @@ module.exports.getNewsList = function (req, res) {
     const page = req.params.page || 1;
     const perPage = 10;
     News.find({})
+        .sort({ created: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec(function (err, data) {
             if (err) res.send(err);
-            News.count().exec(function (err, count) {
+            News.countDocuments().exec(function (err, count) {
                 if (err) res.send(err);
                 res.render('./admin/news_list', {
-                    data: data.reverse(),
+                    data: data,
                     total: count,
                     title: "News List || Admin",
                     activeClass: 1,
@@ -317,4 +320,97 @@ module.exports.deleteNews = function (req, res) {
 
 module.exports.getPostsForm = function (req, res) {
     res.render('./admin/posts/add_posts', { activeClass: 4, title: "Add News || Admin" });
+}
+
+module.exports.getQuestionForm = function (req, res) {
+    Question_type.find({}, function (err, data) {
+        if (err) req.send(err);
+        res.render('./admin/question/add_question', { activeClass: 6, title: "Add Question || Admin", q_category: data });
+    });
+}
+
+module.exports.getListQuestion = function (req, res) {
+    const page = req.params.page || 1;
+    const perPage = 10;
+
+    Question.find({})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function (err, data) {
+            if (err) res.send(err);
+            News.countDocuments().exec(function (err, count) {
+                if (err) res.send(err);
+                res.render('./admin/question/list_question', {
+                    data: data.reverse(),
+                    count,
+                    title: "List Question || Admin",
+                    activeClass: 5,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                });
+            });
+        });
+}
+
+module.exports.add_question_type = function (req, res) {
+    const questionType = new Question_type({
+        mainText: req.body.question_type_en,
+        text_en: req.body.question_type_en,
+        text_vi: req.body.question_type_vi,
+        text_cn: req.body.question_type_vn,
+        kids: []
+    });
+
+    questionType.save(function (err) {
+        if (err) res.send(err);
+        res.redirect('/admin/add_question');
+    });
+}
+
+module.exports.postAddQuestion = function (req, res) {
+    const date = new Date;
+    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
+    const question = new Question({
+        mainQuestion: req.body.question_en,
+        question_en: req.body.question_en,
+        question_vi: req.body.question_vi,
+        question_cn: req.body.question_cn,
+        mainAnswer: req.body.answer_en,
+        answer_en: req.body.answer_en,
+        answer_vi: req.body.answer_vi,
+        answer_cn: req.body.answer_cn,
+        created: time,
+        updated: "No Updated",
+        updateBy: req.cookies.admin_id
+    });
+
+    question.save(function (err) {
+        if (err) {
+            res.send(err);
+        } else {
+            Question_type.findByIdAndUpdate(
+                { _id: req.body.question_type },
+                { $push: { kids: question._id } },
+                function (err) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        res.redirect("/admin/list_question/1");
+                    }
+                });
+        }
+    });
+
+}
+
+module.exports.deleteQuestion = function (req, res) {
+    const id = req.params.id;
+    Question.findOneAndDelete({ _id: id }, function (err) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.redirect('/admin/list_question/1');
+        }
+    })
+
 }

@@ -67,4 +67,14 @@ router.get('/news/delete/:id', requireAuth.requireAuth, adminController.deleteNe
 
 router.get('/posts/add_posts', requireAuth.requireAuth, adminController.getPostsForm);
 
+router.get('/list_question/:page', requireAuth.requireAuth, adminController.getListQuestion);
+
+router.post('/add_question_type', adminController.add_question_type);
+
+router.get('/add_question', requireAuth.requireAuth, adminController.getQuestionForm);
+
+router.post('/add_question', adminController.postAddQuestion);
+
+router.get('/question/delete/:id', adminController.deleteQuestion);
+
 module.exports = router;

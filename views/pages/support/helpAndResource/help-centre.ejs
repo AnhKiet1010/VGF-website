@@ -10,114 +10,23 @@
         <%- include ('../../../partials/header') %>
     </header>
     <main>
-        <div class="edu-top text-center help-centre">
-            <h1 class="text-white">Help Centre</h1>
-            <p class="text-white">Help Centre – Find the answers you’re looking for using our in-depth knowledgebase or
-                contact our friendly customer support 24/7</p>
-            <br>
-            <br>
-            <br>
-        </div>
         <div class="container help-centre-container">
-            <article class="page-header__menu-container">
-                <div class="page-header__menu">
-                    <div class="menu-item current-page"><a href="/sc/en/education/education-overview"
-                            class="menu-title">Help Centre</a></div>
-                    <div class="menu-item"><a href="/sc/en/education/advantages-of-forex" class="menu-title">Forex
-                            Calculators</a></div>
-                    <div class="menu-item"><a href="/sc/en/education/advantages-of-cfds" class="menu-title">Economic
-                            Calendar</a></div>
-                </div>
-            </article>
-            <h1 style="padding: 40px 0;font-size: 48px;margin-top: 40px;text-align:center;">Most frequently asked
-                questions</h1>
-            <div style="margin: 16px 48px;text-align: center;font-size: 20px;">
-                <p>Here are the most common questions a trader would normally ask us or consider to ask before opening
-                    an
-                    account with us.
-                    For more information on help resources related to VGF and the products we offer,
-                    simply type your question below or visit our live chat service.</p>
-            </div>
+            <% data.forEach(function(item) {%>
+            <h1 style="padding: 40px 0;font-size: 48px;margin-top: 40px;text-align:center;"><%= item.mainText %></h1>
+            <% item.question.forEach(function(question,index) { %>
             <div class="faq-accordion mb-3">
-                <div class="collapse-box" data-toggle="collapse" data-target="#collapse1" aria-expanded="false"
-                    aria-controls="collapse1">
-                    What account types does VGF offer?<span><i class="fa fa-chevron-down"></i></span>
-                </div>
-                <div class="collapse" id="collapse1" aria-controls="collapse1">
-                    <div class="card card-body panel-content">
-                        VGF offer two types of accounts, Standard account and our
-                        market leading, Raw Spread account.<br><br><strong>Raw Spread Account</strong>: This account
-                        shows the Raw inter-bank spread received from our liquidity providers. There is a commission
-                        charge of $3.5 per standard lot round turn.<br><br><strong>Standard Account</strong>: We do
-                        not charge a commission on Standard accounts but instead, there is a mark up applied to the
-                        spread of 1 pip above the raw Inter-bank rate received from our Liquidity
-                        providers.<br><br>Further information about the different types of trading accounts
-                        available can be found on our <a href="/trading-accounts/overview">Account Overview</a>
-                        page.
-                    </div>
-                </div>
-            </div>
-            <div class="faq-accordion mb-3">
-                <div class="collapse-box" data-toggle="collapse" data-target="#collapse2" aria-expanded="false"
-                    aria-controls="collapse2">
-                    What are the fees, commissions for trading with VGF?<span><i class="fa fa-chevron-down"></i></span>
-                </div>
-                <div class="collapse" id="collapse2" aria-controls="collapse2">
-                    <div class="card card-body panel-content">
-                        IC Markets has two MetaTrader 4 account types, a Standard account and
-                        our market leading, The Raw Spread account. IC Markets does not charge a commission on
-                        Standard accounts but instead applies a spread mark up of 1 pip above the Raw inter-bank
-                        prices received from our liquidity providers. IC Markets Raw Spread account shows the raw
-                        inter-bank spread received from our liquidity providers. On this account we commission of
-                        $3.5 per standard lot round turn.
-                    </div>
-                </div>
-            </div>
-            <div class="faq-accordion mb-3">
-                <div class="collapse-box" data-toggle="collapse" data-target="#collapse3" aria-expanded="false"
-                    aria-controls="collapse3">
-                    What is the minimum amount needed to open a trading account?<span><i
+                <div class="collapse-box" data-toggle="collapse" data-target="#collapse<%= index %>"
+                    aria-expanded="false" aria-controls="collapse<%= index %>"><%= question.mainQuestion %><span><i
                             class="fa fa-chevron-down"></i></span>
                 </div>
-                <div class="collapse" id="collapse3" aria-controls="collapse3">
+                <div class="collapse" id="collapse<%= index %>" aria-controls="collapse<%= index %>">
                     <div class="card card-body panel-content">
-                        VGF allows clients to open an account with as little as USD $200 or currency equivalent.
+                        <%- question.mainAnswer %>
                     </div>
                 </div>
             </div>
-            <div class="faq-accordion mb-3">
-                <div class="collapse-box" data-toggle="collapse" data-target="#collapse4" aria-expanded="false"
-                    aria-controls="collapse4">
-                    What are your trading conditions?<span><i class="fa fa-chevron-down"></i></span>
-                </div>
-                <div class="collapse" id="collapse4" aria-controls="collapse4">
-                    <div class="card card-body panel-content">
-                        Our mission is to provide traders with the lowest spreads and fastest
-                        executions possible across over 285 Forex products including Forex, precious metals, stocks,
-                        futures and other commodities. We have invested heavily in technology and established strong
-                        relationships with some of the largest and most reliable pricing providers in the
-                        market.<br><br>To find more about products offering click here: <a class="text-primary"
-                            href="/trading-markets/range-of-markets">range of products</a><br>We also strongly
-                        suggest to thoroughly read our <a target="_blank" rel="noopener noreferrer" class="text-primary"
-                            href="https://cdn.icmarkets.com/uploads/FSA/IC+Markets+Terms+%26+Condition+FSA.pdf">Account
-                            Terms</a> available for the attached costs, risks and your responsibilities before
-                        deciding to trade with us.
-                    </div>
-                </div>
-            </div>
-            <div class="faq-accordion mb-3">
-                <div class="collapse-box" data-toggle="collapse" data-target="#collapse5" aria-expanded="false"
-                    aria-controls="collapse5">
-                    What is the minimum amount needed to open a trading account?<span><i
-                            class="fa fa-chevron-down"></i></span>
-                </div>
-                <div class="collapse" id="collapse5" aria-controls="collapse5">
-                    <div class="card card-body panel-content">
-                        VGF allows clients to open an account with as little as USD $200 or currency equivalent.
-                    </div>
-                </div>
-            </div>
-
+            <% }) %>
+            <% }) %>
             <!-- input Form -->
             <div class="faq-search__container">
                 <input class="faq-input faq-search-input" type="text" placeholder="Type your question here">
@@ -131,26 +40,6 @@
                         each of the words separated by a space).
                     </p>
                 </div>
-            </div>
-        </div>
-        <div class="page-content">
-            <div class="page-section ui-card-list\">
-                <a class="h-card h-1 text-dark" href="#">
-                    <i class="fa fa-headset"></i>
-                    <span class="h-img"></i></span>
-                    <span class="h-title">LIVE CHAT</span>
-                </a>
-                <div class="h-space s-1"></div>
-
-                <a class="h-card h-2 text-dark" href="#" target="_self">
-                    <span class="h-img"></span>
-                    <span class="h-title">E-MAIL SUPPORT</span>
-                </a>
-                <div class="h-space s-2"></div>
-                <a class="h-card h-3 show-callback-form-button text-dark" target="_self">
-                    <span class="h-img"></span>
-                    <span class="h-title">CALL BACK</span>
-                </a>
             </div>
         </div>
     </main>

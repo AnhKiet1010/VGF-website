@@ -383,16 +383,18 @@ ul.sub-menu li:hover .sub-menu-lv2 {
 }
 
 /* Support Page */
-
+.card.card-body.panel-content a {
+    color: blue;
+}
 /* Education overview */
 .edu-overview-top {
     background-image: url("../images/education-overreview.jpg");
     background-position: bottom;
     background-size: cover;
-    height: 20em;
 }
 .edu-overview-top-content {
     padding-top: 3em;
+    text-align: center;
 }
 .edu-overview-top-content h1 {
     font-size: 4em;
@@ -402,6 +404,10 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     color: #ddd;
     font-size: 1.5em;
     font-weight: lighter;
+    padding: 1em 3em;
+}
+.edu-overview-top-content button {
+    margin-bottom: 20px;
 }
 .edu-overview-navbar {
     display: flex;
@@ -435,7 +441,30 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     color: #fff;
 }
 
+.edu-overview-content .right-sidebar .bottom {
+    background-color: #ddd;
+    width: 18em;
+    padding: 2em 1em;
+}
+.right-sidebar {
+    float: right;
+    margin: 4em 8em;
+}
+.edu-overview-content .bgcolor1 {
+    background-color: #fff;
+    padding: 80px 40px;
+}
+.edu-overview-content .bgcolor2 {
+    background-color: #f4f7f5;
+    padding: 80px 40px;
+}
 /* NEWS PAGE */
+.news-desc img {
+    width: 100%;
+}
+.news-desc a {
+    color: blue;
+}
 .main-news {
     padding: 10px 20px;
     margin: 20px 0;
@@ -443,7 +472,7 @@ ul.sub-menu li:hover .sub-menu-lv2 {
 .news-desc > p {
     font-size: large;
     line-height: 1.6em;
-    font-family: monospace, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .item .item-img-wrapper .thumbWrap {
     background-size: cover;
@@ -983,6 +1012,12 @@ div[aria-expanded="true"] {
     ul.navbar-nav li {
         font-size: 16px;
     }
+    .edu-overview-navbar {
+        display: none;
+    }
+    .edu-overview-content .right-sidebar {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -999,6 +1034,18 @@ div[aria-expanded="true"] {
         margin: 10px;
         color: #fff;
         line-height: 1.6em;
+    }
+    .help-centre-container {
+        padding: 20px;
+    }
+    .help-centre-container > h1 {
+        font-size: 24px;
+    }
+    .help-centre-container > p {
+        font-size: 16px;
+    }
+    .faq-accordion div {
+        font-size: 18px;
     }
 }
 

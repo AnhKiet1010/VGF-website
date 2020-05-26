@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('../partials/head') %>
+</head>
+
+<body class="bg-light d-flex flex-column h-100">
+    <%- include ('../partials/header') %>
+    <main role="main" class="container flex-shrink-0">
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+            style="background-color: green;">
+            <img class="mr-3" src="/images/admin.jpg" alt="admin-image" width="48" height="48">
+            <div class="lh-100">
+                <h6 class="mb-0 text-white lh-100">Add Question</h6>
+                <small></small>
+            </div>
+        </div>
+
+        <h3 class="text-center mt-3">ADD QUESTION CATEGORY</h3>
+        <form action="/admin/add_question_type" class="mt-2" method="POST">
+            <div class="form-group col-12 my-3 p-3 bg-white rounded shadow-sm">
+                <label class="">Question Type</label>
+                <div class="input-group mb-3 mt-3">
+                    <input type="text" class="form-control" placeholder="English" required name="question_type_en">
+                    <div class="input-group mb-3 mt-3">
+                        <input type="text" class="form-control" placeholder="Vietnamese" required
+                            name="question_type_vi">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Chinese" required name="question_type_cn">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-outline-success btn-block my-2 my-sm-0">Submit</button>
+            </div>
+        </form>
+
+
+        <h3 class="text-center mt-3">ADD QUESTION</h3>
+        <form class="pb-3" action="/admin/add_question" method="POST">
+            <div class="my-3 p-3 bg-white rounded shadow-sm pc">
+                <div class="row media text-muted pt-3">
+                    <div class="form-group col-12">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Question Type</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="question_type">
+                                <option selected>Choose...</option>
+                                <% q_category.forEach(function(item) { %>
+                                <option value="<%= item._id %>"><%= item.text_en %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-3 p-3 bg-white rounded shadow-sm">
+                <h6 class="border-bottom border-gray pb-2 mb-0">English</h6>
+                <div class="row media text-muted pt-3">
+                    <div class="form-group col-12 pc">
+                        <input type="text" class="form-control" name="question_en" value=""
+                            placeholder="English Question">
+                    </div>
+                    <div class="form-group col-12">
+                        <textarea name="answer_en" id="editor1" rows="10" cols="80"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="my-3 p-3 bg-white rounded shadow-sm">
+                <h6 class="border-bottom border-gray pb-2 mb-0">Vietnamese</h6>
+                <div class="row media text-muted pt-3">
+                    <div class="form-group col-12 pc">
+                        <input type="text" class="form-control" name="question_vi" value=""
+                            placeholder="Vietnamese Question">
+                    </div>
+                    <div class="form-group col-12">
+                        <textarea name="answer_vi" id="editor2" rows="10" cols="80"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="my-3 p-3 bg-white rounded shadow-sm">
+                <h6 class="border-bottom border-gray pb-2 mb-0">Simplified Chinese</h6>
+                <div class="row media text-muted pt-3">
+                    <div class="form-group col-12 pc">
+                        <input type="text" class="form-control" name="question_cn" value=""
+                            placeholder="Simplified Chinese Title">
+                    </div>
+                    <div class="form-group col-12">
+                        <textarea name="answer_cn" id="editor3" rows="10" cols="80"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-outline-success btn-block my-2 my-sm-0" type="submit">Submit</button>
+        </form>
+    </main>
+
+    <script>
+        CKEDITOR.replace('editor1');
+        CKEDITOR.replace('editor2');
+        CKEDITOR.replace('editor3');
+    </script>
+    <%- include ('../partials/footer') %>
+</body>
+
+</html>

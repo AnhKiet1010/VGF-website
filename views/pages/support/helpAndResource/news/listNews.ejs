@@ -15,14 +15,14 @@
             <div class="row top-category-news">
                 <div class="col-md-3 col-6">
                     <div class="item">
-                        <a href="/news/search/1" class="item-img-wrapper">
+                        <a href="/news/search/1/1" class="item-img-wrapper">
                             <div style="background: url(https://invest318.com/data/category/dmi1588131714.jpg);background-size: cover;"
                                 class="thumbWrap">
                                 <img src="https://invest318.com/data/category/dmi1588131714.jpg" alt="Tin Forex"
                                     class="thumb"></div>
                         </a>
                         <div class="top-content">
-                            <a href="/news/search/1">
+                            <a href="/news/search/1/1">
                                 <h4 class="cat-name"><%= __('Tin Forex') %></h4>
                             </a>
                         </div>
@@ -30,14 +30,14 @@
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="item">
-                        <a href="/news/search/2" class="item-img-wrapper">
+                        <a href="/news/search/2/1" class="item-img-wrapper">
                             <div style="background: url(https://invest318.com/data/category/zcl1588641370.jpg);background-size: cover;"
                                 class="thumbWrap">
                                 <img src="https://invest318.com/data/category/zcl1588641370.jpg" alt="Tin hàng hóa"
                                     class="thumb"></div>
                         </a>
                         <div class="top-content">
-                            <a href="/news/search/2">
+                            <a href="/news/search/2/1">
                                 <h4 class="cat-name"><%= __('Tin Hàng Hóa') %></h4>
                             </a>
                         </div>
@@ -45,14 +45,14 @@
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="item">
-                        <a href="/news/search/3" class="item-img-wrapper">
+                        <a href="/news/search/3/1" class="item-img-wrapper">
                             <div style="background: url(https://invest318.com/data/category/jlw1588131738.jpg);background-size: cover;"
                                 class="thumbWrap">
                                 <img src="https://invest318.com/data/category/jlw1588131738.jpg"
                                     alt="Tin kinh tế thế giới" class="thumb"></div>
                         </a>
                         <div class="top-content">
-                            <a href="/news/search/3">
+                            <a href="/news/search/3/1">
                                 <h4 class="cat-name"><%= __('Tin Kinh Tế Thế Giới') %></h4>
                             </a>
                         </div>
@@ -60,14 +60,14 @@
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="item">
-                        <a href="/news/search/4" class="item-img-wrapper">
+                        <a href="/news/search/4/1" class="item-img-wrapper">
                             <div style="background: url(https://invest318.com/data/category/nsh1588131749.jpg);background-size: cover;"
                                 class="thumbWrap">
                                 <img src="https://invest318.com/data/category/nsh1588131749.jpg"
                                     alt="Đời sống tài chính " class="thumb"></div>
                         </a>
                         <div class="top-content">
-                            <a href="/news/search/4">
+                            <a href="/news/search/4/1">
                                 <h4 class="cat-name"><%= __('Đời Sống Tài Chính') %></h4>
                             </a>
                         </div>
@@ -107,22 +107,22 @@
                         </div>
                     </div>
 
-                    <small class="d-block mt-3 text-center">
+                    <small class="d-block mt-3 text-center mb-3">
                         <nav>
                             <% if(pages > 0) { %>
                             <ul class="pagination">
                                 <li class="page-item <%= current === "1" ? "disabled" : "" %>" aria-disabled="true"
                                     aria-label="« Previous">
-                                    <a class="page-link" href="/admin/news/news_list/<%= Number(current) - 1 %>">‹</a>
+                                    <a class="page-link" href="/support/news/<%= Number(current) - 1 %>">‹</a>
                                 </li>
                                 <% for(var i = 1; i <= pages; i++) { %>
                                 <li class="page-item <%= i === Number(current) ? "active" : "" %>">
-                                    <a class="page-link" href="/admin/news/news_list/<%= i %>"><%= i %></a>
+                                    <a class="page-link" href="/support/news/<%= i %>"><%= i %></a>
                                 </li>
                                 <% } %>
                                 <li class="page-item <%= Number(current) === pages ? "disabled" : "" %>"
                                     aria-disabled="true" aria-label="Next ››">
-                                    <a class="page-link" href="/admin/news/news_list/<%= Number(current) + 1 %>">›</a>
+                                    <a class="page-link" href="/support/news/<%= Number(current) + 1 %>">›</a>
                                 </li>
                             </ul>
                             <% } %>

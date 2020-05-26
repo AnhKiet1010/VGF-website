@@ -1,24 +1,37 @@
 const News = require('../models/news');
 
+const Question_type = require('../models/question_type');
 
 module.exports.education = function (req, res) {
     res.render('./pages/support/education/' + req.params.sub, { title: "Education || VGF" });
 }
 
 module.exports.help = function (req, res) {
-    res.render('./pages/support/helpAndResource/help-centre', { title: "Help || VGF" });
+    Question_type.aggregate([
+        {
+            $lookup: {
+                from: "questions",
+                localField: "kids",
+                foreignField: "_id",
+                as: "question"
+            }
+        }
+    ], function (err, data) {
+        res.render('./pages/support/helpAndResource/help-centre', { title: "Help || VGF", data });
+    })
 }
 
 module.exports.news = function (req, res) {
-    const page = req.params.page || 1;
+    const page = Number(req.params.page) || 1;
     const perPage = 5;
 
     News.find({})
+        .sort({ created: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec(function (err, data) {
             if (err) res.send(err);
-            News.count().exec(function (err, count) {
+            News.countDocuments().exec(function (err, count) {
                 if (err) {
                     res.send(err);
                 } else {
@@ -45,7 +58,7 @@ module.exports.news = function (req, res) {
                         });
                     }
                     res.render('./pages/support/helpAndResource/news/listNews', {
-                        data: data.reverse(),
+                        data: data,
                         total: count,
                         title: "News || VGF",
                         current: page,
