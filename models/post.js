@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const posts = new Schema({
+    categoryId: String,
     mainTitle: String,
     mainSubtitle: String,
     mainContent: String,
@@ -14,12 +15,10 @@ const posts = new Schema({
     content_en: String,
     content_vi: String,
     content_cn: String,
-    of_page_menu: String,
-    of_page_lv1: String,
-    of_page_lv2: String,
     created: String,
     updated: String,
-    editBy: String
+    editBy: String,
+    image: String
 });
 
 module.exports = mongoose.model("posts", posts);

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('../../../partials/head') %>
+</head>
+
+<body>
+    <header>
+        <%- include ('../../../partials/header') %>
+    </header>
+    <main>
+        <div class="static__bannertext flx">
+            <div class="content-flx d-flex" style="margin: 0 auto">
+                <span><img src="/images/note.png"></span>
+                <div class="site__title">
+                    <span><%= __('Information Hub for') %></span><%= __('Serious Traders') %>
+                </div>
+            </div>
+        </div>
+        <div class="container-lg mb-5">
+            <div class="list-block">
+                <ul class="nav justify-content-center site__nav">
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                            href="/support/education/trading_knowledge/1/1"><%= __('Company News') %></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                            href="/support/education/trading_knowledge/2/1"><%= __('Fundamental Analysis') %></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="/support/education/trading_knowledge/3/1"><%= __('Technical Analysis') %></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/support/education/trading_knowledge/4/1"><%= __('Education') %></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="/support/education/trading_knowledge/5/1"><%= __('Trading Data') %></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/support/education/trading_knowledge/6/1"><%= __('About') %></a>
+                    </li>
+                </ul>
+                <div class="row list mt-4" style="margin-right: 0px;">
+                    <div class="col-lg-8">
+                        <header>
+                            <div class="d-flex">
+                                <div style="margin-right: 20px;margin-right: 20px;
+                                width: 80px;
+                                padding: 10px;
+                                font-size: 15px;
+                                text-align: center;
+                                font-weight: 800;
+                                border-right: 2px solid #ddd;">
+                                    <%= data.created %></div>
+                                <div style="font-size: 30px;
+                                width: 50%;
+                                font-weight: bolder;"><%= data.mainTitle %></div>
+                            </div>
+                        </header>
+                        <div id="posts_content" style="width: 100%;">
+                            <%- data.mainContent %>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <aside id="recent-posts-2" class="widget widget_recent_entries">
+                            <h3 class="widget-title pb-2"><%= __('Recent Posts') %></h3>
+                            <ul class="recentPost">
+                                <% recentPost.forEach(function(item) { %>
+                                <li>
+                                    <a href="/support/education/posts/<%= item._id %>"><%= item.mainTitle %></a>
+                                    <span class="post-date"><%= item.created %></span>
+                                </li>
+                                <% }) %>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <%- include ('../../../partials/footer') %>
+    </footer>
+</body>
+
+</html>

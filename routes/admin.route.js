@@ -53,6 +53,9 @@ router.post('/sub_menu_lv2', adminController.sub_menu_lv2);
 
 router.get('/menuData', requireAuth.requireAuth, adminController.menuData);
 
+/* 
+            NEWS
+*/
 router.get('/news/add_news', requireAuth.requireAuth, adminController.getNewsForm);
 
 router.post("/news/postNewsForm", upload.single('image'), adminController.postNewsForm);
@@ -65,7 +68,24 @@ router.get('/news/news_list/:page', requireAuth.requireAuth, adminController.get
 
 router.get('/news/delete/:id', requireAuth.requireAuth, adminController.deleteNews);
 
+/* 
+            POSTS
+*/
 router.get('/posts/add_posts', requireAuth.requireAuth, adminController.getPostsForm);
+
+router.post('/posts/add_posts', upload.single('image'), adminController.postPostsForm);
+
+router.get('/posts/posts_list/:page', adminController.getPostsList);
+
+router.get("/posts/edit/:id", requireAuth.requireAuth, adminController.getEditPostsForm);
+
+router.post("/posts/edit/:id", upload.single('image'), adminController.postEditPostsForm);
+
+router.get('/posts/delete/:id', adminController.deletePosts);
+
+/* 
+            QUESTION
+*/
 
 router.get('/list_question/:page', requireAuth.requireAuth, adminController.getListQuestion);
 
@@ -75,6 +95,12 @@ router.get('/add_question', requireAuth.requireAuth, adminController.getQuestion
 
 router.post('/add_question', adminController.postAddQuestion);
 
+router.get("/question/edit/:id", requireAuth.requireAuth, adminController.getEditQuestionForm);
+
+router.post("/question/edit/:id", upload.single('image'), adminController.postEditQuestionForm);
+
 router.get('/question/delete/:id', adminController.deleteQuestion);
+
+
 
 module.exports = router;

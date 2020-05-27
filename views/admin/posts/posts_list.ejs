@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('../partials/head') %>
+</head>
+
+<body class="bg-light d-flex flex-column h-100">
+    <%- include ('../partials/header') %>
+    <div class="container flex-shrink-0">
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+            style="background-color: green;">
+            <img class="mr-3" src="/images/admin.jpg" alt="admin-image" width="48" height="48">
+            <div class="lh-100">
+                <h6 class="mb-0 text-white lh-100">Posts List</h6>
+                <small>Total: <%= count %> articles.</small>
+            </div>
+        </div>
+
+        <div class="my-3 p-3 bg-white rounded shadow-sm">
+            <h6 class="border-bottom border-gray pb-2 mb-0">Recent Update</h6>
+            <% data.forEach(function(item) { %>
+            <div class="media text-muted pt-3" id="item-384">
+                <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32">
+                    <title>Placeholder</title>
+                    <% if(item.categoryId === "1") { %>
+                    <rect width="100%" height="100%" fill="#e67e22 "></rect><text x="50%" y="50%" fill="#e67e22"
+                        dy=".3em">32x32</text>
+                    <% } else if(item.categoryId === "2") { %>
+                    <rect width="100%" height="100%" fill="#e74c3c "></rect><text x="50%" y="50%" fill="#e74c3c"
+                        dy=".3em">32x32</text>
+                    <% } else if(item.categoryId === "3") { %>
+                    <rect width="100%" height="100%" fill="#2980b9"></rect><text x="50%" y="50%" fill="#2980b9"
+                        dy=".3em">32x32</text>
+                    <% } else { %>
+                    <rect width="100%" height="100%" fill="#000 "></rect><text x="50%" y="50%" fill="#000"
+                        dy=".3em">32x32</text>
+                    <% } %>
+                </svg>
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark"><a href="/support/education/posts/<%= item._id %>"
+                            title="View" target="_blank"><%= item.title_en %></a></strong>
+                    Created At: <%= item.created %>
+                    | Updated At: <%= item.updated %>
+                    | Updated By: <%= item.editBy %>
+                    | <a class="" href="/admin/posts/edit/<%= item._id %>">Edit</a>
+                    | <a class="del" href="/admin/posts/delete/<%= item._id %>">Delete</a>
+                </p>
+            </div>
+            <% }) %>
+            <small class="d-block mt-3 text-center">
+                <nav>
+                    <% if(pages > 0) { %>
+                    <ul class="pagination">
+                        <li class="page-item <%= current === "1" ? "disabled" : "" %>" aria-disabled="true"
+                            aria-label="« Previous">
+                            <a class="page-link" href="/admin/news/news_list/<%= Number(current) - 1 %>">‹</a>
+                        </li>
+                        <% for(var i = 1; i <= pages; i++) { %>
+                        <li class="page-item <%= i === Number(current) ? "active" : "" %>">
+                            <a class="page-link" href="/admin/news/news_list/<%= i %>"><%= i %></a>
+                        </li>
+                        <% } %>
+                        <li class="page-item <%= Number(current) === pages ? "disabled" : "" %>" aria-disabled="true"
+                            aria-label="Next ››">
+                            <a class="page-link" href="/admin/news/news_list/<%= Number(current) + 1 %>">›</a>
+                        </li>
+                    </ul>
+                    <% } %>
+                </nav>
+            </small>
+        </div>
+    </div>
+
+    <%- include ('../partials/footer') %>
+</body>
+
+</html>

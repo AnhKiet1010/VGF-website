@@ -7,6 +7,7 @@ const Admin = require('../models/admin');
 const Menu = require('../models/menu');
 const Sub_menu_lv1 = require('../models/sub_menu_lv1');
 const Sub_menu_lv2 = require('../models/sub_menu_lv2');
+const Posts = require('../models/post');
 const Question_type = require('../models/question_type');
 const Question = require('../models/question');
 
@@ -40,7 +41,7 @@ module.exports.postLogin = function (req, res) {
                             const token = jwt.sign({ name: "Kiet" }, process.env.SECRET_KEY, { algorithm: "HS256", expiresIn: "3h" });
                             res.cookie('access_token', token);
                             res.cookie('admin_id', data.employeeId);
-                            res.redirect('/');
+                            res.redirect('/admin');
                         } else {
                             res.send('/error');
                         }
@@ -99,41 +100,10 @@ module.exports.logout = function (req, res) {
     res.redirect('/');
 }
 
-module.exports.getNewsForm = function (req, res) {
-    res.render('./admin/add_news', { title: "Add News || Admin", activeClass: 2 });
-}
 
-module.exports.postNewsForm = function (req, res) {
-    const date = new Date;
-    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
-    const content_en = req.body.content_en;
-    const content_vi = req.body.content_vi;
-    const content_cn = req.body.content_cn;
-    let news = new News({
-        title_en: req.body.title_en,
-        title_vi: req.body.title_vi,
-        title_cn: req.body.title_cn,
-        subtitle_en: req.body.subtitle_en === '' ? req.body.subtitle_en : req.body.title_en + '...',
-        subtitle_vi: req.body.subtitle_vi === '' ? req.body.subtitle_vi : req.body.title_vi + '...',
-        subtitle_cn: req.body.subtitle_cn === '' ? req.body.subtitle_cn : req.body.title_cn + '...',
-        content_en,
-        content_vi,
-        content_cn,
-        news_type: req.body.news_type,
-        created: time,
-        updated: "No Updated",
-        image: req.file ? req.file.filename : '',
-        views: 200
-    });
-    news.save(function (err) {
-        if (err) {
-            res.send(err);
-        } else {
-            res.redirect('/admin');
-        }
-    });
-}
-
+/* 
+            MENU
+*/
 module.exports.menu = function (req, res) {
 
     Menu.find(function (err, data) {
@@ -241,6 +211,45 @@ module.exports.menuData = function (req, res) {
     });
 }
 
+
+/* 
+            NEWS
+*/
+module.exports.getNewsForm = function (req, res) {
+    res.render('./admin/add_news', { title: "Add News || Admin", activeClass: 2 });
+}
+
+module.exports.postNewsForm = function (req, res) {
+    const date = new Date;
+    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + (date.getMinutes().toString().length === 1 ? ('0' + date.getMinutes()) : date.getMinutes());
+    const content_en = req.body.content_en;
+    const content_vi = req.body.content_vi;
+    const content_cn = req.body.content_cn;
+    let news = new News({
+        title_en: req.body.title_en,
+        title_vi: req.body.title_vi,
+        title_cn: req.body.title_cn,
+        subtitle_en: req.body.subtitle_en === '' ? req.body.subtitle_en : req.body.title_en + '...',
+        subtitle_vi: req.body.subtitle_vi === '' ? req.body.subtitle_vi : req.body.title_vi + '...',
+        subtitle_cn: req.body.subtitle_cn === '' ? req.body.subtitle_cn : req.body.title_cn + '...',
+        content_en,
+        content_vi,
+        content_cn,
+        news_type: req.body.news_type,
+        created: time,
+        updated: "No Updated",
+        image: req.file ? req.file.filename : '',
+        views: 200
+    });
+    news.save(function (err) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.redirect('/admin');
+        }
+    });
+}
+
 module.exports.getNewsList = function (req, res) {
     const page = req.params.page || 1;
     const perPage = 10;
@@ -283,6 +292,9 @@ module.exports.postEditForm = function (req, res) {
     const content_vi = req.body.content_vi;
     const content_cn = req.body.content_cn;
     const newNews = {
+        mainTitle: req.body.title_en,
+        mainSubtitle: req.body.subtitle_en,
+        mainContent: req.body.content_en,
         title_en: req.body.title_en,
         title_vi: req.body.title_vi,
         title_cn: req.body.title_cn,
@@ -318,10 +330,126 @@ module.exports.deleteNews = function (req, res) {
     })
 }
 
+/* 
+            POSTS
+*/
 module.exports.getPostsForm = function (req, res) {
-    res.render('./admin/posts/add_posts', { activeClass: 4, title: "Add News || Admin" });
+    res.render('./admin/posts/add_posts', { activeClass: 4, title: "Add Posts || Admin" });
 }
 
+module.exports.postPostsForm = function (req, res) {
+    const date = new Date;
+    const time = date.toDateString();
+    const posts = new Posts({
+        categoryId: req.body.category,
+        mainTitle: req.body.title_en,
+        mainSubtitle: req.body.subtitle_en,
+        mainContent: req.body.content_en,
+        title_en: req.body.title_en,
+        title_vi: req.body.title_en,
+        title_cn: req.body.title_en,
+        subtitle_en: req.body.subtitle_en,
+        subtitle_vi: req.body.subtitle_vi,
+        subtitle_cn: req.body.subtitle_cn,
+        content_en: req.body.content_en,
+        content_vi: req.body.content_en,
+        content_cn: req.body.content_en,
+        created: time,
+        updated: 'No Updated',
+        editBy: '',
+        image: req.file.filename
+    });
+
+    posts.save(function (err) {
+        if (err) res.send(err);
+        res.redirect('/admin/posts/posts_list/1');
+    })
+}
+
+module.exports.getPostsList = function (req, res) {
+    const page = req.params.page || 1;
+    const perPage = 10;
+
+    Posts.find({})
+        .sort({ created: -1 })
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function (err, data) {
+            if (err) res.send(err);
+            Posts.countDocuments().exec(function (err, count) {
+                if (err) res.send(err);
+                res.render('./admin/posts/posts_list', {
+                    data: data,
+                    count,
+                    title: "List Posts || Admin",
+                    activeClass: 3,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                });
+            });
+        });
+}
+
+module.exports.getEditPostsForm = function (req, res) {
+    const id = req.params.id;
+    Posts.findOne({ _id: id }, function (err, data) {
+        if (err) {
+            req.send(err);
+        } else {
+            res.render("./admin/posts/edit_posts", { title: "Edit Posts || Admin", data, activeClass: "no have" });
+        }
+    })
+}
+
+module.exports.postEditPostsForm = function (req, res) {
+    const id = req.params.id;
+    const date = new Date;
+    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
+    const content_en = req.body.content_en;
+    const content_vi = req.body.content_vi;
+    const content_cn = req.body.content_cn;
+    const newPosts = {
+        mainTitle: req.body.title_en,
+        mainSubtitle: req.body.subtitle_en,
+        mainContent: req.body.content_en,
+        title_en: req.body.title_en,
+        title_vi: req.body.title_vi,
+        title_cn: req.body.title_cn,
+        subtitle_en: req.body.subtitle_en,
+        subtitle_vi: req.body.subtitle_vi,
+        subtitle_cn: req.body.subtitle_cn,
+        content_en,
+        content_vi,
+        content_cn,
+        categoryId: req.body.category,
+        updated: time,
+        image: req.file ? req.file.filename : req.body.hidden_image,
+        editBy: req.cookies ? req.cookies.admin_id : 'No Updated'
+    }
+    Posts.findOneAndUpdate({ _id: id }, { ...newPosts }, function (err, data) {
+        if (err) {
+            req.send(err);
+        } else {
+            res.redirect("/admin/posts/posts_list/1");
+        }
+    });
+}
+
+module.exports.deletePosts = function (req, res) {
+    const id = req.params.id;
+    Posts.findOneAndDelete({ _id: id }, function (err) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.redirect('/admin/posts/posts_list/1');
+        }
+    })
+
+}
+
+/* 
+            QUESTION
+*/
 module.exports.getQuestionForm = function (req, res) {
     Question_type.find({}, function (err, data) {
         if (err) req.send(err);
@@ -334,14 +462,15 @@ module.exports.getListQuestion = function (req, res) {
     const perPage = 10;
 
     Question.find({})
+        .sort({ created: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec(function (err, data) {
             if (err) res.send(err);
-            News.countDocuments().exec(function (err, count) {
+            Question.countDocuments().exec(function (err, count) {
                 if (err) res.send(err);
                 res.render('./admin/question/list_question', {
-                    data: data.reverse(),
+                    data: data,
                     count,
                     title: "List Question || Admin",
                     activeClass: 5,
@@ -401,6 +530,47 @@ module.exports.postAddQuestion = function (req, res) {
         }
     });
 
+}
+
+module.exports.getEditQuestionForm = function (req, res) {
+    const id = req.params.id;
+    Question.findOne({ _id: id }, function (err, data) {
+        if (err) {
+            req.send(err);
+        } else {
+            Question_type.find({}, function (err, data1) {
+                if (err) res.send(err);
+                res.render("./admin/question/edit_question", { title: "Edit Question || Admin", data, q_category: data1, activeClass: "no have" });
+            })
+        }
+    })
+}
+
+module.exports.postEditQuestionForm = function (req, res) {
+    const id = req.params.id;
+    const date = new Date;
+    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
+    const newQuestion = {
+        mainQuestion: req.body.question_en,
+        question_en: req.body.question_en,
+        question_vi: req.body.question_vi,
+        question_cn: req.body.question_cn,
+        mainAnswer: req.body.answer_en,
+        answer_en: req.body.answer_en,
+        answer_vi: req.body.answer_vi,
+        answer_cn: req.body.answer_cn,
+        news_type: req.body.news_type,
+        updated: time,
+        editBy: req.cookies ? req.cookies.admin_id : 'No Updated'
+    }
+    // const question_type = req.body.question_type;
+    Question.findOneAndUpdate({ _id: id }, { ...newQuestion }, function (err, data) {
+        if (err) {
+            req.send(err);
+        } else {
+            res.redirect("/admin/list_question/1");
+        }
+    });
 }
 
 module.exports.deleteQuestion = function (req, res) {

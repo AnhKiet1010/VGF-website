@@ -46,7 +46,6 @@
                                 <label class="input-group-text" for="inputGroupSelect01">Question Type</label>
                             </div>
                             <select class="custom-select" id="inputGroupSelect01" name="question_type">
-                                <option selected>Choose...</option>
                                 <% q_category.forEach(function(item) { %>
                                 <option value="<%= item._id %>"><%= item.text_en %></option>
                                 <% }) %>

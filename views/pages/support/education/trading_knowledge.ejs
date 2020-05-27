@@ -14,8 +14,7 @@
             <div class="content-flx d-flex" style="margin: 0 auto">
                 <span><img src="/images/note.png"></span>
                 <div class="site__title">
-                    <span>Information Hub for</span>
-                    Serious Traders
+                    <span><%= __('Information Hub for') %></span><%= __('Serious Traders') %>
                 </div>
             </div>
         </div>
@@ -23,28 +22,34 @@
             <div class="list-block">
                 <ul class="nav justify-content-center site__nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Company News</a>
+                        <a class="nav-link active"
+                            href="/support/education/trading_knowledge/1/1"><%= __('Company News') %></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Fundamental Analysis</a>
+                        <a class="nav-link active"
+                            href="/support/education/trading_knowledge/2/1"><%= __('Fundamental Analysis') %></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Technical Analysis</a>
+                        <a class="nav-link"
+                            href="/support/education/trading_knowledge/3/1"><%= __('Technical Analysis') %></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Education</a>
+                        <a class="nav-link" href="/support/education/trading_knowledge/4/1"><%= __('Education') %></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Trading Data</a>
+                        <a class="nav-link"
+                            href="/support/education/trading_knowledge/5/1"><%= __('Trading Data') %></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="/support/education/trading_knowledge/6/1"><%= __('About') %></a>
                     </li>
                 </ul>
-                <div class="row list mt-4">
+                <div class="row list mt-4" style="margin-right: 0px;">
                     <div class="col-lg-8">
                         <header class="page-header">
-                            <h1 class="page-title">Category: Fundamental Analysis</h1>
+                            <h1 class="page-title"><%= __('Category') %>:
+                                <%= currentCategory === '1' ? "Company News": (currentCategory === '2') ? "Fundamental Analysis" : (currentCategory === '3') ? "Technical Analysis" : (currentCategory === '4') ? "Education" : (currentCategory === '5') ? "Trading Data" : (currentCategory === '6') ? "About": "" %>
+                            </h1>
                             <div class="archive__view--mode">
                                 <span class="list_view">
                                     <span class="ti-list"></span>
@@ -57,22 +62,20 @@
                             </div>
                         </header>
                         <div class="row">
+                            <% data.forEach(function(item) {%>
                             <div class="col-lg-6">
                                 <div class="card news-card" style="width: 100%;">
                                     <div class="post_date">
-                                        <span class="day">07</span>
-                                        <span class="month">May</span>
-                                        <span class="year">2020</span>
+                                        <span class="year"><%= item.created %></span>
                                     </div>
-                                    <img src="/images/finance.jpg" class="card-img-top" alt="...">
+                                    <img src="/upload/<%= item.image %>" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <div class="pos_infos">
                                             <header class="entry-header">
-                                                <h2 class="entry-title"><a href="#" rel="bookmark">Thursday 7th May:
-                                                        Asian markets flat as Chinese
-                                                        exports surprise.</a></h2>
+                                                <h2 class="entry-title"><a
+                                                        href="/support/education/posts/<%= item._id %>"><%= item.mainTitle %></a>
+                                                </h2>
                                             </header>
-
                                             <div class="entry-details">
                                                 <span class="author"><i class="fa fa-user"></i>VGF</span>
                                                 <span class="no_of_cmnt"><i class="fa fa-comments"></i>No Comments
@@ -81,66 +84,46 @@
                                             </div>
 
                                             <div class="entry-content">
-                                                <p></p>
-                                                <p>Global Markets: Asian Stock Markets : Nikkei up 0.28%, Shanghai
-                                                    Composite down 0.23%, Hang Seng down 0.41%, ASX down 0.38%
-                                                    Commodities : Gold at $1691.30 (+0.17%), Silver at $15.14 (+0.80%),
-                                                    Brent Oil at $29.51 (-0.71%), WTI Oil at $23.99 (0.00%) Rates : US
-                                                    10-year yield at 0.704, UK 10-year yield at 0.246, Germany 10-year
-                                                    yield …
+                                                <p> <%= item.mainSubtitle %> …</p>
                                             </div>
-
-
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <% } )%>
                         </div>
-                        <div class="pagination">
-                            <nav aria-label="Page navigation example">
+                        <small class="d-block mt-3 text-center mb-3">
+                            <nav>
+                                <% if(pages > 0) { %>
                                 <ul class="pagination">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
+                                    <li class="page-item <%= current === "1" ? "disabled" : "" %>" aria-disabled="true"
+                                        aria-label="« Previous">
+                                        <a class="page-link" href="/support/news/<%= Number(current) - 1 %>">‹</a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
+                                    <% for(var i = 1; i <= pages; i++) { %>
+                                    <li class="page-item <%= i === Number(current) ? "active" : "" %>">
+                                        <a class="page-link" href="/support/news/<%= i %>"><%= i %></a>
+                                    </li>
+                                    <% } %>
+                                    <li class="page-item <%= Number(current) === pages ? "disabled" : "" %>"
+                                        aria-disabled="true" aria-label="Next ››">
+                                        <a class="page-link" href="/support/news/<%= Number(current) + 1 %>">›</a>
                                     </li>
                                 </ul>
+                                <% } %>
                             </nav>
-                        </div>
+                        </small>
                     </div>
                     <div class="col-lg-4">
                         <aside id="recent-posts-2" class="widget widget_recent_entries">
-                            <h2 class="widget-title">Recent Posts</h2>
-                            <ul>
+                            <h3 class="widget-title pb-2"><%= __('Recent Posts') %></h3>
+                            <ul class="recentPost">
+                                <% recentPost.forEach(function(item) { %>
                                 <li>
-                                    <a href="#">Friday
-                                        8th May: NFP Day – Remain Vigilant</a>
-                                    <span class="post-date">May 8, 2020</span>
+                                    <a href="/support/education/posts/<%= item._id %>"><%= item.mainTitle %></a>
+                                    <span class="post-date"><%= item.created %></span>
                                 </li>
-                                <li>
-                                    <a href="#">Friday
-                                        8th May: NFP Day – Remain Vigilant</a>
-                                    <span class="post-date">May 8, 2020</span>
-                                </li>
-                                <li>
-                                    <a href="#">Friday
-                                        8th May: NFP Day – Remain Vigilant</a>
-                                    <span class="post-date">May 8, 2020</span>
-                                </li>
-                                <li>
-                                    <a href="#">Friday
-                                        8th May: NFP Day – Remain Vigilant</a>
-                                    <span class="post-date">May 8, 2020</span>
-                                </li>
+                                <% }) %>
                             </ul>
                         </aside>
                     </div>

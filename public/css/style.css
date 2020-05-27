@@ -83,7 +83,7 @@ li.nav-item {
 
 #nav-header {
     background-color: #000;
-    z-index: 100;
+    z-index: 100000000;
     position: fixed;
     width: 100vw;
     font-size: 20px;
@@ -738,6 +738,7 @@ ul.sub-menu li {
 
 .widget-title {
     border-bottom: 0.8px solid rgba(0, 0, 0, 0.8);
+    text-align: center;
 }
 
 .widget-area ul {
@@ -756,7 +757,7 @@ ul.sub-menu li {
     display: block;
     flex: 1 1 auto;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.68);
     transition: all 0.3s ease;
@@ -795,28 +796,6 @@ ul.sub-menu li {
     padding: 10px;
 }
 
-.news-card .post_date span {
-    display: block;
-}
-
-.news-card .post_date span:first-child {
-    font-size: 28px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.68);
-}
-
-.news-card .post_date span:nth-child(2) {
-    font-size: 20px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.news-card .post_date span:nth-child(3) {
-    font-size: 14px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.34);
-}
-
 .pos_infos {
     display: block;
     align-self: center;
@@ -827,6 +806,7 @@ ul.sub-menu li {
     margin-bottom: 15px;
     font-size: 26px;
     font-weight: 500;
+    padding: 5px;
 }
 
 .pos_infos .entry-title a {
@@ -837,7 +817,6 @@ ul.sub-menu li {
 .pos_infos .entry-title a:hover {
     color: #44f674;
 }
-
 .pos_infos .entry-details {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.5);
@@ -1046,6 +1025,31 @@ div[aria-expanded="true"] {
     }
     .faq-accordion div {
         font-size: 18px;
+    }
+    .static__bannertext.flx .content-flx span img {
+        width: 50px;
+    }
+    .static__bannertext.flx .site__title {
+        font-size: 40px;
+        letter-spacing: 0px;
+    }
+    .static__bannertext.flx .site__title span {
+        font-size: 30px;
+        letter-spacing: 0;
+        line-height: 40px;
+    }
+    #recent-posts-2 {
+        margin: 10px;
+    }
+    ul.site__nav li {
+        float: left;
+        margin-right: 0px;
+    }
+    #posts_content > p {
+        width: 100%;
+    }
+    #posts_content > p > a > img {
+        width: 100%;
     }
 }
 

@@ -94,9 +94,9 @@
                                                 <% if(lang === 'vi') { %>
                                                 <%= item.news_type === "1" ? "Tin Forex" : (item.news_type === "2") ? "Tin Hàng Hóa" : (item.news_type === "3") ? "Tin Kinh Tế Thế Giới" : (item.news_type === "4") ? "Đời Sống Tài Chính" : "" %>
                                                 <% } else if(lang === 'en') { %>
-                                                <%= item.news_type === "1" ? "Forex News" : (item.news_type === "2") ? "Commodity" : (item.news_type === "3") ? "World News" : (item.news_type === "4") ? "Finance Times" : "" %>
+                                                <%= item.news_type === "1" ? "Forex News" : (item.news_type === "2") ? "Commodity News" : (item.news_type === "3") ? "World News" : (item.news_type === "4") ? "Finance Times" : "" %>
                                                 <% } else { %>
-                                                <%= item.news_type === "1" ? "Forex News" : (item.news_type === "2") ? "Commodity" : (item.news_type === "3") ? "World News" : (item.news_type === "4") ? "Finance Times" : "" %>
+                                                <%= item.news_type === "1" ? "Forex News" : (item.news_type === "2") ? "Commodity News" : (item.news_type === "3") ? "World News" : (item.news_type === "4") ? "Finance Times" : "" %>
                                                 <% } %>
                                             </a></span><span>|</span><span><%= item.created %></span><span>|</span><span>
                                             <%= item.views %> <%= __('Lượt xem') %></span>

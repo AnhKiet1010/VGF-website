@@ -51,25 +51,22 @@
             style="background-color: green;">
             <img class="mr-3" src="/images/admin.jpg" alt="admin-image" width="48" height="48">
             <div class="lh-100">
-                <h6 class="mb-0 text-white lh-100">Add Posts</h6>
+                <h6 class="mb-0 text-white lh-100">Edit Question</h6>
                 <small></small>
             </div>
         </div>
-        <form class="pb-3" action="/admin/posts/add_posts" method="POST" enctype="multipart/form-data">
+        <form class="pb-3" action="/admin/question/edit/<%= data._id%> " method="POST" enctype="multipart/form-data">
             <div class="my-3 p-3 bg-white rounded shadow-sm pc">
                 <div class="row media text-muted pt-3">
                     <div class="form-group col-12">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                                <label class="input-group-text" for="inputGroupSelect01">Question Type</label>
                             </div>
-                            <select class="custom-select" id="inputGroupSelect01" name="category">
-                                <option value="1">Company News</option>
-                                <option value="2">Fundamental Analysis</option>
-                                <option value="3">Technical Analysis</option>
-                                <option value="4">Education</option>
-                                <option value="5">Trading Data</option>
-                                <option value="6">About</option>
+                            <select class="custom-select" id="inputGroupSelect01" name="question_type">
+                                <% q_category.forEach(function(item) { %>
+                                <option value="<%= item._id %>"><%= item.text_en %></option>
+                                <% }) %>
                             </select>
                         </div>
                     </div>
@@ -79,14 +76,11 @@
                 <h6 class="border-bottom border-gray pb-2 mb-0">English</h6>
                 <div class="row media text-muted pt-3">
                     <div class="form-group col-12 pc">
-                        <input type="text" class="form-control" name="title_en" value="" placeholder="English Title">
-                    </div>
-                    <div class="form-group col-12 pc ">
-                        <input type="text" class="form-control" name="subtitle_en" value=""
-                            placeholder="English Subtitle">
+                        <input type="text" class="form-control" name="question_en" value="<%= data.question_en %>"
+                            placeholder="English Title">
                     </div>
                     <div class="form-group col-12">
-                        <textarea name="content_en" id="editor1" rows="10" cols="80"></textarea>
+                        <textarea name="content_en" id="editor1" rows="10" cols="80"><%= data.answer_en %></textarea>
                     </div>
                 </div>
             </div>
@@ -94,14 +88,11 @@
                 <h6 class="border-bottom border-gray pb-2 mb-0">Vietnamese</h6>
                 <div class="row media text-muted pt-3">
                     <div class="form-group col-12 pc">
-                        <input type="text" class="form-control" name="title_vi" value="" placeholder="Vietnamese Title">
-                    </div>
-                    <div class="form-group col-12 pc ">
-                        <input type="text" class="form-control" name="subtitle_vi" value=""
-                            placeholder="Vietnamese Subtitle">
+                        <input type="text" class="form-control" name="question_vi" value="<%= data.question_vi %>"
+                            placeholder="Vietnamese Title">
                     </div>
                     <div class="form-group col-12">
-                        <textarea name="content_vi" id="editor2" rows="10" cols="80"></textarea>
+                        <textarea name="content_vi" id="editor2" rows="10" cols="80"><%= data.answer_vi %></textarea>
                     </div>
                 </div>
             </div>
@@ -109,23 +100,12 @@
                 <h6 class="border-bottom border-gray pb-2 mb-0">Simplified Chinese</h6>
                 <div class="row media text-muted pt-3">
                     <div class="form-group col-12 pc">
-                        <input type="text" class="form-control" name="title_cn" value=""
+                        <input type="text" class="form-control" name="question_cn" value="<%= data.question_cn %>"
                             placeholder="Simplified Chinese Title">
                     </div>
-                    <div class="form-group col-12 pc ">
-                        <input type="text" class="form-control" name="subtitle_cn" value=""
-                            placeholder="Simplified Chinese Subtitle">
-                    </div>
                     <div class="form-group col-12">
-                        <textarea name="content_cn" id="editor3" rows="10" cols="80"></textarea>
+                        <textarea name="content_cn" id="editor3" rows="10" cols="80"><%= data.answer_cn %></textarea>
                     </div>
-                </div>
-            </div>
-            <div class="my-3 p-3 bg-white rounded shadow-sm">
-                <h6 class="border-bottom border-gray pb-2 mb-0">Banner</h6>
-                <div class="form-group col-12">
-                    <br>
-                    <input type="file" name="image" class="custom-file-input">
                 </div>
             </div>
             <button class="btn btn-outline-success btn-block my-2 my-sm-0" type="submit">Submit</button>
