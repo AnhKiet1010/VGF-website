@@ -16,6 +16,7 @@ module.exports.admin = function (req, res) {
 }
 
 module.exports.login = function (req, res) {
+    res.setHeader("Content-Type", "text/html");
     res.render('./admin/login', { title: "Login Form || Admin", error: undefined });
 }
 
@@ -261,6 +262,7 @@ module.exports.getNewsList = function (req, res) {
             if (err) res.send(err);
             News.countDocuments().exec(function (err, count) {
                 if (err) res.send(err);
+                res.setHeader("Content-Type", "text/html");
                 res.render('./admin/news_list', {
                     data: data,
                     total: count,

@@ -18,6 +18,7 @@ module.exports.help = function (req, res) {
             }
         }
     ], function (err, data) {
+        res.setHeader("Content-Type", "text/html");
         res.render('./pages/support/helpAndResource/help-centre', { title: "Help || VGF", data });
     })
 }
@@ -58,6 +59,7 @@ module.exports.news = function (req, res) {
                             return;
                         });
                     }
+                    res.setHeader("Content-Type", "text/html");
                     res.render('./pages/support/helpAndResource/news/listNews', {
                         data: data,
                         total: count,

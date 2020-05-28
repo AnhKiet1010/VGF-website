@@ -29,6 +29,8 @@ module.exports.getNews = function (req, res) {
                         data.mainSubtitle = data.subtitle_en;
                         data.mainContent = data.content_en;
                     }
+
+                    res.setHeader("Content-Type", "text/html");
                     res.render('./pages/support/helpAndResource/news/newsDetail', { news: data, title: "News Detail || VGF" });
                 }
             })
@@ -73,6 +75,8 @@ module.exports.getNewsByCategory = function (req, res) {
                             return;
                         });
                     }
+
+                    res.setHeader("Content-Type", "text/html");
                     res.render('./pages/support/helpAndResource/news/listNews', {
                         data: data,
                         total: count,
