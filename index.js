@@ -7,10 +7,7 @@ const i18n = require("i18n");
 const cookieParser = require('cookie-parser');
 const app = express();
 
-const server = require('http').Server(app);
-
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -37,6 +34,8 @@ mongoose.connect(process.env.MONGO_URL,
 
 const servicesRouter = require('./routes/services.route');
 const supportRouter = require('./routes/support.route');
+const promotionRouter = require('./routes/promotion.route');
+const partnershipRouter = require('./routes/partnership.route');
 const adminRouter = require('./routes/admin.route');
 const newtRouter = require('./routes/news.route');
 /*
@@ -68,6 +67,14 @@ app.use('/services', servicesRouter);
 */
 app.use('/support', supportRouter);
 /*
+    Promotion Page
+*/
+app.use('/promotion', promotionRouter);
+/*
+    Partnership Page
+*/
+app.use('/partnership', partnershipRouter);
+/*
     Search NEWs
 */
 app.use('/news', newtRouter);
@@ -77,6 +84,6 @@ app.use('/news', newtRouter);
 app.use('/admin', adminRouter);
 
 // Config Server Port
-server.listen(process.env.SERVER_PORT || 3000, function () {
+app.listen(process.env.SERVER_PORT || 3000, function () {
     console.log('Server started!!!');
 });
