@@ -99,7 +99,13 @@ router.get("/question/edit/:id", requireAuth.requireAuth, adminController.getEdi
 
 router.post("/question/edit/:id", upload.single('image'), adminController.postEditQuestionForm);
 
+<<<<<<< Updated upstream
 router.get('/question/delete/:id', adminController.deleteQuestion);
+=======
+router.get('/menuData', requireAuth.requireAuth, adminController.menuData);
+
+router.post('/todo', requireAuth.requireAuth, adminController.todo);
+>>>>>>> Stashed changes
 
 
 

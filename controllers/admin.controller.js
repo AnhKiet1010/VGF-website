@@ -186,6 +186,7 @@ module.exports.menuData = function (req, res) {
                 from: "sub_menu_lv1",
                 localField: "kids",
                 foreignField: "_id",
+<<<<<<< Updated upstream
                 as: "menu-lv1"
             }
         }
@@ -564,4 +565,16 @@ module.exports.deleteQuestion = function (req, res) {
         }
     })
 
+=======
+                as: "sub-menu-lv1"
+            }
+        }
+    ], function (err, data) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(data);
+        }
+    })
+>>>>>>> Stashed changes
 }
