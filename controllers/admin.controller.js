@@ -52,7 +52,6 @@ module.exports.postLogin = async function (req, res) {
             });
         }
     }
-
 }
 
 module.exports.postRegister = async function (req, res) {
@@ -186,7 +185,6 @@ module.exports.menuData = function (req, res) {
                 from: "sub_menu_lv1",
                 localField: "kids",
                 foreignField: "_id",
-<<<<<<< Updated upstream
                 as: "menu-lv1"
             }
         }
@@ -564,17 +562,4 @@ module.exports.deleteQuestion = function (req, res) {
             res.redirect('/admin/list_question/1');
         }
     })
-
-=======
-                as: "sub-menu-lv1"
-            }
-        }
-    ], function (err, data) {
-        if (err) {
-            res.send(err);
-        } else {
-            res.send(data);
-        }
-    })
->>>>>>> Stashed changes
 }
