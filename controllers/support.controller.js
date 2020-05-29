@@ -35,43 +35,46 @@ module.exports.news = function (req, res) {
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec(function (err, data) {
-            if (err) res.send(err);
-            News.countDocuments().exec(function (err, count) {
-                if (err) {
-                    return res.send(err);
-                } else {
-                    if (req.cookies.lang === "en") {
-                        data.map(function (item) {
-                            item.mainTitle = item.title_en;
-                            item.mainSubtitle = item.subtitle_en;
-                            item.mainContent = item.content_en;
-                            return;
-                        });
-                    } else if (req.cookies.lang === "vi") {
-                        data.map(function (item) {
-                            item.mainTitle = item.title_vi;
-                            item.mainSubtitle = item.subtitle_vi;
-                            item.mainContent = item.content_vi;
-                            return;
-                        });
+            if (err) {
+                return res.send(err);
+            } else {
+                News.countDocuments().exec(function (err, count) {
+                    if (err) {
+                        return res.send(err);
                     } else {
-                        data.map(function (item) {
-                            item.mainTitle = item.title_en;
-                            item.mainSubtitle = item.subtitle_en;
-                            item.mainContent = item.content_en;
-                            return;
+                        if (req.cookies.lang === "en") {
+                            data.map(function (item) {
+                                item.mainTitle = item.title_en;
+                                item.mainSubtitle = item.subtitle_en;
+                                item.mainContent = item.content_en;
+                                return;
+                            });
+                        } else if (req.cookies.lang === "vi") {
+                            data.map(function (item) {
+                                item.mainTitle = item.title_vi;
+                                item.mainSubtitle = item.subtitle_vi;
+                                item.mainContent = item.content_vi;
+                                return;
+                            });
+                        } else {
+                            data.map(function (item) {
+                                item.mainTitle = item.title_en;
+                                item.mainSubtitle = item.subtitle_en;
+                                item.mainContent = item.content_en;
+                                return;
+                            });
+                        }
+                        res.render('./pages/support/helpAndResource/news/listNews', {
+                            data: data,
+                            total: count,
+                            title: "News || VGF",
+                            current: page,
+                            pages: Math.ceil(count / perPage),
+                            lang: req.cookies.lang
                         });
                     }
-                    res.render('./pages/support/helpAndResource/news/listNews', {
-                        data: data,
-                        total: count,
-                        title: "News || VGF",
-                        current: page,
-                        pages: Math.ceil(count / perPage),
-                        lang: req.cookies.lang
-                    });
-                }
-            });
+                });
+            }
         });
 }
 
@@ -84,52 +87,61 @@ module.exports.trading_knowledge = function (req, res) {
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec(function (err, data) {
-            if (err) return res.send(err);
-            Posts.countDocuments().exec(function (err, count) {
-                if (err) res.send(err);
-                Posts.find({})
-                    .limit(perPage)
-                    .exec(function (err, data1) {
-                        if (err) res.send(err);
-                        if (req.cookies.lang === "vi") {
-                            data.map(function (item) {
-                                item.mainTitle = item.title_vi;
-                                item.mainSubtitle = item.subtitle_vi;
-                                item.mainContent = item.content_vi;
-                                return;
-                            });
-                            data1.map(function (item) {
-                                item.mainTitle = item.title_vi;
-                                item.mainSubtitle = item.subtitle_vi;
-                                item.mainContent = item.content_vi;
-                                return;
-                            });
-                        } else if (req.cookies.lang === "cn") {
-                            data.map(function (item) {
-                                item.mainTitle = item.title_cn;
-                                item.mainSubtitle = item.subtitle_cn;
-                                item.mainContent = item.content_cn;
-                                return;
-                            });
-                            data1.map(function (item) {
-                                item.mainTitle = item.title_cn;
-                                item.mainSubtitle = item.subtitle_cn;
-                                item.mainContent = item.content_cn;
-                                return;
-                            });
-                        }
-                        res.render('./pages/support/education/trading_knowledge', {
-                            data: data,
-                            recentPost: data1,
-                            count,
-                            currentCategory: req.params.category,
-                            title: "Trading Knowledge || VGF",
-                            activeClass: 5,
-                            current: page,
-                            pages: Math.ceil(count / perPage)
-                        });
-                    })
-            });
+            if (err) {
+                return res.send(err);
+            } else {
+                Posts.countDocuments().exec(function (err, count) {
+                    if (err) {
+                        return res.send(err);
+                    } else {
+                        Posts.find({})
+                            .limit(perPage)
+                            .exec(function (err, data1) {
+                                if (err) {
+                                    return res.send(err);
+                                } else {
+                                    if (req.cookies.lang === "vi") {
+                                        data.map(function (item) {
+                                            item.mainTitle = item.title_vi;
+                                            item.mainSubtitle = item.subtitle_vi;
+                                            item.mainContent = item.content_vi;
+                                            return;
+                                        });
+                                        data1.map(function (item) {
+                                            item.mainTitle = item.title_vi;
+                                            item.mainSubtitle = item.subtitle_vi;
+                                            item.mainContent = item.content_vi;
+                                            return;
+                                        });
+                                    } else if (req.cookies.lang === "cn") {
+                                        data.map(function (item) {
+                                            item.mainTitle = item.title_cn;
+                                            item.mainSubtitle = item.subtitle_cn;
+                                            item.mainContent = item.content_cn;
+                                            return;
+                                        });
+                                        data1.map(function (item) {
+                                            item.mainTitle = item.title_cn;
+                                            item.mainSubtitle = item.subtitle_cn;
+                                            item.mainContent = item.content_cn;
+                                            return;
+                                        });
+                                    }
+                                    res.render('./pages/support/education/trading_knowledge', {
+                                        data: data,
+                                        recentPost: data1,
+                                        count,
+                                        currentCategory: req.params.category,
+                                        title: "Trading Knowledge || VGF",
+                                        activeClass: 5,
+                                        current: page,
+                                        pages: Math.ceil(count / perPage)
+                                    });
+                                }
+                            })
+                    }
+                });
+            }
         });
 }
 
@@ -138,28 +150,34 @@ module.exports.postsDetail = function (req, res) {
     const perPage = 6;
 
     Posts.findOne({ _id: id }, function (err, data) {
-        if (err) return res.send(err);
-        Posts.find({})
-            .sort({ created: -1 })
-            .limit(perPage)
-            .exec(function (err, data1) {
-                if (err) return res.send(err);
-                if (req.cookies.lang === "vi") {
-                    data1.map(function (item) {
-                        item.mainTitle = item.title_vi;
-                        item.mainSubtitle = item.subtitle_vi;
-                        item.mainContent = item.content_vi;
-                        return;
-                    });
-                } else if (req.cookies.lang === "cn") {
-                    data1.map(function (item) {
-                        item.mainTitle = item.title_cn;
-                        item.mainSubtitle = item.subtitle_cn;
-                        item.mainContent = item.content_cn;
-                        return;
-                    });
-                }
-                res.render('./pages/support/education/posts_detail', { data, recentPost: data1, title: data.mainTitle + " || VGF" })
-            })
+        if (err) {
+            return res.send(err);
+        } else {
+            Posts.find({})
+                .sort({ created: -1 })
+                .limit(perPage)
+                .exec(function (err, data1) {
+                    if (err) {
+                        return res.send(err);
+                    } else {
+                        if (req.cookies.lang === "vi") {
+                            data1.map(function (item) {
+                                item.mainTitle = item.title_vi;
+                                item.mainSubtitle = item.subtitle_vi;
+                                item.mainContent = item.content_vi;
+                                return;
+                            });
+                        } else if (req.cookies.lang === "cn") {
+                            data1.map(function (item) {
+                                item.mainTitle = item.title_cn;
+                                item.mainSubtitle = item.subtitle_cn;
+                                item.mainContent = item.content_cn;
+                                return;
+                            });
+                        }
+                        res.render('./pages/support/education/posts_detail', { data, recentPost: data1, title: data.mainTitle + " || VGF" })
+                    }
+                })
+        }
     })
 }

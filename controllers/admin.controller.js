@@ -258,18 +258,24 @@ module.exports.getNewsList = function (req, res) {
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec(function (err, data) {
-            if (err) res.send(err);
-            News.countDocuments().exec(function (err, count) {
-                if (err) return res.send(err);
-                res.render('./admin/news_list', {
-                    data: data,
-                    total: count,
-                    title: "News List || Admin",
-                    activeClass: 1,
-                    current: page,
-                    pages: Math.ceil(count / perPage)
+            if (err) {
+                return res.send(err);
+            } else {
+                News.countDocuments().exec(function (err, count) {
+                    if (err) {
+                        return res.send(err);
+                    } else {
+                        res.render('./admin/news_list', {
+                            data: data,
+                            total: count,
+                            title: "News List || Admin",
+                            activeClass: 1,
+                            current: page,
+                            pages: Math.ceil(count / perPage)
+                        });
+                    }
                 });
-            });
+            }
         });
 }
 
@@ -361,8 +367,11 @@ module.exports.postPostsForm = function (req, res) {
     });
 
     posts.save(function (err) {
-        if (err) return res.send(err);
-        res.redirect('/admin/posts/posts_list/1');
+        if (err) {
+            return res.send(err);
+        } else {
+            res.redirect('/admin/posts/posts_list/1');
+        }
     })
 }
 
@@ -375,18 +384,24 @@ module.exports.getPostsList = function (req, res) {
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec(function (err, data) {
-            if (err) return res.send(err);
-            Posts.countDocuments().exec(function (err, count) {
-                if (err) res.send(err);
-                res.render('./admin/posts/posts_list', {
-                    data: data,
-                    count,
-                    title: "List Posts || Admin",
-                    activeClass: 3,
-                    current: page,
-                    pages: Math.ceil(count / perPage)
+            if (err) {
+                return res.send(err);
+            } else {
+                Posts.countDocuments().exec(function (err, count) {
+                    if (err) {
+                        return res.send(err);
+                    } else {
+                        res.render('./admin/posts/posts_list', {
+                            data: data,
+                            count,
+                            title: "List Posts || Admin",
+                            activeClass: 3,
+                            current: page,
+                            pages: Math.ceil(count / perPage)
+                        });
+                    }
                 });
-            });
+            }
         });
 }
 
@@ -394,7 +409,7 @@ module.exports.getEditPostsForm = function (req, res) {
     const id = req.params.id;
     Posts.findOne({ _id: id }, function (err, data) {
         if (err) {
-            return req.send(err);
+            return res.send(err);
         } else {
             res.render("./admin/posts/edit_posts", { title: "Edit Posts || Admin", data, activeClass: "no have" });
         }
@@ -428,7 +443,7 @@ module.exports.postEditPostsForm = function (req, res) {
     }
     Posts.findOneAndUpdate({ _id: id }, { ...newPosts }, function (err, data) {
         if (err) {
-            return req.send(err);
+            return res.send(err);
         } else {
             res.redirect("/admin/posts/posts_list/1");
         }
@@ -452,8 +467,11 @@ module.exports.deletePosts = function (req, res) {
 */
 module.exports.getQuestionForm = function (req, res) {
     Question_type.find({}, function (err, data) {
-        if (err) return req.send(err);
-        res.render('./admin/question/add_question', { activeClass: 6, title: "Add Question || Admin", q_category: data });
+        if (err) {
+            return res.send(err);
+        } else {
+            res.render('./admin/question/add_question', { activeClass: 6, title: "Add Question || Admin", q_category: data });
+        }
     });
 }
 
@@ -468,15 +486,18 @@ module.exports.getListQuestion = function (req, res) {
         .exec(function (err, data) {
             if (err) res.send(err);
             Question.countDocuments().exec(function (err, count) {
-                if (err) return res.send(err);
-                res.render('./admin/question/list_question', {
-                    data: data,
-                    count,
-                    title: "List Question || Admin",
-                    activeClass: 5,
-                    current: page,
-                    pages: Math.ceil(count / perPage)
-                });
+                if (err) {
+                    return res.send(err);
+                } else {
+                    res.render('./admin/question/list_question', {
+                        data: data,
+                        count,
+                        title: "List Question || Admin",
+                        activeClass: 5,
+                        current: page,
+                        pages: Math.ceil(count / perPage)
+                    });
+                }
             });
         });
 }
@@ -491,8 +512,11 @@ module.exports.add_question_type = function (req, res) {
     });
 
     questionType.save(function (err) {
-        if (err) return res.send(err);
-        res.redirect('/admin/add_question');
+        if (err) {
+            return res.send(err);
+        } else {
+            res.redirect('/admin/add_question');
+        }
     });
 }
 
@@ -515,7 +539,7 @@ module.exports.postAddQuestion = function (req, res) {
 
     question.save(function (err) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             Question_type.findByIdAndUpdate(
                 { _id: req.body.question_type },
@@ -539,8 +563,11 @@ module.exports.getEditQuestionForm = function (req, res) {
             return res.send(err);
         } else {
             Question_type.find({}, function (err, data1) {
-                if (err) return res.send(err);
-                res.render("./admin/question/edit_question", { title: "Edit Question || Admin", data, q_category: data1, activeClass: "no have" });
+                if (err) {
+                    return res.send(err);
+                } else {
+                    res.render("./admin/question/edit_question", { title: "Edit Question || Admin", data, q_category: data1, activeClass: "no have" });
+                }
             })
         }
     })
