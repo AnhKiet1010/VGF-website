@@ -89,6 +89,6 @@ app.use('/news', newtRouter);
 app.use('/admin', adminRouter);
 
 // Config Server Port
-app.listen(process.env.SERVER_PORT || 3000, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log('Server started!!!');
 });
