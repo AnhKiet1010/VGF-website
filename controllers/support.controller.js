@@ -76,7 +76,8 @@ module.exports.trading_knowledge = async function (req, res) {
 
     const count = await Posts.countDocuments().exec();
 
-    const data1 = Posts.find({}).limit(perPage).exec();
+    const data1 = await Posts.find({}).limit(perPage).exec();
+
     if (req.cookies.lang === "vi") {
         data.map(function (item) {
             item.mainTitle = item.title_vi;

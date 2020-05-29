@@ -36,6 +36,7 @@ const servicesRouter = require('./routes/services.route');
 const supportRouter = require('./routes/support.route');
 const promotionRouter = require('./routes/promotion.route');
 const partnershipRouter = require('./routes/partnership.route');
+const shopRouter = require('./routes/shop.route');
 const adminRouter = require('./routes/admin.route');
 const newtRouter = require('./routes/news.route');
 /*
@@ -74,6 +75,10 @@ app.use('/promotion', promotionRouter);
     Partnership Page
 */
 app.use('/partnership', partnershipRouter);
+/*
+    Shop Page
+*/
+app.use('/shop', shopRouter);
 /*
     Search NEWs
 */
