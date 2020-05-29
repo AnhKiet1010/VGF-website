@@ -73,7 +73,7 @@ app.use('/promotion', promotionRouter);
 /*
     Partnership Page
 */
-app.use('/partnership', promotionRouter);
+app.use('/partnership', partnershipRouter);
 /*
     Search NEWs
 */

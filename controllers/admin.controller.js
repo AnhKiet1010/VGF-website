@@ -23,36 +23,32 @@ module.exports.register = function (req, res) {
     res.render('./admin/register', { title: "Register Form || Admin", error: undefined });
 }
 
-module.exports.postLogin = function (req, res) {
+module.exports.postLogin = async function (req, res) {
     const name = req.body.username;
     const password = req.body.password;
-    Admin.findOne({ name }, function (err, data) {
-        if (err) {
-            return res.send(err);
-        } else {
-            if (data === null) {
-                res.render('./admin/login', { error: "User does not exist!!!" });
+
+    const data = await Admin.findOne({ name }).exec();
+    if (data === null) {
+        res.render('./admin/login', { error: "User does not exist!!!" });
+    } else {
+        bcrypt.compare(password, data.password, function (err, result) {
+            if (err) {
+                return res.send(err);
             } else {
-                bcrypt.compare(password, data.password, function (err, result) {
-                    if (err) {
-                        return res.send(err);
-                    } else {
-                        if (result) {
-                            const token = jwt.sign({ name: "Kiet" }, process.env.SECRET_KEY, { algorithm: "HS256", expiresIn: "3h" });
-                            res.cookie('access_token', token);
-                            res.cookie('admin_id', data.employeeId);
-                            res.redirect('/admin');
-                        } else {
-                            return res.send('/error');
-                        }
-                    }
-                });
+                if (result) {
+                    const token = jwt.sign({ name: "Kiet" }, process.env.SECRET_KEY, { algorithm: "HS256", expiresIn: "3h" });
+                    res.cookie('access_token', token);
+                    res.cookie('admin_id', data.employeeId);
+                    res.redirect('/admin');
+                } else {
+                    return res.send('/error');
+                }
             }
-        }
-    });
+        });
+    }
 }
 
-module.exports.postRegister = function (req, res) {
+module.exports.postRegister = async function (req, res) {
     const employeeId = req.body.employeeId;
     const name = req.body.username;
     const password = req.body.password;
@@ -62,36 +58,33 @@ module.exports.postRegister = function (req, res) {
         res.render('./admin/register', { error: 'Password is wrong!!!' });
         return;
     }
-    Admin.findOne({ name }, function (err, data) {
-        if (err) {
-            return res.send(err);
-        } else {
-            if (data) {
-                res.render('./admin/register', { error: 'User already exists!!!' });
-                return;
+
+    const data = await Admin.findOne({ name }).exec();
+
+    if (data) {
+        res.render('./admin/register', { error: 'User already exists!!!' });
+        return;
+    } else {
+        bcrypt.hash(password, saltRounds, async function (err, hash) {
+            if (err) {
+                return res.send(err);
             } else {
-                bcrypt.hash(password, saltRounds, function (err, hash) {
+                let admin = new Admin({
+                    employeeId,
+                    name,
+                    password: hash
+                });
+
+                await admin.save(function (err) {
                     if (err) {
                         return res.send(err);
                     } else {
-                        let admin = new Admin({
-                            employeeId,
-                            name,
-                            password: hash
-                        });
-
-                        admin.save(function (err) {
-                            if (err) {
-                                return res.send(err);
-                            } else {
-                                res.send('saved!');
-                            }
-                        });
+                        res.send('saved!');
                     }
                 });
             }
-        }
-    });
+        });
+    }
 }
 
 module.exports.logout = function (req, res) {
@@ -250,47 +243,32 @@ module.exports.postNewsForm = function (req, res) {
     });
 }
 
-module.exports.getNewsList = function (req, res) {
+module.exports.getNewsList = async function (req, res) {
     const page = req.params.page || 1;
     const perPage = 10;
-    News.find({})
+    const data = await News.find({})
         .sort({ created: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
-        .exec(function (err, data) {
-            if (err) {
-                return res.send(err);
-            } else {
-                News.countDocuments().exec(function (err, count) {
-                    if (err) {
-                        return res.send(err);
-                    } else {
-                        res.render('./admin/news_list', {
-                            data: data,
-                            total: count,
-                            title: "News List || Admin",
-                            activeClass: 1,
-                            current: page,
-                            pages: Math.ceil(count / perPage)
-                        });
-                    }
-                });
-            }
-        });
+        .exec();
+    const count = await News.countDocuments().exec();
+    res.render('./admin/news_list', {
+        data: data,
+        total: count,
+        title: "News List || Admin",
+        activeClass: 1,
+        current: page,
+        pages: Math.ceil(count / perPage)
+    });
 }
 
-module.exports.getEditForm = function (req, res) {
+module.exports.getEditForm = async function (req, res) {
     const id = req.params.id;
-    News.findOne({ _id: id }, function (err, data) {
-        if (err) {
-            return req.send(err);
-        } else {
-            res.render("./admin/edit_news", { title: "Edit News || Admin", data, activeClass: "no have" });
-        }
-    })
+    const data = await News.findOne({ _id: id }).exec();
+    res.render("./admin/edit_news", { title: "Edit News || Admin", data, activeClass: "no have" });
 }
 
-module.exports.postEditForm = function (req, res) {
+module.exports.postEditForm = async function (req, res) {
     const id = req.params.id;
     const date = new Date;
     const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
@@ -315,13 +293,8 @@ module.exports.postEditForm = function (req, res) {
         image: req.file ? req.file.filename : req.body.hidden_image,
         editBy: req.cookies ? req.cookies.admin_id : 'No Updated'
     }
-    News.findOneAndUpdate({ _id: id }, { ...newNews }, function (err, data) {
-        if (err) {
-            return res.send(err);
-        } else {
-            res.redirect("/admin");
-        }
-    });
+    await News.findOneAndUpdate({ _id: id }, { ...newNews }).exec();
+    res.redirect("/admin");
 }
 
 module.exports.deleteNews = function (req, res) {
@@ -375,34 +348,24 @@ module.exports.postPostsForm = function (req, res) {
     })
 }
 
-module.exports.getPostsList = function (req, res) {
+module.exports.getPostsList = async function (req, res) {
     const page = req.params.page || 1;
     const perPage = 10;
 
-    Posts.find({})
+    const data = await Posts.find({})
         .sort({ created: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
-        .exec(function (err, data) {
-            if (err) {
-                return res.send(err);
-            } else {
-                Posts.countDocuments().exec(function (err, count) {
-                    if (err) {
-                        return res.send(err);
-                    } else {
-                        res.render('./admin/posts/posts_list', {
-                            data: data,
-                            count,
-                            title: "List Posts || Admin",
-                            activeClass: 3,
-                            current: page,
-                            pages: Math.ceil(count / perPage)
-                        });
-                    }
-                });
-            }
-        });
+        .exec();
+    const count = await Posts.countDocuments().exec();
+    res.render('./admin/posts/posts_list', {
+        data: data,
+        count,
+        title: "List Posts || Admin",
+        activeClass: 3,
+        current: page,
+        pages: Math.ceil(count / perPage)
+    });
 }
 
 module.exports.getEditPostsForm = function (req, res) {
@@ -475,31 +438,25 @@ module.exports.getQuestionForm = function (req, res) {
     });
 }
 
-module.exports.getListQuestion = function (req, res) {
+module.exports.getListQuestion = async function (req, res) {
     const page = req.params.page || 1;
     const perPage = 10;
 
-    Question.find({})
+    const data = await Question.find({})
         .sort({ created: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
-        .exec(function (err, data) {
-            if (err) res.send(err);
-            Question.countDocuments().exec(function (err, count) {
-                if (err) {
-                    return res.send(err);
-                } else {
-                    res.render('./admin/question/list_question', {
-                        data: data,
-                        count,
-                        title: "List Question || Admin",
-                        activeClass: 5,
-                        current: page,
-                        pages: Math.ceil(count / perPage)
-                    });
-                }
-            });
-        });
+        .exec();
+
+    const count = await Question.countDocuments().exec();
+    res.render('./admin/question/list_question', {
+        data: data,
+        count,
+        title: "List Question || Admin",
+        activeClass: 5,
+        current: page,
+        pages: Math.ceil(count / perPage)
+    });
 }
 
 module.exports.add_question_type = function (req, res) {
@@ -556,21 +513,11 @@ module.exports.postAddQuestion = function (req, res) {
 
 }
 
-module.exports.getEditQuestionForm = function (req, res) {
+module.exports.getEditQuestionForm = async function (req, res) {
     const id = req.params.id;
-    Question.findOne({ _id: id }, function (err, data) {
-        if (err) {
-            return res.send(err);
-        } else {
-            Question_type.find({}, function (err, data1) {
-                if (err) {
-                    return res.send(err);
-                } else {
-                    res.render("./admin/question/edit_question", { title: "Edit Question || Admin", data, q_category: data1, activeClass: "no have" });
-                }
-            })
-        }
-    })
+    const data = await Question.findOne({ _id: id }).exec();
+    const data1 = await Question_type.find({}).exec();
+    res.render("./admin/question/edit_question", { title: "Edit Question || Admin", data, q_category: data1, activeClass: "no have" });
 }
 
 module.exports.postEditQuestionForm = function (req, res) {
