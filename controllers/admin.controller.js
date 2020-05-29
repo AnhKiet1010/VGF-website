@@ -16,7 +16,6 @@ module.exports.admin = function (req, res) {
 }
 
 module.exports.login = function (req, res) {
-    res.setHeader("Content-Type", "text/html");
     res.render('./admin/login', { title: "Login Form || Admin", error: undefined });
 }
 
@@ -29,14 +28,14 @@ module.exports.postLogin = function (req, res) {
     const password = req.body.password;
     Admin.findOne({ name }, function (err, data) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             if (data === null) {
                 res.render('./admin/login', { error: "User does not exist!!!" });
             } else {
                 bcrypt.compare(password, data.password, function (err, result) {
                     if (err) {
-                        res.send(err);
+                        return res.send(err);
                     } else {
                         if (result) {
                             const token = jwt.sign({ name: "Kiet" }, process.env.SECRET_KEY, { algorithm: "HS256", expiresIn: "3h" });
@@ -44,7 +43,7 @@ module.exports.postLogin = function (req, res) {
                             res.cookie('admin_id', data.employeeId);
                             res.redirect('/admin');
                         } else {
-                            res.send('/error');
+                            return res.send('/error');
                         }
                     }
                 });
@@ -65,7 +64,7 @@ module.exports.postRegister = function (req, res) {
     }
     Admin.findOne({ name }, function (err, data) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             if (data) {
                 res.render('./admin/register', { error: 'User already exists!!!' });
@@ -73,7 +72,7 @@ module.exports.postRegister = function (req, res) {
             } else {
                 bcrypt.hash(password, saltRounds, function (err, hash) {
                     if (err) {
-                        res.send(err);
+                        return res.send(err);
                     } else {
                         let admin = new Admin({
                             employeeId,
@@ -83,7 +82,7 @@ module.exports.postRegister = function (req, res) {
 
                         admin.save(function (err) {
                             if (err) {
-                                res.send(err);
+                                return res.send(err);
                             } else {
                                 res.send('saved!');
                             }
@@ -109,11 +108,11 @@ module.exports.menu = function (req, res) {
 
     Menu.find(function (err, data) {
         if (err) {
-            res.redirect('./error');
+            return res.redirect('./error');
         } else {
             Sub_menu_lv1.find(function (err, data2) {
                 if (err) {
-                    res.redirect('./error');
+                    return res.redirect('./error');
                 } else {
                     res.render("./admin/add_menu.ejs", { list_parents1: data, list_parents2: data2 });
                 }
@@ -129,7 +128,7 @@ module.exports.postMenu = function (req, res) {
 
     menu.save(function (err) {
         if (err) {
-            res.redirect('/error');
+            return res.redirect('/error');
         } else {
             res.redirect('back');
         }
@@ -142,14 +141,14 @@ module.exports.sub_menu_lv1 = function (req, res) {
     });
     sub_menu_lv1.save(function (err) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             Menu.findByIdAndUpdate(
                 { _id: req.body.parentsOfLv1 },
                 { $push: { kids: sub_menu_lv1._id } },
                 function (err) {
                     if (err) {
-                        res.send(err);
+                        return res.send(err);
                     } else {
                         res.redirect("back");
                     }
@@ -164,14 +163,14 @@ module.exports.sub_menu_lv2 = function (req, res) {
     });
     sub_menu_lv2.save(function (err) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             Menu.findByIdAndUpdate(
                 { _id: req.body.parentsOfLv2 },
                 { $push: { kids: sub_menu_lv2._id } },
                 function (err) {
                     if (err) {
-                        res.send(err);
+                        return res.send(err);
                     } else {
                         res.redirect("back");
                     }
@@ -192,7 +191,7 @@ module.exports.menuData = function (req, res) {
         }
     ], function (err, data1) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             Sub_menu_lv1.aggregate([{
                 $lookup: {
@@ -203,7 +202,7 @@ module.exports.menuData = function (req, res) {
                 }
             }], function (err, data2) {
                 if (err) {
-                    res.send(err);
+                    return res.send(err);
                 } else {
                     res.render('./testNavbar', { title: "Test Navbar", data1, data2 });
                 }
@@ -244,7 +243,7 @@ module.exports.postNewsForm = function (req, res) {
     });
     news.save(function (err) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             res.redirect('/admin');
         }
@@ -261,8 +260,7 @@ module.exports.getNewsList = function (req, res) {
         .exec(function (err, data) {
             if (err) res.send(err);
             News.countDocuments().exec(function (err, count) {
-                if (err) res.send(err);
-                res.setHeader("Content-Type", "text/html");
+                if (err) return res.send(err);
                 res.render('./admin/news_list', {
                     data: data,
                     total: count,
@@ -279,7 +277,7 @@ module.exports.getEditForm = function (req, res) {
     const id = req.params.id;
     News.findOne({ _id: id }, function (err, data) {
         if (err) {
-            req.send(err);
+            return req.send(err);
         } else {
             res.render("./admin/edit_news", { title: "Edit News || Admin", data, activeClass: "no have" });
         }
@@ -313,7 +311,7 @@ module.exports.postEditForm = function (req, res) {
     }
     News.findOneAndUpdate({ _id: id }, { ...newNews }, function (err, data) {
         if (err) {
-            req.send(err);
+            return res.send(err);
         } else {
             res.redirect("/admin");
         }
@@ -325,7 +323,7 @@ module.exports.deleteNews = function (req, res) {
 
     News.findOneAndDelete({ _id: id }, function (err) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             res.redirect('/admin');
         }
@@ -363,7 +361,7 @@ module.exports.postPostsForm = function (req, res) {
     });
 
     posts.save(function (err) {
-        if (err) res.send(err);
+        if (err) return res.send(err);
         res.redirect('/admin/posts/posts_list/1');
     })
 }
@@ -377,7 +375,7 @@ module.exports.getPostsList = function (req, res) {
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec(function (err, data) {
-            if (err) res.send(err);
+            if (err) return res.send(err);
             Posts.countDocuments().exec(function (err, count) {
                 if (err) res.send(err);
                 res.render('./admin/posts/posts_list', {
@@ -396,7 +394,7 @@ module.exports.getEditPostsForm = function (req, res) {
     const id = req.params.id;
     Posts.findOne({ _id: id }, function (err, data) {
         if (err) {
-            req.send(err);
+            return req.send(err);
         } else {
             res.render("./admin/posts/edit_posts", { title: "Edit Posts || Admin", data, activeClass: "no have" });
         }
@@ -430,7 +428,7 @@ module.exports.postEditPostsForm = function (req, res) {
     }
     Posts.findOneAndUpdate({ _id: id }, { ...newPosts }, function (err, data) {
         if (err) {
-            req.send(err);
+            return req.send(err);
         } else {
             res.redirect("/admin/posts/posts_list/1");
         }
@@ -441,7 +439,7 @@ module.exports.deletePosts = function (req, res) {
     const id = req.params.id;
     Posts.findOneAndDelete({ _id: id }, function (err) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             res.redirect('/admin/posts/posts_list/1');
         }
@@ -454,7 +452,7 @@ module.exports.deletePosts = function (req, res) {
 */
 module.exports.getQuestionForm = function (req, res) {
     Question_type.find({}, function (err, data) {
-        if (err) req.send(err);
+        if (err) return req.send(err);
         res.render('./admin/question/add_question', { activeClass: 6, title: "Add Question || Admin", q_category: data });
     });
 }
@@ -470,7 +468,7 @@ module.exports.getListQuestion = function (req, res) {
         .exec(function (err, data) {
             if (err) res.send(err);
             Question.countDocuments().exec(function (err, count) {
-                if (err) res.send(err);
+                if (err) return res.send(err);
                 res.render('./admin/question/list_question', {
                     data: data,
                     count,
@@ -493,7 +491,7 @@ module.exports.add_question_type = function (req, res) {
     });
 
     questionType.save(function (err) {
-        if (err) res.send(err);
+        if (err) return res.send(err);
         res.redirect('/admin/add_question');
     });
 }
@@ -524,7 +522,7 @@ module.exports.postAddQuestion = function (req, res) {
                 { $push: { kids: question._id } },
                 function (err) {
                     if (err) {
-                        res.send(err);
+                        return res.send(err);
                     } else {
                         res.redirect("/admin/list_question/1");
                     }
@@ -538,10 +536,10 @@ module.exports.getEditQuestionForm = function (req, res) {
     const id = req.params.id;
     Question.findOne({ _id: id }, function (err, data) {
         if (err) {
-            req.send(err);
+            return res.send(err);
         } else {
             Question_type.find({}, function (err, data1) {
-                if (err) res.send(err);
+                if (err) return res.send(err);
                 res.render("./admin/question/edit_question", { title: "Edit Question || Admin", data, q_category: data1, activeClass: "no have" });
             })
         }
@@ -568,7 +566,7 @@ module.exports.postEditQuestionForm = function (req, res) {
     // const question_type = req.body.question_type;
     Question.findOneAndUpdate({ _id: id }, { ...newQuestion }, function (err, data) {
         if (err) {
-            req.send(err);
+            return res.send(err);
         } else {
             res.redirect("/admin/list_question/1");
         }
@@ -579,7 +577,7 @@ module.exports.deleteQuestion = function (req, res) {
     const id = req.params.id;
     Question.findOneAndDelete({ _id: id }, function (err) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             res.redirect('/admin/list_question/1');
         }

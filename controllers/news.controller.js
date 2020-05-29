@@ -5,7 +5,7 @@ module.exports.getNews = function (req, res) {
 
     News.findOne({ _id: id }, function (err, data) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             const currentView = data.views;
             News.findOneAndUpdate({ _id: id }, { $set: { views: currentView + 1 } }, function (err) {
@@ -29,8 +29,6 @@ module.exports.getNews = function (req, res) {
                         data.mainSubtitle = data.subtitle_en;
                         data.mainContent = data.content_en;
                     }
-
-                    res.setHeader("Content-Type", "text/html");
                     res.render('./pages/support/helpAndResource/news/newsDetail', { news: data, title: "News Detail || VGF" });
                 }
             })
@@ -48,7 +46,7 @@ module.exports.getNewsByCategory = function (req, res) {
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec(function (err, data) {
-            if (err) res.send(err);
+            if (err) return res.send(err);
             News.countDocuments().exec(function (err, count) {
                 if (err) {
                     res.send(err);
@@ -75,8 +73,6 @@ module.exports.getNewsByCategory = function (req, res) {
                             return;
                         });
                     }
-
-                    res.setHeader("Content-Type", "text/html");
                     res.render('./pages/support/helpAndResource/news/listNews', {
                         data: data,
                         total: count,

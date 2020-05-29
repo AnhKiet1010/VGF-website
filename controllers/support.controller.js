@@ -18,8 +18,11 @@ module.exports.help = function (req, res) {
             }
         }
     ], function (err, data) {
-        res.setHeader("Content-Type", "text/html");
-        res.render('./pages/support/helpAndResource/help-centre', { title: "Help || VGF", data });
+        if (err) {
+            return res.send(err);
+        } else {
+            res.render('./pages/support/helpAndResource/help-centre', { title: "Help || VGF", data });
+        }
     })
 }
 
@@ -35,7 +38,7 @@ module.exports.news = function (req, res) {
             if (err) res.send(err);
             News.countDocuments().exec(function (err, count) {
                 if (err) {
-                    res.send(err);
+                    return res.send(err);
                 } else {
                     if (req.cookies.lang === "en") {
                         data.map(function (item) {
@@ -59,7 +62,6 @@ module.exports.news = function (req, res) {
                             return;
                         });
                     }
-                    res.setHeader("Content-Type", "text/html");
                     res.render('./pages/support/helpAndResource/news/listNews', {
                         data: data,
                         total: count,
@@ -82,7 +84,7 @@ module.exports.trading_knowledge = function (req, res) {
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec(function (err, data) {
-            if (err) res.send(err);
+            if (err) return res.send(err);
             Posts.countDocuments().exec(function (err, count) {
                 if (err) res.send(err);
                 Posts.find({})
@@ -136,12 +138,12 @@ module.exports.postsDetail = function (req, res) {
     const perPage = 6;
 
     Posts.findOne({ _id: id }, function (err, data) {
-        if (err) res.send(err);
+        if (err) return res.send(err);
         Posts.find({})
             .sort({ created: -1 })
             .limit(perPage)
             .exec(function (err, data1) {
-                if (err) res.send(err);
+                if (err) return res.send(err);
                 if (req.cookies.lang === "vi") {
                     data1.map(function (item) {
                         item.mainTitle = item.title_vi;
