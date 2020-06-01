@@ -2,13 +2,59 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include ('../../partials/head') %>
 </head>
 
 <body>
-    <h1>hello</h1>
+    <!-- Navbar -->
+    <div class="wrapper">
+        <div class="header">
+            <!-- Navbar Start -->
+            <%- include ('../../partials/header') %>
+            <!-- Navbar End -->
+            <!-- Slide Start -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper" style="margin-top: 118px;">
+                    <div class="swiper-slide swiper-slide3">
+                        <div class="wrap-slide text-left">
+                            <div class="content" style="margin-top: -10em;">
+                                <h1 class="text-white" style="font-size: 3em;">Vins Global Fintech</h1>
+                                <p class="text-white" style="width: 100%;">
+                                    Opportunity to own many attractive gifts from VGF
+                                </p>
+                            </div>
+                            <div class="btnGroup">
+                                <button type="button" class="btn btn-info btn-lg"><a
+                                        href="#"><%= __('Learn More') %></a></button>
+                                <button class="btn btn-primary btn-lg" type="submit"><a
+                                        href="#footer"><%= __('Contact Us') %></a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide4">
+                        <div class="wrap-slide">
+                            <div class="content">
+                                <h4 class="text-white text-right"><%= __('we help') %></h4>
+                                <h1 class="text-white text-right"><%= __('growing business') %></h1>
+                                <p class="text-white text-right">
+                                    <%= __('We help you managing asset, provide financial advise. Leave money issue with us and focus on your core business.') %>
+                                </p>
+                            </div>
+                            <div class="btnGroup">
+                                <button type="button" class="btn btn-info btn-lg"><a
+                                        href="#"><%= __('Learn More') %></a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide End -->
+        </div>
+        <!-- Footer-->
+
+        <%- include ('../../partials/footer') %>
+        <!-- Swiper JS -->
+        <script src="js/swiper.min.js"></script>
 </body>
 
 </html>

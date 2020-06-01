@@ -1,3 +1,3 @@
 module.exports.shop = function (req, res) {
-    res.render('./pages/shop/shop');
+    res.render('./pages/shop/shop', { title: "Shop || VGF" });
 }

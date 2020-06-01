@@ -229,6 +229,18 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     background-position: bottom;
     transition: all scale(2) 0.2s;
 }
+.swiper-slide3 {
+    background: url("../images/qc-dt.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.swiper-slide4 {
+    background: url("../images/bmw.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
 
 /* 3 LOGO */
 
