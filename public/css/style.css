@@ -233,13 +233,13 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     background: url("../images/qc-dt.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
 }
 .swiper-slide4 {
     background: url("../images/bmw.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
 }
 
 /* 3 LOGO */
