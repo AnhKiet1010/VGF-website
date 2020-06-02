@@ -8,7 +8,7 @@ const requireAuth = require('../middlewares/auth.controller');
 // UPLOAD IMAGE
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './public/upload')
+        cb(null, './public/upload');
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname)
@@ -101,6 +101,6 @@ router.post("/question/edit/:id", upload.single('image'), adminController.postEd
 
 router.get('/question/delete/:id', adminController.deleteQuestion);
 
-
+router.get('/menuData', requireAuth.requireAuth, adminController.menuData);
 
 module.exports = router;

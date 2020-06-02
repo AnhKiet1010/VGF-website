@@ -556,5 +556,5 @@ module.exports.deleteQuestion = function (req, res) {
         } else {
             res.redirect('/admin/list_question/1');
         }
-    })
+    });
 }
