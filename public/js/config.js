@@ -14,11 +14,11 @@ $(document).ready(function () {
         pagination: {
             el: '.swiper-pagination',
         },
-        // loop: true,
-        // speed: 1500,
-        // autoplay: {
-        //     delay: 7000,
-        // }
+        loop: true,
+        speed: 1500,
+        autoplay: {
+            delay: 7000,
+        }
     });
 
     TweenMax.from("#logo", 0.8, {

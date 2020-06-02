@@ -1,6 +1,7 @@
 const News = require('../models/news');
 
 const Question_type = require('../models/question_type');
+const Question = require('../models/question');
 const Posts = require('../models/post');
 
 module.exports.education = function (req, res) {
@@ -8,6 +9,7 @@ module.exports.education = function (req, res) {
 }
 
 module.exports.help = async function (req, res) {
+
     const data = await Question_type.aggregate([
         {
             $lookup: {
@@ -18,6 +20,32 @@ module.exports.help = async function (req, res) {
             }
         }
     ]).exec();
+
+    if (req.cookies.lang === "vi") {
+        data.mainText = data.text_vi;
+
+        // data.question.map(function (item) {
+        //     item.mainQuestion = item.question_vi;
+        //     item.mainAnswer = item.answer_vi;
+        //     return;
+        // });
+    } if (req.cookies.lang === "cn") {
+        data.mainText = data.text_cn;
+
+        // data.question.map(function (item) {
+        //     item.mainQuestion = item.question_cn;
+        //     item.mainAnswer = item.answer_cn;
+        //     return;
+        // });
+    } else {
+        data.mainText = data.text_en;
+
+        // data.question.map(function (item) {
+        //     item.mainQuestion = item.Question_en;
+        //     item.mainAnswer = item.answer_en;
+        //     return;
+        // });
+    }
     res.render('./pages/support/helpAndResource/help-centre', { title: "Help || VGF", data });
 }
 

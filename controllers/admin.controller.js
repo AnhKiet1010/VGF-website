@@ -27,30 +27,25 @@ module.exports.postLogin = async function (req, res) {
     const name = req.body.username;
     const password = req.body.password;
 
-    if (name === "vgf" && password === "vgf") {
-        res.cookie('access_token', 'vgf');
-        res.cookie('admin_id', 'VGF');
-        res.redirect('/admin');
+
+    const data = await Admin.findOne({ name }).exec();
+    if (data === null) {
+        res.render('./admin/login', { error: "User does not exist!!!" });
     } else {
-        const data = await Admin.findOne({ name }).exec();
-        if (data === null) {
-            res.render('./admin/login', { error: "User does not exist!!!" });
-        } else {
-            bcrypt.compare(password, data.password, function (err, result) {
-                if (err) {
-                    return res.send(err);
+        bcrypt.compare(password, data.password, function (err, result) {
+            if (err) {
+                return res.send(err);
+            } else {
+                if (result) {
+                    const token = jwt.sign({ name: "Kiet" }, process.env.SECRET_KEY, { algorithm: "HS256", expiresIn: "3h" });
+                    res.cookie('access_token', token);
+                    res.cookie('admin_id', data.employeeId);
+                    res.redirect('/admin');
                 } else {
-                    if (result) {
-                        const token = jwt.sign({ name: "Kiet" }, process.env.SECRET_KEY, { algorithm: "HS256", expiresIn: "3h" });
-                        res.cookie('access_token', token);
-                        res.cookie('admin_id', data.employeeId);
-                        res.redirect('/admin');
-                    } else {
-                        return res.send('/error');
-                    }
+                    return res.send('/error');
                 }
-            });
-        }
+            }
+        });
     }
 }
 
