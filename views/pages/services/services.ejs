@@ -11,22 +11,20 @@
     </header>
     <main>
         <div class="container">
-            <h4 class="text-dark mt-4" style="background-color: #f3f3f3;padding: 0;margin: 0;">
-                Home /Our Services / <%= data %>
-            </h4>
+            <br>
             <div class="row mt-4 mb-4">
                 <div class="col-lg-3">
                     <h3><%= __('Our Services') %></h3>
                     <ul class="service-list">
-                        <li><a tabindex="-1" href="/services/forex/1">Forex Market</a></li>
-                        <li><a tabindex="-1" href="/services/copy_trade">Copy Trade</a></li>
-                        <li><a tabindex="-1" href="/services/capital_markets">Capital Markets</a></li>
+                        <li><a tabindex="-1" href="/services/forex/1"><%= __('Forex Market') %></a></li>
+                        <li><a tabindex="-1" href="/services/copy_trade"><%= __('Copy Trade') %></a></li>
+                        <li><a tabindex="-1" href="/services/capital_markets"><%= __('Capital Markets') %></a></li>
                         <li><a tabindex="-1" href="/services/technology_advisory"><%= __('Technology & Advisory') %></a>
                         </li>
                         <li><a tabindex="-1" href="/services/finance_risk"><%= __('Finance & Risk') %></a></li>
                         <li><a tabindex="-1" href="/services/portfolio_management"><%= __('Portfolio Management') %></a>
                         </li>
-                        <li><a tabindex="-1" href="/services/blockchain">Blockchain</a></li>
+                        <li><a tabindex="-1" href="/services/blockchain"><%= __('Blockchain') %></a></li>
                         <li><a tabindex="-1" href="/services/finance_training"><%= __('Finance Training') %></a>
                         </li>
                     </ul>
@@ -49,7 +47,7 @@
                         <p style="text-transform: uppercase;">
                             <%= __('GLOBAL STRATEGIES, INSIGHT-DRIVEN TRANSFORMATION') %></p>
                     </div>
-                    <% if(id !== undefined)  { %>
+                    <!-- <% if(id !== undefined)  { %>
                     <div class="page-header__menu_container">
                         <div class="row text-center">
                             <div class="col-lg-3">
@@ -70,14 +68,370 @@
                             </div>
                         </div>
                     </div>
+                    <% } %> -->
+                    <% if(data === 'Forex') { %>
+                    <div class="wrapp-market mt-3">
+                        <div class="row">
+                            <div class="row p-4">
+                                <div class="col-sm-6" style="padding: 20px;">
+                                    <h2>Forex CFD</h2>
+                                    <p style="font-size: 1.2em;word-spacing: 0.1em;">The Forex market provides traders
+                                        the opportunity to trade 24 hours a day, 5 days
+                                        a week in the world’s most liquid financial market. Traders can take advantage
+                                        of some of the tightest spreads, superior execution, and deep liquidity across
+                                        60 currency pairs.</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="market-facts-card forex">
+                                        <div class="facts-header" stlye="text-align: center;line-height: 35px;">
+                                            <div class="header-label"
+                                                style="font-size: 20px;color: rgba(11, 10, 20, 0.6);">Markets</div>
+                                            <div class="header-title" style="font-size: 38px;
+                                            color: #0b0a14;
+                                            font-weight: 500;">Forex</div>
+                                        </div>
+                                        <div class="facts-items" style="margin: 32px 0; text-align: left;">
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #05ba5d; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>60 currency
+                                                pairs</div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #05ba5d; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Tight spreads from 0.0 pips</div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #05ba5d; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Up to 1:500 leverage</div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #05ba5d; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Deep liquidity</div>
+
+                                        </div>
+                                        <div class="action-buttons-container">
+                                            <a class="btn btn-success" href="#"
+                                                style="background-color: #05ba5d;">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrapp-market mt-3">
+                        <div class="row">
+                            <div class="row p-4">
+                                <div class="col-sm-6" style="padding: 20px;">
+                                    <h2>Indices CFD</h2>
+                                    <p style="font-size: 1.2em;word-spacing: 0.1em;">Gain exposure to the world’s
+                                        largest equity markets through VGF offering
+                                        of global Indices CFDs. With spreads from 0.5 points on 16 Indices, traders can
+                                        take a wider view of equities markets whilst enjoying commission free and 24/5
+                                        trading across major markets.</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="market-facts-card forex">
+                                        <div class="facts-header" style="text-align: center;line-height: 35px;">
+                                            <div class="header-label"
+                                                style="font-size: 20px;color: rgba(11, 10, 20, 0.6);">Markets</div>
+                                            <div class="header-title" style="font-size: 38px;
+                                            color: #0b0a14;
+                                            font-weight: 500;">Indices</div>
+                                        </div>
+                                        <div class="facts-items" style="margin: 32px 0; text-align: left;">
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #57b2f7; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>17 Indices to trade from across
+                                                the globe</div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #57b2f7; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Up to 1:200 leverage</div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #57b2f7; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>No commissions</div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #57b2f7; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>MT4, MT5 & cTrader</div>
+
+                                        </div>
+                                        <div class="action-buttons-container">
+                                            <a class="btn btn-info" href="#"
+                                                style="background-color: #57b2f7;">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrapp-market mt-3">
+                        <div class="row">
+                            <div class="row p-4">
+                                <div class="col-sm-6" style="padding: 20px;">
+                                    <h2>Commodities CFD</h2>
+                                    <p style="font-size: 1.2em;word-spacing: 0.1em;">.Trade energy, agriculture and
+                                        metals products like a currency pair against the USD or as a Futures CFD. We’ve
+                                        combined tight pricing and flexible lot sizes from 10c per point to give you one
+                                        powerful product.</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="market-facts-card forex">
+                                        <div class="facts-header" style="text-align: center;line-height: 35px;">
+                                            <div class="header-label"
+                                                style="font-size: 20px;color: rgba(11, 10, 20, 0.6);">Markets</div>
+                                            <div class="header-title" style="font-size: 38px;
+                                            color: #0b0a14;
+                                            font-weight: 500;">Commodities</div>
+                                        </div>
+                                        <div class="facts-items" style="margin: 32px 0; text-align: left;">
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f7cf57; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Over 19 commodities to trade
+                                            </div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f7cf57; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Energy, agriculture and metals
+                                            </div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f7cf57; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Spot and Futures CFDs</div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f7cf57; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Up to 1:500 leverage</div>
+
+                                        </div>
+                                        <div class="action-buttons-container">
+                                            <a class="btn btn-info" href="#"
+                                                style="background-color: #f7cf57;">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrapp-market mt-3">
+                        <div class="row">
+                            <div class="row p-4">
+                                <div class="col-sm-6" style="padding: 20px;">
+                                    <h2>Stocks CFD</h2>
+                                    <p style="font-size: 1.2em;word-spacing: 0.1em;">Access over 100 large-cap Stocks
+                                        CFDs across the ASX, NYSE and NASDAQ stock exchanges. We’ve selected a range of
+                                        the world’s most popular companies to give you the best trading opportunities.
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="market-facts-card forex">
+                                        <div class="facts-header" style="text-align: center;line-height: 35px;">
+                                            <div class="header-label"
+                                                style="font-size: 20px;color: rgba(11, 10, 20, 0.6);">Markets</div>
+                                            <div class="header-title" style="font-size: 38px;
+                                            color: #0b0a14;
+                                            font-weight: 500;">Stocks</div>
+                                        </div>
+                                        <div class="facts-items" style="margin: 32px 0; text-align: left;">
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f37272; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>120+ stocks from ASX, Nasdaq &
+                                                NYSE
+                                            </div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f37272; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Earn dividends
+                                            </div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f37272; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>MT5</div>
+
+                                        </div>
+                                        <div class="action-buttons-container">
+                                            <a class="btn btn-info" href="#"
+                                                style="background-color: #f37272;">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrapp-market mt-3">
+                        <div class="row">
+                            <div class="row p-4">
+                                <div class="col-sm-6" style="padding: 20px;">
+                                    <h2>Bonds CFD</h2>
+                                    <p style="font-size: 1.2em;word-spacing: 0.1em;">Bonds offer traders the opportunity
+                                        to speculate on interest rates and global risk on/off sentiment, hedging
+                                        equities exposure and to diversify their strategy. Choose from a range of Bonds
+                                        issued by governments around the world including Japan, Europe, the U.K, and the
+                                        U.S.
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="market-facts-card forex">
+                                        <div class="facts-header" style="text-align: center;line-height: 35px;">
+                                            <div class="header-label"
+                                                style="font-size: 20px;color: rgba(11, 10, 20, 0.6);">Markets</div>
+                                            <div class="header-title" style="font-size: 38px;
+                                            color: #0b0a14;
+                                            font-weight: 500;">Bonds</div>
+                                        </div>
+                                        <div class="facts-items" style="margin: 32px 0; text-align: left;">
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #a78ae1; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Over 6 Bonds available to trade
+                                            </div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #a78ae1; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>No commissions
+                                            </div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #a78ae1; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Up to 1:200 leverage</div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #a78ae1; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Deep Liquidity</div>
+
+                                        </div>
+                                        <div class="action-buttons-container">
+                                            <a class="btn btn-info" href="#"
+                                                style="background-color: #a78ae1;">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrapp-market mt-3">
+                        <div class="row">
+                            <div class="row p-4">
+                                <div class="col-sm-6" style="padding: 20px;">
+                                    <h2>Crypto CFD</h2>
+                                    <p style="font-size: 1.2em;word-spacing: 0.1em;">Go long or short across our range
+                                        of the world’s largest and most popular Cryptocurrencies. Trade against other
+                                        retail traders 24/5 where price movements are driven primarily by fear and
+                                        greed, news and prevailing sentiment. Enjoy trading with a leverage of up to 1:5
+                                        and eliminate Cryptocurrency Exchange risk by trading with an FSA-regulated CFD
+                                        Provider.
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="market-facts-card forex">
+                                        <div class="facts-header" style="text-align: center;line-height: 35px;">
+                                            <div class="header-label"
+                                                style="font-size: 20px;color: rgba(11, 10, 20, 0.6);">Markets</div>
+                                            <div class="header-title" style="font-size: 38px;
+                                            color: #0b0a14;
+                                            font-weight: 500;">Crypto</div>
+                                        </div>
+                                        <div class="facts-items" style="margin: 32px 0; text-align: left;">
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f5bc6a; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Trade the market 24/5
+                                            </div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f5bc6a; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Long or short
+                                            </div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f5bc6a; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Up to 1:5 leverage</div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #f5bc6a; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>10 of the most popular Cryptos
+                                            </div>
+
+                                        </div>
+                                        <div class="action-buttons-container">
+                                            <a class="btn btn-info" href="#"
+                                                style="background-color: #f5bc6a;">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrapp-market mt-3">
+                        <div class="row">
+                            <div class="row p-4">
+                                <div class="col-sm-6" style="padding: 20px;">
+                                    <h2>Futures CFD</h2>
+                                    <p style="font-size: 1.2em;word-spacing: 0.1em;">Futures are one of the most popular
+                                        form of CFDs. VGF offer a range of Futures from around the world,
+                                        including ICE Dollar Index and CBOE VIX Index. Online Futures based CFDs are
+                                        offered exclusively on VGF' MetaTrader 4 Platform.
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="market-facts-card forex">
+                                        <div class="facts-header" style="text-align: center;line-height: 35px;">
+                                            <div class="header-label"
+                                                style="font-size: 20px;color: rgba(11, 10, 20, 0.6);">Markets</div>
+                                            <div class="header-title" style="font-size: 38px;
+                                            color: #0b0a14;
+                                            font-weight: 500;">Futures</div>
+                                        </div>
+                                        <div class="facts-items" style="margin: 32px 0; text-align: left;">
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #8df086; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>4 Global Futures available to
+                                                trade
+                                            </div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #8df086; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>No commissions
+                                            </div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #8df086; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Up to 1:200 leverage</div>
+
+                                            <div class="facts-item"><span
+                                                    style="font-size: 1.5em; color: #8df086; margin-right: 10px;"><i
+                                                        class="fa fa-check"></i></span>Deep Liquidity
+                                            </div>
+
+                                        </div>
+                                        <div class="action-buttons-container">
+                                            <a class="btn btn-info" href="#"
+                                                style="background-color: #8df086;">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <% } %>
+
                     <% if(data === 'Technology Advisory') { %>
                     <div class="introduce-tech text-center">
                         <img src="/images/company-logo.png" alt="company-bg" width="450px">
                         <h1 style="padding: 20px 40px"><%= __('Giới thiệu hệ thống phân tích tự động') %></h1>
                     </div>
-                    <% } else { %>
-                    <img src="/images/forex.png" alt="forex" width="100%" />
                     <% } %>
                 </div>
             </div>
