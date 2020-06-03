@@ -73,7 +73,17 @@
                                         <div class="pos_infos">
                                             <header class="entry-header">
                                                 <h2 class="entry-title"><a
-                                                        href="/support/education/posts/<%= item._id %>"><%= item.mainTitle %></a>
+                                                        href="/support/education/posts/<%= item._id %>">
+                                                        <% if(lang === 'en') { %>
+                                                        <%= item.title_en %>
+                                                        <% } else if(lang === 'vi') { %>
+                                                        <%= item.title_vi %>
+                                                        <% } else if(lang === 'cn') { %>
+                                                        <%= item.title_cn %>
+                                                        <% } else { %>
+                                                        <%= item.title_en %>
+                                                        <% } %>
+                                                    </a>
                                                 </h2>
                                             </header>
                                             <div class="entry-details">
@@ -84,13 +94,21 @@
                                             </div>
 
                                             <div class="entry-content">
-                                                <p> <%= item.mainSubtitle %> …</p>
+                                                <p> <% if(lang === 'en') { %>
+                                                    <%= item.subtitle_en %>
+                                                    <% } else if(lang === 'vi') { %>
+                                                    <%= item.subtitle_vi %>
+                                                    <% } else if(lang === 'cn') { %>
+                                                    <%= item.subtitle_cn %>
+                                                    <% } else { %>
+                                                    <%= item.subtitle_en %>
+                                                    <% } %> …</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <% } )%>
+                            <% }) %>
                         </div>
                         <small class="d-block mt-3 text-center mb-3">
                             <nav>

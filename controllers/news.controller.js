@@ -8,24 +8,17 @@ module.exports.getNews = async function (req, res) {
     const currentView = data.views;
 
     await News.findOneAndUpdate({ _id: id }, { $set: { views: currentView + 1 } }).exec();
-    if (req.cookies.lang === "en") {
-        data.mainTitle = data.title_en;
-        data.mainSubtitle = data.subtitle_en;
-        data.mainContent = data.content_en;
-    } else if (req.cookies.lang === "vi") {
-        data.mainTitle = data.title_vi;
-        data.mainSubtitle = data.subtitle_vi;
-        data.mainContent = data.content_vi;
-    } else if (req.cookies.lang === "cn") {
-        data.mainTitle = data.title_cn;
-        data.mainSubtitle = data.subtitle_cn;
-        data.mainContent = data.content_cn;
-    } else {
-        data.mainTitle = data.title_en;
-        data.mainSubtitle = data.subtitle_en;
-        data.mainContent = data.content_en;
+
+    var title = data.title_en;
+    if (req.cookies.lang === 'en') {
+        title = data.title_en + " || VGF";
+    } else if (req.cookies.lang === 'vi') {
+        title = data.title_vi + " || VGF";
+    } else if (req.cookies.lang === 'cn') {
+        title = data.title_cn + " || VGF";
     }
-    res.render('./pages/support/helpAndResource/news/newsDetail', { news: data, title: "News Detail || VGF" });
+
+    res.render('./pages/support/helpAndResource/news/newsDetail', { news: data, title, lang: req.cookies.lang });
 }
 
 module.exports.getNewsByCategory = async function (req, res) {
@@ -40,28 +33,7 @@ module.exports.getNewsByCategory = async function (req, res) {
         .exec();
 
     const count = await News.countDocuments().exec();
-    if (req.cookies.lang === "en") {
-        data.map(function (item) {
-            item.mainTitle = item.title_en;
-            item.mainSubtitle = item.subtitle_en;
-            item.mainContent = item.content_en;
-            return;
-        });
-    } else if (req.cookies.lang === "vi") {
-        data.map(function (item) {
-            item.mainTitle = item.title_vi;
-            item.mainSubtitle = item.subtitle_vi;
-            item.mainContent = item.content_vi;
-            return;
-        });
-    } else {
-        data.map(function (item) {
-            item.mainTitle = item.title_en;
-            item.mainSubtitle = item.subtitle_en;
-            item.mainContent = item.content_en;
-            return;
-        });
-    }
+
     res.render('./pages/support/helpAndResource/news/listNews', {
         data: data,
         total: count,

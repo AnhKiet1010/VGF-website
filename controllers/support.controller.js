@@ -21,32 +21,7 @@ module.exports.help = async function (req, res) {
         }
     ]).exec();
 
-    if (req.cookies.lang === "vi") {
-        data.mainText = data.text_vi;
-
-        // data.question.map(function (item) {
-        //     item.mainQuestion = item.question_vi;
-        //     item.mainAnswer = item.answer_vi;
-        //     return;
-        // });
-    } if (req.cookies.lang === "cn") {
-        data.mainText = data.text_cn;
-
-        // data.question.map(function (item) {
-        //     item.mainQuestion = item.question_cn;
-        //     item.mainAnswer = item.answer_cn;
-        //     return;
-        // });
-    } else {
-        data.mainText = data.text_en;
-
-        // data.question.map(function (item) {
-        //     item.mainQuestion = item.Question_en;
-        //     item.mainAnswer = item.answer_en;
-        //     return;
-        // });
-    }
-    res.render('./pages/support/helpAndResource/help-centre', { title: "Help || VGF", data });
+    res.render('./pages/support/helpAndResource/help-centre', { title: "Help || VGF", data, lang: req.cookies.lang });
 }
 
 module.exports.news = async function (req, res) {
@@ -60,28 +35,7 @@ module.exports.news = async function (req, res) {
         .exec();
 
     const count = await News.countDocuments().exec();
-    if (req.cookies.lang === "en") {
-        data.map(function (item) {
-            item.mainTitle = item.title_en;
-            item.mainSubtitle = item.subtitle_en;
-            item.mainContent = item.content_en;
-            return;
-        });
-    } else if (req.cookies.lang === "vi") {
-        data.map(function (item) {
-            item.mainTitle = item.title_vi;
-            item.mainSubtitle = item.subtitle_vi;
-            item.mainContent = item.content_vi;
-            return;
-        });
-    } else {
-        data.map(function (item) {
-            item.mainTitle = item.title_en;
-            item.mainSubtitle = item.subtitle_en;
-            item.mainContent = item.content_en;
-            return;
-        });
-    }
+
     res.render('./pages/support/helpAndResource/news/listNews', {
         data: data,
         total: count,
@@ -106,33 +60,6 @@ module.exports.trading_knowledge = async function (req, res) {
 
     const data1 = await Posts.find({}).limit(perPage).exec();
 
-    if (req.cookies.lang === "vi") {
-        data.map(function (item) {
-            item.mainTitle = item.title_vi;
-            item.mainSubtitle = item.subtitle_vi;
-            item.mainContent = item.content_vi;
-            return;
-        });
-        data1.map(function (item) {
-            item.mainTitle = item.title_vi;
-            item.mainSubtitle = item.subtitle_vi;
-            item.mainContent = item.content_vi;
-            return;
-        });
-    } else if (req.cookies.lang === "cn") {
-        data.map(function (item) {
-            item.mainTitle = item.title_cn;
-            item.mainSubtitle = item.subtitle_cn;
-            item.mainContent = item.content_cn;
-            return;
-        });
-        data1.map(function (item) {
-            item.mainTitle = item.title_cn;
-            item.mainSubtitle = item.subtitle_cn;
-            item.mainContent = item.content_cn;
-            return;
-        });
-    }
     res.render('./pages/support/education/trading_knowledge', {
         data: data,
         recentPost: data1,
@@ -141,7 +68,8 @@ module.exports.trading_knowledge = async function (req, res) {
         title: "Trading Knowledge || VGF",
         activeClass: 5,
         current: page,
-        pages: Math.ceil(count / perPage)
+        pages: Math.ceil(count / perPage),
+        lang: req.cookies.lang
     });
 }
 
@@ -155,20 +83,14 @@ module.exports.postsDetail = async function (req, res) {
         .sort({ created: -1 })
         .limit(perPage)
         .exec();
-    if (req.cookies.lang === "vi") {
-        data1.map(function (item) {
-            item.mainTitle = item.title_vi;
-            item.mainSubtitle = item.subtitle_vi;
-            item.mainContent = item.content_vi;
-            return;
-        });
-    } else if (req.cookies.lang === "cn") {
-        data1.map(function (item) {
-            item.mainTitle = item.title_cn;
-            item.mainSubtitle = item.subtitle_cn;
-            item.mainContent = item.content_cn;
-            return;
-        });
+
+    var title = data.title_en;
+    if (req.cookies.lang === 'en') {
+        title = data.title_en + " || VGF";
+    } else if (req.cookies.lang === 'vi') {
+        title = data.title_vi + " || VGF";
+    } else if (req.cookies.lang === 'cn') {
+        title = data.title_cn + " || VGF";
     }
-    res.render('./pages/support/education/posts_detail', { data, recentPost: data1, title: data.mainTitle + " || VGF" })
+    res.render('./pages/support/education/posts_detail', { data, recentPost: data1, title, lang: req.cookies.lang })
 }

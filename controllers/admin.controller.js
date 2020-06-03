@@ -277,9 +277,6 @@ module.exports.postEditForm = async function (req, res) {
     const content_vi = req.body.content_vi;
     const content_cn = req.body.content_cn;
     const newNews = {
-        mainTitle: req.body.title_en,
-        mainSubtitle: req.body.subtitle_en,
-        mainContent: req.body.content_en,
         title_en: req.body.title_en,
         title_vi: req.body.title_vi,
         title_cn: req.body.title_cn,
@@ -322,9 +319,6 @@ module.exports.postPostsForm = function (req, res) {
     const time = date.toDateString();
     const posts = new Posts({
         categoryId: req.body.category,
-        mainTitle: req.body.title_en,
-        mainSubtitle: req.body.subtitle_en,
-        mainContent: req.body.content_en,
         title_en: req.body.title_en,
         title_vi: req.body.title_en,
         title_cn: req.body.title_en,
@@ -365,7 +359,8 @@ module.exports.getPostsList = async function (req, res) {
         title: "List Posts || Admin",
         activeClass: 3,
         current: page,
-        pages: Math.ceil(count / perPage)
+        pages: Math.ceil(count / perPage),
+        lang: req.cookies.lang
     });
 }
 
@@ -380,7 +375,7 @@ module.exports.getEditPostsForm = function (req, res) {
     })
 }
 
-module.exports.postEditPostsForm = function (req, res) {
+module.exports.postEditPostsForm = async function (req, res) {
     const id = req.params.id;
     const date = new Date;
     const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
@@ -388,9 +383,6 @@ module.exports.postEditPostsForm = function (req, res) {
     const content_vi = req.body.content_vi;
     const content_cn = req.body.content_cn;
     const newPosts = {
-        mainTitle: req.body.title_en,
-        mainSubtitle: req.body.subtitle_en,
-        mainContent: req.body.content_en,
         title_en: req.body.title_en,
         title_vi: req.body.title_vi,
         title_cn: req.body.title_cn,
@@ -405,13 +397,8 @@ module.exports.postEditPostsForm = function (req, res) {
         image: req.file ? req.file.filename : req.body.hidden_image,
         editBy: req.cookies ? req.cookies.admin_id : 'No Updated'
     }
-    Posts.findOneAndUpdate({ _id: id }, { ...newPosts }, function (err, data) {
-        if (err) {
-            return res.send(err);
-        } else {
-            res.redirect("/admin/posts/posts_list/1");
-        }
-    });
+    await Posts.findOneAndUpdate({ _id: id }, { ...newPosts }).exec();
+    res.redirect("/admin/posts/posts_list/1");
 }
 
 module.exports.deletePosts = function (req, res) {
@@ -462,10 +449,9 @@ module.exports.getListQuestion = async function (req, res) {
 
 module.exports.add_question_type = function (req, res) {
     const questionType = new Question_type({
-        mainText: req.body.question_type_en,
         text_en: req.body.question_type_en,
         text_vi: req.body.question_type_vi,
-        text_cn: req.body.question_type_vn,
+        text_cn: req.body.question_type_cn,
         kids: []
     });
 
@@ -478,7 +464,7 @@ module.exports.add_question_type = function (req, res) {
     });
 }
 
-module.exports.postAddQuestion = function (req, res) {
+module.exports.postAddQuestion = async function (req, res) {
     const date = new Date;
     const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
     const question = new Question({
@@ -495,23 +481,12 @@ module.exports.postAddQuestion = function (req, res) {
         updateBy: req.cookies.admin_id
     });
 
-    question.save(function (err) {
-        if (err) {
-            return res.send(err);
-        } else {
-            Question_type.findByIdAndUpdate(
-                { _id: req.body.question_type },
-                { $push: { kids: question._id } },
-                function (err) {
-                    if (err) {
-                        return res.send(err);
-                    } else {
-                        res.redirect("/admin/list_question/1");
-                    }
-                });
-        }
-    });
-
+    await question.save().exec();
+    await Question_type.findByIdAndUpdate(
+        { _id: req.body.question_type },
+        { $push: { kids: question._id } }
+    ).exec();
+    res.redirect("/admin/list_question/1");
 }
 
 module.exports.getEditQuestionForm = async function (req, res) {
@@ -521,16 +496,14 @@ module.exports.getEditQuestionForm = async function (req, res) {
     res.render("./admin/question/edit_question", { title: "Edit Question || Admin", data, q_category: data1, activeClass: "no have" });
 }
 
-module.exports.postEditQuestionForm = function (req, res) {
+module.exports.postEditQuestionForm = async function (req, res) {
     const id = req.params.id;
     const date = new Date;
     const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
     const newQuestion = {
-        mainQuestion: req.body.question_en,
         question_en: req.body.question_en,
         question_vi: req.body.question_vi,
         question_cn: req.body.question_cn,
-        mainAnswer: req.body.answer_en,
         answer_en: req.body.answer_en,
         answer_vi: req.body.answer_vi,
         answer_cn: req.body.answer_cn,
@@ -538,14 +511,9 @@ module.exports.postEditQuestionForm = function (req, res) {
         updated: time,
         editBy: req.cookies ? req.cookies.admin_id : 'No Updated'
     }
-    // const question_type = req.body.question_type;
-    Question.findOneAndUpdate({ _id: id }, { ...newQuestion }, function (err, data) {
-        if (err) {
-            return res.send(err);
-        } else {
-            res.redirect("/admin/list_question/1");
-        }
-    });
+
+    await Question.findOneAndUpdate({ _id: id }, { ...newQuestion }).exec();
+    res.redirect("/admin/list_question/1");
 }
 
 module.exports.deleteQuestion = function (req, res) {

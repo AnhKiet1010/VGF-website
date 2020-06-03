@@ -11,17 +11,44 @@
     </header>
     <main>
         <div class="container help-centre-container">
-            <% data.forEach(function(item) {%>
-            <h1 style="padding: 40px 0;font-size: 48px;margin-top: 40px;text-align:center;"><%= item.mainText %></h1>
+            <% data.forEach(function(item,i) {%>
+            <h1 style="padding: 40px 0;font-size: 48px;margin-top: 40px;text-align:center;">
+                <% if(lang === 'en') { %>
+                <%= item.text_en %>
+                <% } else if(lang === 'vi') { %>
+                <%= item.text_vi %>
+                <% } else if(lang === 'cn') { %>
+                <%= item.text_cn %>
+                <% } else { %>
+                <%= item.text_en %>
+                <% } %>
+            </h1>
             <% item.question.forEach(function(question,index) { %>
             <div class="faq-accordion mb-3">
-                <div class="collapse-box" data-toggle="collapse" data-target="#collapse<%= index %>"
-                    aria-expanded="false" aria-controls="collapse<%= index %>"><%= question.mainQuestion %><span><i
-                            class="fa fa-chevron-down"></i></span>
+                <div class="collapse-box" data-toggle="collapse" data-target="#collapse<%= index %><%= i %>"
+                    aria-expanded="false" aria-controls="collapse<%= index %><%= i %>">
+                    <% if(lang === 'en') { %>
+                    <%= question.question_en %>
+                    <% } else if(lang === 'vi') { %>
+                    <%= question.question_vi %>
+                    <% } else if(lang === 'cn') { %>
+                    <%= question.question_cn %>
+                    <% } else { %>
+                    <%= question.question_en %>
+                    <% } %>
+                    <span><i class="fa fa-chevron-down"></i></span>
                 </div>
-                <div class="collapse" id="collapse<%= index %>" aria-controls="collapse<%= index %>">
+                <div class="collapse" id="collapse<%= index %><%= i %>" aria-controls="collapse<%= index %><%= i %>">
                     <div class="card card-body panel-content">
-                        <%- question.mainAnswer %>
+                        <% if(lang === 'en') { %>
+                        <%- question.answer_en %>
+                        <% } else if(lang === 'vi') { %>
+                        <%- question.answer_vi %>
+                        <% } else if(lang === 'cn') { %>
+                        <%- question.answer_cn %>
+                        <% } else { %>
+                        <%- question.answer_en %>
+                        <% } %>
                     </div>
                 </div>
             </div>

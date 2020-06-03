@@ -86,15 +86,38 @@
                                             width="100%"></a>
                                 </div>
                                 <div class="col-md-7 article-info">
-                                    <p class="article-title"><a href="/news/<%= item._id %>"><%= item.mainTitle %></a>
+                                    <p class="article-title">
+                                        <a href="/news/<%= item._id %>">
+                                            <% if(lang === 'en') { %>
+                                            <%= item.title_en %>
+                                            <% } else if(lang === 'vi') { %>
+                                            <%= item.title_vi %>
+                                            <% } else if(lang === 'cn') { %>
+                                            <%= item.title_cn %>
+                                            <% } else { %>
+                                            <%= item.title_en %>
+                                            <% } %>
+                                        </a>
                                     </p>
-                                    <p class="article-short-desc"><%= item.mainSubtitle %></p>
+                                    <p class="article-short-desc">
+                                        <% if(lang === 'en') { %>
+                                        <%= item.subtitle_en %>
+                                        <% } else if(lang === 'vi') { %>
+                                        <%= item.subtitle_vi %>
+                                        <% } else if(lang === 'cn') { %>
+                                        <%= item.subtitle_cn %>
+                                        <% } else { %>
+                                        <%= item.subtitle_en %>
+                                        <% } %>
+                                    </p>
                                     <p class="article-detail">
                                         <span><a href="/news/search/<%= item.news_type %>/1">
                                                 <% if(lang === 'vi') { %>
                                                 <%= item.news_type === "1" ? "Tin Forex" : (item.news_type === "2") ? "Tin Hàng Hóa" : (item.news_type === "3") ? "Tin Kinh Tế Thế Giới" : (item.news_type === "4") ? "Đời Sống Tài Chính" : "" %>
                                                 <% } else if(lang === 'en') { %>
                                                 <%= item.news_type === "1" ? "Forex News" : (item.news_type === "2") ? "Commodity News" : (item.news_type === "3") ? "World News" : (item.news_type === "4") ? "Finance Times" : "" %>
+                                                <% } else if(lang === 'cn') { %>
+                                                <%= item.news_type === "1" ? "外汇新闻" : (item.news_type === "2") ? "商品和期货新闻" : (item.news_type === "3") ? "世界经济新闻" : (item.news_type === "4") ? "财经新闻" : "" %>
                                                 <% } else { %>
                                                 <%= item.news_type === "1" ? "Forex News" : (item.news_type === "2") ? "Commodity News" : (item.news_type === "3") ? "World News" : (item.news_type === "4") ? "Finance Times" : "" %>
                                                 <% } %>

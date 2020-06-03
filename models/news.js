@@ -2,9 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const news = new Schema({
-    mainTitle: String,
-    mainSubtitle: String,
-    mainContent: String,
     title_en: String,
     title_vi: String,
     title_cn: String,

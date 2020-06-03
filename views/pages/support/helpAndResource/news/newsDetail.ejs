@@ -75,11 +75,29 @@
                 </div>
             </div>
             <div class="row news-bottom">
-                <h1 class="m-3"><%= news.mainTitle %></h1>
+                <h1 class="m-3">
+                    <% if(lang === 'en') { %>
+                    <%= news.title_en %>
+                    <% } else if(lang === 'vi') { %>
+                    <%= news.title_vi %>
+                    <% } else if(lang === 'cn') { %>
+                    <%= news.title_cn %>
+                    <% } else { %>
+                    <%= news.title_en %>
+                    <% } %>
+                </h1>
                 <div class="col-md-8 main-big" style="">
                     <img src="/upload/<%= news.image %>" alt="news-bg" width="100%" class="mb-3">
                     <div class="news-desc">
-                        <%- news.mainContent %>
+                        <% if(lang === 'en') { %>
+                        <%- news.content_en %>
+                        <% } else if(lang === 'vi') { %>
+                        <%- news.content_vi %>
+                        <% } else if(lang === 'cn') { %>
+                        <%- news.content_cn %>
+                        <% } else { %>
+                        <%- news.content_en %>
+                        <% } %>
                     </div>
                 </div>
                 <div class="col-md-4 brokers">

@@ -3,9 +3,6 @@ const Schema = mongoose.Schema;
 
 const posts = new Schema({
     categoryId: String,
-    mainTitle: String,
-    mainSubtitle: String,
-    mainContent: String,
     title_en: String,
     title_vi: String,
     title_cn: String,
