@@ -1290,6 +1290,7 @@ div[aria-expanded="true"] {
 
     #posts_content > p {
         width: 100%;
+        padding: 2em;
     }
 
     #posts_content > p > a > img {
