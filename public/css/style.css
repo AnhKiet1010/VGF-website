@@ -377,13 +377,24 @@ ul.sub-menu li:hover .sub-menu-lv2 {
 .service-list li:hover a {
     color: #1d5996;
 }
-
+.t-lime-colored {
+    font-size: 16px;
+    font-weight: bold;
+    color: #a7c843;
+}
+.cards-list__item {
+    padding: 20px 0 10px 0;
+    border-bottom: 0.5px solid #eee;
+}
 .page-header__menu_container {
     width: 100%;
     background: #0b0a14;
     max-width: 1184px;
     margin: 0 auto;
     padding: 30px 0;
+}
+.t-ul__item {
+    margin-bottom: 1em;
 }
 
 .col-lg-3 a {
