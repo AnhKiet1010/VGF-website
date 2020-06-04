@@ -44,9 +44,9 @@ const newtRouter = require('./routes/news.route');
 */
 app.get('/', function (req, res) {
     if (!req.cookies.lang) {
-        res.cookie('lang', 'en', { maxAge: 900000 });
+        res.cookie('lang', 'en');
     }
-    res.render('./pages/index', { title: "Vins Global Fintech" });
+    res.render('./pages/index', { title: "Vins Global Fintech", lang: req.cookies.lang });
 });
 app.get('/error', function (req, res) {
     res.render('./pages/404');
