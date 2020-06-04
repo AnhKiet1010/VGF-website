@@ -97,10 +97,6 @@ router.post('/add_question', adminController.postAddQuestion);
 
 router.get("/question/edit/:id", requireAuth.requireAuth, adminController.getEditQuestionForm);
 
-router.post("/question/edit/:id", upload.single('image'), adminController.postEditQuestionForm);
-
 router.get('/question/delete/:id', adminController.deleteQuestion);
-
-router.get('/menuData', requireAuth.requireAuth, adminController.menuData);
 
 module.exports = router;
