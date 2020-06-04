@@ -94,3 +94,11 @@ module.exports.postsDetail = async function (req, res) {
     }
     res.render('./pages/support/education/posts_detail', { data, recentPost: data1, title, lang: req.cookies.lang })
 }
+
+module.exports.calendar = function (req, res) {
+    res.render('./pages/support/helpAndResource/economic_calendar', { title: 'Economic Calendar || VGF' });
+}
+
+module.exports.glossary = function (req, res) {
+    res.render('./pages/support/helpAndResource/forex_glossary', { title: 'Forex Glossary || VGF' });
+}
