@@ -6,7 +6,7 @@ module.exports.index = function (req, res) {
 module.exports.sub = function (req, res) {
     const sub = req.params.sub;
     const newStr = sub.replace('_', ' ');
-    var splitStr = newStr.toLowerCase().split(' ');
+    var splitStr = newStr.split(' ');
 
     for (var i = 0; i < splitStr.length; i++) {
         splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);

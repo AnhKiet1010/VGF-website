@@ -101,7 +101,7 @@
 	"Copy Trade": "跟单",
 	"Capital Markets": " 资本资产",
 	"Blockchain": "区块链",
-	"VGF deposits 20% of free activities": "20%入金奖励",
+	"VGF deposits 30% of free activities": "30%入金奖励",
 	"Get up to $ 20,000 in bonuses": "获得高达20,000美元的奖金",
 	"Activity advantage": "活动优势",
 	"High Rate": "高利率",
@@ -110,7 +110,7 @@
 	"Arrive in": "到",
 	"Activity introduction and rules": "活动介绍及规则",
 	"Activity Description": "活动介绍",
-	"Each new CGTrade customer can enjoy 20% of the deposit amount with a new deposit of more than US $ 200, with a maximum of 20,000 USD in trading bonus. The amount of liquidation required to complete the bonus (the bonus amount x 15%) can be withdrawn.Example: Deposit 10,000 USD during the event, and the bonus is 10,000 * 20% = 2,000 USD. The customer will receive the 2,000 USD bonus directly into the MT4 account. When the number of transactions reached 2000 × 15% is equal to 300, you can withdraw": "每位VGF新客户新入金200美元以上即可享有入金金额20%，最高20,000美金交易赠金。此赠金完成所需的平仓手数（赠金金额 15%) 即可提取。例子：活动期间入金10,000美金，赠金为10,000*20%= 2,000美金，客户将收到2,000美金的赠金直接存入MT4帐户，达到交易手数2000×15%等于300手，即可提现。",
+	"Each new VGF customer can enjoy 20% of the deposit amount with a new deposit of more than US $ 200, with a maximum of 20,000 USD in trading bonus. The amount of liquidation required to complete the bonus (the bonus amount x 15%) can be withdrawn.Example: Deposit 10,000 USD during the event, and the bonus is 10,000 * 20% = 2,000 USD. The customer will receive the 2,000 USD bonus directly into the MT4 account. When the number of transactions reached 2000 × 15% is equal to 300, you can withdraw": "每位VGF新客户新入金200美元以上即可享有入金金额20%，最高20,000美金交易赠金。此赠金完成所需的平仓手数（赠金金额 15%) 即可提取。例子：活动期间入金10,000美金，赠金为10,000*20%= 2,000美金，客户将收到2,000美金的赠金直接存入MT4帐户，达到交易手数2000×15%等于300手，即可提现。",
 	"Activity Rules": "活动规则",
 	"The client can withdraw the bonus at the specified time to complete the corresponding transaction lot": "客户在指定时间来完成相应的交易手数即可提取赠金",
 	"The calculation period is 90 days from the beginning of the deposit": "计算周期为入金开始90天",
@@ -122,5 +122,6 @@
 	"The trading products participating in this promotion are limited to foreign exchange, energy and precious metals": "参加此促销活动的交易产品仅限于外汇，能源和贵金属",
 	"After the customer deposits the gold, contact the account manager to apply for the bonus when the position is empty": "客户入金后，空仓情况下联系帐户经理申请赠金",
 	"When the net value is less than the credit limit, the credit will be removed in full, that is, the trading account will be liquidated": "当净值少于信用额度时，信用额会被全额移除，即交易帐户会被强平",
-	"The above offers are not applicable to cent accounts and agency accounts": "以上优惠不适用于cent账户和代理账户"
+	"The above offers are not applicable to cent accounts and agency accounts": "以上优惠不适用于cent账户和代理账户",
+	"Giới thiệu hệ thống phân tích tự động": "Giới thiệu hệ thống phân tích tự động"
 }
