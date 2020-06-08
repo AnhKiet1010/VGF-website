@@ -79,7 +79,6 @@
 	"Danh sách sàn ngoại hối": "Danh sách sàn ngoại hối",
 	"năm": "năm",
 	"Lượt xem": "Lượt xem",
-	"Overview": "Đánh Giá",
 	"Forex": "Forex",
 	"Stock": "Cổ Phiếu",
 	"Futures": "Tương Lai",
@@ -181,5 +180,6 @@
 	"Forex Market": "Thị Trường Ngoại Hối",
 	"Copy Trade": "Copy Trade",
 	"Capital Markets": "Thị Trường Vốn",
-	"Blockchain": "Blockchain"
+	"Blockchain": "Blockchain",
+	"AI Trading": "AI Trading"
 }

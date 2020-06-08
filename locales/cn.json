@@ -11,7 +11,7 @@
 	"Language": "语言",
 	"Portfolio Management": "投资组合管理",
 	"Finance Training": "金融教育",
-	"Overview": "鉴定",
+	"Overview": "批评",
 	"Commodities": "产品",
 	"Indices": "指数",
 	"Education": "教育",
@@ -93,7 +93,6 @@
 	"Trader First, Technology for Social Good": "交易者至上，技术造福社会",
 	"Please feel free to contact us. We will get back to you with 1-2 business days.Or just call us now": "请随时联系我们。 我们将在1-2个工作日内跟您联系或立即致电给我们",
 	"GLOBAL STRATEGIES, INSIGHT-DRIVEN TRANSFORMATION": "全球战略，以洞察为导向的转型",
-	"Overview": "批评",
 	"Forex": "外汇",
 	"Stock": "股票",
 	"Futures": "未来",
@@ -123,5 +122,6 @@
 	"After the customer deposits the gold, contact the account manager to apply for the bonus when the position is empty": "客户入金后，空仓情况下联系帐户经理申请赠金",
 	"When the net value is less than the credit limit, the credit will be removed in full, that is, the trading account will be liquidated": "当净值少于信用额度时，信用额会被全额移除，即交易帐户会被强平",
 	"The above offers are not applicable to cent accounts and agency accounts": "以上优惠不适用于cent账户和代理账户",
-	"Giới thiệu hệ thống phân tích tự động": "自动分析系统介绍"
+	"Giới thiệu hệ thống phân tích tự động": "自动分析系统介绍",
+	"AI Trading": "AI Trading"
 }

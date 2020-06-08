@@ -46,7 +46,9 @@ a:link {
 a:hover {
     color: #fff;
 }
-
+.fancybox-container {
+    z-index: 1000000;
+}
 blockquote {
     margin: 0;
     padding: 0;
@@ -84,7 +86,7 @@ li.nav-item {
 
 #nav-header {
     background-color: #000;
-    z-index: 100000000;
+    z-index: 10000;
     position: fixed;
     width: 100vw;
     font-size: 20px;
