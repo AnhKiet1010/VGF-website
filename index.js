@@ -52,7 +52,7 @@ app.get('/error', function (req, res) {
     res.render('./pages/404');
 });
 app.use('/change-lang/:lang', (req, res) => {
-    res.cookie('lang', req.params.lang, { maxAge: 900000 });
+    res.cookie('lang', req.params.lang);
     res.redirect('back');
 });
 /*
