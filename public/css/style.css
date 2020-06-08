@@ -303,9 +303,6 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     box-shadow: 0 0 1px 1px;
 }
 
-.our-case-pic {
-}
-
 .item-content {
     padding-top: 30px;
     text-align: center;
@@ -731,7 +728,6 @@ h2.title-right {
 .static__bannertext .site__title span {
     font-size: 54px;
     line-height: 54px;
-    vertical-align: top;
     display: block;
     letter-spacing: 0.5px;
 }
