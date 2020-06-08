@@ -377,15 +377,18 @@ ul.sub-menu li:hover .sub-menu-lv2 {
 .service-list li:hover a {
     color: #1d5996;
 }
+
 .t-lime-colored {
     font-size: 16px;
     font-weight: bold;
     color: #a7c843;
 }
+
 .cards-list__item {
     padding: 20px 0 10px 0;
     border-bottom: 0.5px solid #eee;
 }
+
 .page-header__menu_container {
     width: 100%;
     background: #0b0a14;
@@ -393,6 +396,7 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     margin: 0 auto;
     padding: 30px 0;
 }
+
 .t-ul__item {
     margin-bottom: 1em;
 }
@@ -407,6 +411,7 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     font-size: 22px;
     font-weight: 900;
 }
+
 .market-facts-card {
     width: 300px;
     min-width: 300px;
@@ -418,6 +423,7 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
 .market-facts-card .facts-item {
     display: flex;
     padding: 15px 0 15px 40px;
@@ -428,6 +434,7 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     border-bottom: 0.5px solid #d4d2d2;
     color: rgba(11, 10, 20, 0.6);
 }
+
 /* Service Page Tech */
 .introduce-tech {
     background-image: url(../images/tech-bg.JPG);
