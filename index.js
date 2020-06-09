@@ -40,6 +40,8 @@ const partnershipRouter = require('./routes/partnership.route');
 const shopRouter = require('./routes/shop.route');
 const adminRouter = require('./routes/admin.route');
 const newtRouter = require('./routes/news.route');
+const aboutRouter = require('./routes/about.route');
+const contactRouter = require('./routes/contact.route');
 /*
     Default Page
 */
@@ -86,6 +88,14 @@ app.use('/shop', shopRouter);
     Search NEWs
 */
 app.use('/news', newtRouter);
+/*
+    About
+*/
+app.use('/about', aboutRouter);
+/*
+    Contact
+*/
+app.use('/contact', contactRouter);
 /*
     FOR ADMIN
 */

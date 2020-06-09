@@ -478,6 +478,8 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     font-size: 1.5em;
     font-weight: lighter;
     padding: 1em 3em;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .edu-overview-top-content button {
@@ -1211,7 +1213,85 @@ div[aria-expanded="true"] {
     background: #80ee78;
     box-shadow: 0 0 2px 2px #fff inset;
 }
+/* about */
+.grid-section {
+    display: flex;
+    justify-content: space-around;
+}
 
+.c-card {
+    width: 340px;
+    height: 372px;
+    border-radius: 18px;
+    border: 2px solid transparent;
+    background-color: #fbfafa;
+    box-shadow: 0 3px 24px 0 rgba(0, 0, 0, 0.14);
+    display: table;
+    justify-self: center;
+    position: relative;
+    margin: 50px auto;
+}
+.c-card .c-card-content {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.56;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: #0b0a14;
+    padding: 0 1em;
+}
+.c-card .c-card-content .c-card-img.i-1 {
+    background-image: url(../images/company.png);
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+}
+.c-card .c-card-content .c-card-img.i-2 {
+    background-image: url(../images/phone.png);
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+}
+.c-card .c-card-content .c-card-img.i-3 {
+    background-image: url(../images/mail.png);
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+}
+.c-card-title {
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.4px;
+}
+.c-card-title .title-gray {
+    color: rgba(11, 10, 20, 0.6);
+    margin-top: -28px;
+}
+.c-card-title .title-green {
+    color: #3e96aa;
+    margin: 30px auto;
+}
+.c-card-text {
+    font-weight: 700;
+}
 /* Responsive */
 
 @media screen and (max-width: 1130px) {
