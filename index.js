@@ -21,8 +21,7 @@ i18n.configure({
     directory: __dirname + '/locales',
     cookie: 'lang',
     defaultLocale: 'en',
-    updateFiles: false,
-    objectNotation: true
+    updateFiles: false
 });
 
 // Mongoose
