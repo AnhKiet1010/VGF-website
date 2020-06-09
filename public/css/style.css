@@ -350,14 +350,6 @@ ul.sub-menu li:hover .sub-menu-lv2 {
     color: #fff;
 }
 
-/* Something About Us */
-.about-us-wrapper {
-    background: url("../images/about-us.jpg"), rgb(22, 21, 46);
-    background-blend-mode: overlay;
-    background-size: cover;
-    background-position: top;
-}
-
 /* Services Page */
 .need-help-box {
     padding: 10px 20px;
