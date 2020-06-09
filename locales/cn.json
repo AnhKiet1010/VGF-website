@@ -38,7 +38,6 @@
 	"Legal Document": "法律文件",
 	"Careers": "职业",
 	"Contact Us": "联系",
-	"Floor 38, Landmark 81 Tower, 207 Nguyen Huu Canh St,Binh Thanh District, Ho Chi Minh City, Vietnam": "208 阮友景，Vinhomes 大楼 第38 楼，平盛郡，胡志明市",
 	"Recent News": "最近的新闻",
 	"Useful Links": "链接",
 	"Contact Form": "联系模式",
@@ -122,10 +121,11 @@
 	"When the net value is less than the credit limit, the credit will be removed in full, that is, the trading account will be liquidated": "当净值少于信用额度时，信用额会被全额移除，即交易帐户会被强平",
 	"The above offers are not applicable to cent accounts and agency accounts": "以上优惠不适用于cent账户和代理账户",
 	"Giới thiệu hệ thống phân tích tự động": "自动分析系统介绍",
-	"AI Trading": "AI Trading",
 	"Each new VGF Prime customer with a new deposit of more than US $ 200 can enjoy a 30% deposit amount, with a maximum of US $ 5,000 in trading bonus. The amount of liquidation lots required to complete this bonus (the bonus amount x 10%) can be withdrawn.": "每位VGF新客户新入金200美元以上即可享有入金金额30%，最高5,000美金交易赠金。此赠金完成所需的平仓手数（赠金金额 x 10%) 即可提取。",
 	"Example: Deposit 10,000 USD during the event, and the bonus is 10,000 * 30% = 3,000 USD. The customer will receive the 3,000 USD bonus directly into the MT4 account. When the number of transactions lots reaches 3000 × 10%, which equals 300 lots, you can withdraw.": "例子：活动期间入金10,000美金，赠金为10,000*30%= 3,000美金，客户将收到3,000美金的赠金直接存入MT4帐户，达到交易手数3000×10%等于300手，即可提现。",
 	"For accounts participating in the event, orders with positions of less than 3 minutes are not counted in the number of lots for this event": "参加活动的帐户，持仓低于3分钟的订单不计入本次活动的手数",
 	"While participating in the event, the customer has read and understood the details of the terms of the event by default. If you have any questions, please contact customer service or sales staff for consultation.": "客户在参加活动的同时，默认已经阅读理解并同意该活动条款的细则，如果您有任何问题，请联系客服或销售人员咨询。",
-	"If there is suspicion of misuse or misuse of the rules of the event, VGF reserves the right to refuse, suspend or deduct all bonuses.": "如存在误用或滥用活动规则的嫌疑，VGF保留拒绝、暂停或扣除全部赠金的权利。"
+	"If there is suspicion of misuse or misuse of the rules of the event, VGF reserves the right to refuse, suspend or deduct all bonuses.": "如存在误用或滥用活动规则的嫌疑，VGF保留拒绝、暂停或扣除全部赠金的权利。",
+	"Head Office : Diamond Flower Tower, 48 Le Van Luong St, Nhan Chinh, Cau Giay District, Ha Noi city, Vietnam": "总公司 : Diamond Flower Tower, 48 Le Van Luong St, Nhan Chinh, Cau Giay District, Ha Noi city, Vietnam",
+	"Marketing Office : Landmark 81 Tower, 207 Nguyen Huu Canh St,Binh Thanh District, Ho Chi Minh City, Vietnam": "办事处 : Landmark 81 Tower, 207 Nguyen Huu Canh St,Binh Thanh District, Ho Chi Minh City, Vietnam"
 }

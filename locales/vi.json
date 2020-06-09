@@ -38,7 +38,6 @@
 	"Legal Document": "Văn Bản Pháp Lý",
 	"Careers": "Sự Nghiệp",
 	"Contact Us": "Liên Hệ",
-	"Floor 38, Landmark 81 Tower, 207 Nguyen Huu Canh St,Binh Thanh District, Ho Chi Minh City, Vietnam": "208 Nguyễn Hữu Cảnh, Tầng 38 Tòa Nhà Vinhomes, Quận Bình Thạnh, Thành Phố Hồ Chí Minh",
 	"Recent News": "Tin Tức Gần Đây",
 	"Useful Links": "Liên Kết",
 	"Contact Form": "Mẫu Liên Hệ",
@@ -179,10 +178,11 @@
 	"Copy Trade": "Copy Trade",
 	"Capital Markets": "Thị Trường Vốn",
 	"Blockchain": "Blockchain",
-	"AI Trading": "AI Trading",
 	"Each new VGF Prime customer with a new deposit of more than US $ 200 can enjoy a 30% deposit amount, with a maximum of US $ 5,000 in trading bonus. The amount of liquidation lots required to complete this bonus (the bonus amount x 10%) can be withdrawn.": "Mỗi thành viên mới của BTF Prime trong lần nạp tiền đầu tiên 200 USD trở lên sẽ được hưởng 30% mức tiền nạp, cao nhất là 5000 USD tiền thưởng. Số lượng hợp đồng thanh lý cần thiết để hoàn thành phần thưởng này (số tiền thưởng x 10%) có thể được rút.",
 	"Example: Deposit 10,000 USD during the event, and the bonus is 10,000 * 30% = 3,000 USD. The customer will receive the 3,000 USD bonus directly into the MT4 account. When the number of transactions lots reaches 3000 × 10%, which equals 300 lots, you can withdraw.": "Ví dụ: Trong thời gian diễn ra hoạt động, nếu nạp vào 10,000 USD, tiền thưởng sẽ là 10,000*30% = 3,000 USD, số tiền thưởng 3,000 USD sẽ trực tiếp chuyển vào tài khoản MT4 cho khách hàng, khi số lots giao dịch đạt được 3000 x 10% = 300 lots thì có thể được rút.",
 	"While participating in the event, the customer has read and understood the details of the terms of the event by default. If you have any questions, please contact customer service or sales staff for consultation.": "Trong khi tham gia sự kiện, khách hàng đã đọc và hiểu chi tiết các điều khoản của sự kiện theo mặc định. Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ với dịch vụ khách hàng hoặc nhân viên bán hàng để được tư vấn.",
 	"If there is suspicion of misuse or misuse of the rules of the event, VGF reserves the right to refuse, suspend or deduct all bonuses.": "Nếu có bất kỳ nghi ngờ nào về việc lạm dụng hoặc lạm dụng các quy tắc của hoạt động, BTF Prime có quyền từ chối, đình chỉ hoặc khấu trừ tất cả các khoản thưởng.",
-	"CONTACT US": "LIÊN HỆ VỚI CHÚNG TÔI"
+	"CONTACT US": "LIÊN HỆ VỚI CHÚNG TÔI",
+	"Marketing Office : Landmark 81 Tower, 207 Nguyen Huu Canh St,Binh Thanh District, Ho Chi Minh City, Vietnam": "Phòng Marketing : Tòa Nhà Vinhomes, 208 Nguyễn Hữu Cảnh, Quận Bình Thạnh, Thành Phố Hồ Chí Minh, Việt Nam",
+	"Head Office : Diamond Flower Tower, 48 Le Van Luong St, Nhan Chinh, Cau Giay District, Ha Noi city, Vietnam": "Trụ sở chính : Tòa Nhà Diamond Flower, 48 Lê Văn Lương, Nhân Chính, Quận Cầu Giấy, Thành Phố Hà Nội, Việt Nam"
 }

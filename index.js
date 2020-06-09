@@ -18,9 +18,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(i18n.init);
 i18n.configure({
     locales: ['en', 'vi', 'cn'],
-    defaultLocale: 'en',
     directory: __dirname + '/locales',
     cookie: 'lang',
+    defaultLocale: 'en',
+    updateFiles: false,
+    objectNotation: true
 });
 
 // Mongoose
