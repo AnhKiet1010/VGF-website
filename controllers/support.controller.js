@@ -29,7 +29,7 @@ module.exports.news = async function (req, res) {
     const perPage = 5;
 
     const data = await News.find({})
-        .sort({ created: -1 })
+        .sort({ _id: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec();
@@ -51,7 +51,7 @@ module.exports.trading_knowledge = async function (req, res) {
     const perPage = 6;
 
     const data = await Posts.find({ categoryId: req.params.category })
-        .sort({ created: -1 })
+        .sort({ _id: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec();
@@ -80,7 +80,7 @@ module.exports.postsDetail = async function (req, res) {
     const data = await Posts.findOne({ _id: id }).exec();
 
     const data1 = await Posts.find({})
-        .sort({ created: -1 })
+        .sort({ _id: -1 })
         .limit(perPage)
         .exec();
 

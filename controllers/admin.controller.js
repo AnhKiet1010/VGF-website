@@ -249,7 +249,7 @@ module.exports.getNewsList = async function (req, res) {
     const page = req.params.page || 1;
     const perPage = 10;
     const data = await News.find({})
-        .sort({ created: -1 })
+        .sort({ _id: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec();
@@ -349,7 +349,7 @@ module.exports.getPostsList = async function (req, res) {
     const perPage = 10;
 
     const data = await Posts.find({})
-        .sort({ created: -1 })
+        .sort({ _id: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec();
@@ -432,7 +432,7 @@ module.exports.getListQuestion = async function (req, res) {
     const perPage = 10;
 
     const data = await Question.find({})
-        .sort({ created: -1 })
+        .sort({ _id: -1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec();

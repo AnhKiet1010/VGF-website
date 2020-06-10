@@ -27,7 +27,7 @@ module.exports.getNewsByCategory = async function (req, res) {
     const perPage = 5;
 
     const data = await News.find({ news_type })
-        .sort({ created: 1 })
+        .sort({ _id: 1 })
         .skip((perPage * page) - perPage)
         .limit(perPage)
         .exec();

@@ -5,13 +5,18 @@ module.exports.index = function (req, res) {
 
 module.exports.sub = function (req, res) {
     const sub = req.params.sub;
-    const newStr = sub.replace('_', ' ');
-    var splitStr = newStr.split(' ');
 
-    for (var i = 0; i < splitStr.length; i++) {
-        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    if (sub === "AI_signal") {
+        res.render('./pages/services/ai_signal', { title: "AI Signal || VGF", lang: req.cookies.lang });
+    } else {
+        const newStr = sub.replace('_', ' ');
+        var splitStr = newStr.split(' ');
+
+        for (var i = 0; i < splitStr.length; i++) {
+            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+        }
+        res.render('./pages/services/services', { data: splitStr.join(" "), id: undefined, title: "Services || VGF", lang: req.cookies.lang });
     }
-    res.render('./pages/services/services', { data: splitStr.join(" "), id: undefined, title: "Services || VGF", lang: req.cookies.lang });
 }
 
 module.exports.forexPage = function (req, res) {
