@@ -1335,6 +1335,7 @@ div[aria-expanded="true"] {
     justify-self: center;
     position: relative;
     margin: 50px auto;
+    box-sizing: border-box;
 }
 
 .c-card:hover {
