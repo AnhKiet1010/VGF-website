@@ -16,7 +16,7 @@
                 <div class="col-lg-3">
                     <h3><%= __('Our Services') %></h3>
                     <ul class="service-list">
-                        <li><a tabindex="-1" href="/services/forex"><%= __('Forex Market') %></a></li>
+                        <li><a tabindex="-1" href="/services/forex"><%= __('Forex') %></a></li>
                         <li><a tabindex="-1" href="/services/copy_trade"><%= __('Copy Trade') %></a></li>
                         <li><a tabindex="-1" href="/services/capital_markets"><%= __('Capital Markets') %></a></li>
                         <li><a tabindex="-1" href="/services/technology_advisory"><%= __('Technology & Advisory') %></a>
@@ -42,11 +42,55 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="mt-3 ml-3">
-                        <h1 style="color: rgb(43, 43, 119);font-weight: 600;font-size: 70px;">
-                            <%= data %></h1>
-                        <p style="text-transform: uppercase;">
-                            <%= __('GLOBAL STRATEGIES, INSIGHT-DRIVEN TRANSFORMATION') %></p>
+                        <% if(data === 'Forex') { %>
+                        <h3 class="t-h1"
+                            style="text-align: center;background: #2b2b77;padding: 0.5em 0;color: #fff;margin: 0;">
+                            VGF's CFD trading broker partnership: <a href="https://btfprime.com/"><img
+                                    src="/images/btf.png" alt="" width="120px"></a>
+                        </h3>
+                        <div class="row list-win-btf ml-0 mr-0 mb-4">
+                            <div class="col-sm">
+                                <div class="win-btf">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/images/strenght.png" alt="" width="40px">
+                                        <div class="title h4 ml-4 font-weight-bold" style="color: chocolate;">Why choose
+                                            BTF Prime?</div>
+                                    </div>
+                                    <div class="subscribe h5"
+                                        style="padding-top: 1em;line-height: 18px;font-size: 14px;color: #2b2b77;">
+                                        <div class="pre-image-item">Trustworthy, continuously developing broker</div>
+                                        <div class="pre-image-item">The most beneficial offers on Forex</div>
+                                        <div class="pre-image-item">Thousands profitable orders executed daily</div>
+                                        <div class="pre-image-item">Team of highly-qualified professionals</div>
+                                        <div class="pre-image-item">Millions of thankful customers</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="win-btf">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/images/strenght.png" alt="" width="40px">
+                                        <div class="title h4 ml-4 font-weight-bold" style="color: chocolate;">BTF Prime
+                                            advantages
+                                        </div>
+                                    </div>
+                                    <div class="subscribe h5"
+                                        style="padding-top: 1em;line-height: 18px;font-size: 14px;color: #2b2b77;">
+                                        <div class="pre-image-item">Standard Account</div>
+                                        <div class="pre-image-item">ECM Pro Account</div>
+                                        <div class="pre-image-item">Provide Social Trading Services</div>
+                                        <div class="pre-image-item">Highest liquidity on the world</div>
+                                        <div class="pre-image-item">Spread low</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <% } %>
+                    <h1 style="color: rgb(43, 43, 119);font-weight: 600;font-size: 70px;">
+                        <%= data %></h1>
+                    <p style="text-transform: uppercase;">
+                        <%= __('GLOBAL STRATEGIES, INSIGHT-DRIVEN TRANSFORMATION') %></p>
                     <!-- Forex Page -->
                     <% if(data === 'Forex') { %>
                     <%- include('./partials/forex') %>
@@ -65,6 +109,7 @@
                     <% } %>
                 </div>
             </div>
+        </div>
         </div>
         </div>
     </main>

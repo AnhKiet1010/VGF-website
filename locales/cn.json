@@ -127,8 +127,6 @@
 	"For accounts participating in the event, orders with positions of less than 3 minutes are not counted in the number of lots for this event": "参加活动的帐户，持仓低于3分钟的订单不计入本次活动的手数",
 	"While participating in the event, the customer has read and understood the details of the terms of the event by default. If you have any questions, please contact customer service or sales staff for consultation.": "客户在参加活动的同时，默认已经阅读理解并同意该活动条款的细则，如果您有任何问题，请联系客服或销售人员咨询。",
 	"If there is suspicion of misuse or misuse of the rules of the event, VGF reserves the right to refuse, suspend or deduct all bonuses.": "如存在误用或滥用活动规则的嫌疑，VGF保留拒绝、暂停或扣除全部赠金的权利。",
-	"Head Office : Diamond Flower Tower, 48 Le Van Luong St, Nhan Chinh, Cau Giay District, Ha Noi city, Vietnam": "总公司 : Diamond Flower Tower, 48 Le Van Luong St, Nhan Chinh, Cau Giay District, Ha Noi city, Vietnam",
-	"Marketing Office : Landmark 81 Tower, 207 Nguyen Huu Canh St,Binh Thanh District, Ho Chi Minh City, Vietnam": "办事处 : Landmark 81 Tower, 207 Nguyen Huu Canh St,Binh Thanh District, Ho Chi Minh City, Vietnam",
 	"Forex is an over-the-counter market unlike the stock and futures markets. This means Forex traders have flexibility in position sizing and can trade any amount between 0.01 lots (1 micro lot) and 200 lots. This gives traders a greater ability to manage their risk": "外汇市场是一个场外交易市场，与股票和期货市场不同。这意味着外汇交易者在头寸大小方面具有灵活性，可以在0.01标准手（1超迷你手）和200手之间进行任意数量的交易。这给交易者提供了更大的管理风险的能力。",
 	"AI Signal": "AI Signal",
 	"The Forex market is the world’s largest financial market and is open 24 hours a day, 5 days a week. Trade Forex whenever it suits you": "外汇市场是世界上最大的金融市场，每周5天24小时开放交易。无论何时，您都可以进行外汇交易。。",
@@ -184,5 +182,7 @@
 	"You should always consider your risk appetite and investment strategy prior to trading leveraged products. Leverage can work for you as well as against you and can magnify profits as well as losses. In the event of a significant move against you, you may lose more than your initial deposit. It is also important to be aware that you do not own the underlying instrument over which the CFD is based. Further information regarding the benefits and risks of CFD trading can be found in our Product Disclosure Statement": "在使用杠杆交易产品之前，您应该首先考虑您的风险偏好和投资策略。使用杠杆有利有弊，既能扩大利润，也会加剧亏损。如果市场出现不利于您的巨幅波动，你的账户可能会出现穿仓。这里需要强调的是您并不实际拥有差价合约下的标的产品。可以在我们网站找到关于CFD交易的收益和风险的详解。 产品揭示书",
 	"VGF offers a number of educational videos to help forex traders who are new to using the MetaTrader 4 platform. Our instructional videos will give you an overview as to how to install MetaTrader 4, use the market watch, navigator, trade terminal and place different order types": "VGF 提供了一些教育视频，以帮助外汇交易新手使用Meta Atter 4平台。我们的教学视频将给您讲述如何安装MetaTrader 4，市场观察，使用指南，交易终端和开仓订单类型。",
 	"Actionable trade ideas and market commentary in a short video format. Recorded daily from the floor of the New York Stock Exchange, our WebTV presented in association with Trading Central offer unmatched coverage on global equities, currencies and commodities": "从纽约证券交易所，我们的WebTV每天录制的短视频格式实现贸易和市场评论的想法，向Trading Trading Central展示了有关股票，货币和全球商品的史无前例的新闻事件。",
-	"VGT Mall": "VGT商城"
+	"VGT Mall": "VGT商城",
+	"Head Office : Unit A, 20/F, Tower B, Billion Centre, No.1 Wang Kwong Road, Kowloon Bay, Hong Kong": "总部 : Unit A, 20/F, Tower B, Billion Centre, No.1 Wang Kwong Road, Kowloon Bay, Hong Kong",
+	"Vietnam Office : Diamond Flower Tower, 48 Le Van Luong St, Nhan Chinh, Cau Giay District, Ha Noi city, Vietnam": "越南的办公室: Diamond Flower Tower, 48 Le Van Luong St, Nhan Chinh, Cau Giay District, Ha Noi city, Vietnam"
 }
