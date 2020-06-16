@@ -48,7 +48,8 @@
                             VGF's CFD trading broker partnership: <a href="https://btfprime.com/"><img
                                     src="/images/btf.png" alt="" width="120px"></a>
                         </h3>
-                        <div class="row list-win-btf pt-4 ml-0 mr-0 mb-4">
+                        <div class="row list-win-btf pt-4 ml-0 mr-0 mb-4" style="background-color: rgba(0, 0, 0, 0.08);
+                        padding: 1em 2em;">
                             <div class="col-sm">
                                 <div class="win-btf">
                                     <div class="d-flex align-items-center">
@@ -85,28 +86,28 @@
                                 </div>
                             </div>
                         </div>
+                        <% } %>
+                        <h1 style="color: rgb(43, 43, 119);font-weight: 600;font-size: 70px;">
+                            <%= data %></h1>
+                        <p style="text-transform: uppercase;">
+                            <%= __('GLOBAL STRATEGIES, INSIGHT-DRIVEN TRANSFORMATION') %></p>
+                        <!-- Forex Page -->
+                        <% if(data === 'Forex') { %>
+                        <%- include('./partials/forex') %>
+                        <% } %>
+                        <!-- Copy trade Page -->
+                        <% if(data === 'Copy Trade') { %>
+                        <%- include('./partials/copy_trade') %>
+                        <% } %>
+                        <!-- Finance Training Page -->
+                        <% if(data === 'Finance Training') { %>
+                        <%- include('./partials/finance_training') %>
+                        <% } %>
+                        <!-- Capital market Page -->
+                        <% if(data === 'Capital Markets') { %>
+                        <%- include('./partials/capital_market') %>
+                        <% } %>
                     </div>
-                    <% } %>
-                    <h1 style="color: rgb(43, 43, 119);font-weight: 600;font-size: 70px;">
-                        <%= data %></h1>
-                    <p style="text-transform: uppercase;">
-                        <%= __('GLOBAL STRATEGIES, INSIGHT-DRIVEN TRANSFORMATION') %></p>
-                    <!-- Forex Page -->
-                    <% if(data === 'Forex') { %>
-                    <%- include('./partials/forex') %>
-                    <% } %>
-                    <!-- Copy trade Page -->
-                    <% if(data === 'Copy Trade') { %>
-                    <%- include('./partials/copy_trade') %>
-                    <% } %>
-                    <!-- Finance Training Page -->
-                    <% if(data === 'Finance Training') { %>
-                    <%- include('./partials/finance_training') %>
-                    <% } %>
-                    <!-- Capital market Page -->
-                    <% if(data === 'Capital Markets') { %>
-                    <%- include('./partials/capital_market') %>
-                    <% } %>
                 </div>
             </div>
         </div>
