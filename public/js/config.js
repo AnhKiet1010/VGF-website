@@ -75,5 +75,5 @@ $(document).ready(function () {
         s0.parentNode.insertBefore(s1, s0);
     })();
 
-    $(".fancybox").fancybox();
+    $("a[rel=gallery1]").fancybox();
 });
