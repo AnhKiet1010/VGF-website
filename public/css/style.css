@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 * {
     font-family: "Roboto", sans-serif;
 }
@@ -515,23 +517,6 @@ em[data-v-e89efc46]:last-child {
     line-height: 26px;
     border-bottom: 0.5px solid #d4d2d2;
     color: rgba(11, 10, 20, 0.6);
-}
-
-/* Service Page Tech */
-.introduce-tech {
-    background-image: url(../images/tech-bg.JPG);
-    background-position: center;
-    background-size: cover;
-}
-
-.introduce-tech img {
-    margin-top: 60px;
-}
-
-.introduce-tech h1 {
-    color: #fff;
-    text-transform: uppercase;
-    padding: 60px 0;
 }
 
 /* Support Page */
