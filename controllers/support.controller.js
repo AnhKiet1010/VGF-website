@@ -5,7 +5,7 @@ const Question = require('../models/question');
 const Posts = require('../models/post');
 
 module.exports.education = function (req, res) {
-    res.render('./pages/support/education/' + req.params.sub, { title: "Education || VGF" });
+    res.render('./pages/support/education/' + req.params.sub, { title: "Education || VGF", lang: req.cookies.lang });
 }
 
 module.exports.help = async function (req, res) {
@@ -96,9 +96,9 @@ module.exports.postsDetail = async function (req, res) {
 }
 
 module.exports.calendar = function (req, res) {
-    res.render('./pages/support/helpAndResource/economic_calendar', { title: 'Economic Calendar || VGF' });
+    res.render('./pages/support/helpAndResource/economic_calendar', { title: 'Economic Calendar || VGF', lang: req.cookies.lang });
 }
 
 module.exports.glossary = function (req, res) {
-    res.render('./pages/support/helpAndResource/forex_glossary', { title: 'Forex Glossary || VGF' });
+    res.render('./pages/support/helpAndResource/forex_glossary', { title: 'Forex Glossary || VGF', lang: req.cookies.lang });
 }

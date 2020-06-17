@@ -1,6 +1,6 @@
 
 module.exports.index = function (req, res) {
-    res.render('./pages/services/services', { data: 'Forex Market', title: "Services || VGF" });
+    res.render('./pages/services/services', { data: 'Forex Market', title: "Services || VGF", lang: req.cookies.lang });
 }
 
 module.exports.sub = function (req, res) {
@@ -21,5 +21,5 @@ module.exports.sub = function (req, res) {
 
 module.exports.forexPage = function (req, res) {
     const id = req.params.id;
-    res.render('./pages/services/services', { data: 'Forex Market', id: id, title: "Services || VGF" });
+    res.render('./pages/services/services', { data: 'Forex Market', id: id, title: "Services || VGF", lang: req.cookies.lang });
 }
