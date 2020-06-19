@@ -1683,30 +1683,6 @@ div[aria-expanded="true"] {
     background-color: rgba(0, 0, 0, 0.08);
     padding: 1em 2em;
 }
-.vgf-service {
-    background-color: #0d0b39;
-    width: 100%;
-    padding: 2em;
-}
-.vgf-service .shape {
-    color: #f8bc00;
-    background-image: url("../images/shape.png");
-    background-size: cover;
-    background-position: center;
-    width: 200px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-}
-.list-shape-1 {
-    display: flex;
-    justify-content: center;
-}
-.list-shape-1.list2 {
-    margin-top: -4.8em;
-}
 /* Responsive */
 
 @media screen and (max-width: 1130px) {
