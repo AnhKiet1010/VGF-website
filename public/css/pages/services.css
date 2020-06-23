@@ -79,6 +79,25 @@ main {
     color: rgba(11, 10, 20, 0.6);
 }
 
+.pre-image-item {
+    position: relative;
+    padding-left: 2em;
+    margin-bottom: 0.3em;
+}
+
+.pre-image-item::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    transform: rotate(45deg);
+    border: 1px solid #b5b5b5;
+    background: #80ee78;
+    box-shadow: 0 0 2px 2px #fff inset;
+}
+
 
 @media (max-width: 576px) {}
 
