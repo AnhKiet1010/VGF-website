@@ -52,10 +52,6 @@ $(document).ready(function () {
         opacity: 0,
         ease: Expo.easeInOut
     });
-    TweenMax.to("#slide1", 3, {
-        delay: 4,
-        scale: 1.1
-    });
     TweenMax.staggerFrom(".navbar-nav > li", 1, {
         delay: 0.2,
         opacity: 0,
