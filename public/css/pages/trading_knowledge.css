@@ -1,0 +1,287 @@
+main {
+    margin-top: 130px;
+}
+
+.static__bannertext {
+    padding: 40px 30px 100px 30px;
+    width: 100vw;
+    background-image: url(../../images/trading_knowledge.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    height: 500px;
+}
+
+.static__bannertext span img {
+    max-width: 108px;
+}
+
+.static__bannertext .site__title {
+    padding-left: 44px;
+    font-size: 84px;
+    letter-spacing: -4px;
+    line-height: 0.9;
+    color: white;
+    font-weight: 500;
+}
+
+.static__bannertext .site__title span {
+    font-size: 54px;
+    line-height: 54px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.list-block {
+    margin-top: -250px;
+    background-color: #fff;
+}
+
+.site__nav {
+    background-color: #2d3036;
+    padding: 20px 0 10px 0;
+}
+
+ul.site__nav li {
+    color: #fff;
+    position: relative;
+    padding: 3px 5px;
+    transition: all ease 0.2s;
+}
+
+.site__nav li:hover {
+    background-color: #000;
+    border: none;
+}
+
+.site__nav li:hover ul.sub-menu {
+    display: block;
+}
+
+.site__nav li ul.sub-menu {
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    margin-left: -15px;
+}
+
+ul.sub-menu li {
+    padding: 3px 5px;
+}
+
+.site__nav li span:hover {
+    cursor: pointer;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 0.8px solid rgba(0, 0, 0, 0.08);
+}
+
+.page-header h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    width: auto;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.68);
+}
+
+.archive__view--mode {
+    margin-left: auto;
+    padding-top: 5px;
+}
+
+.archive__view--mode>span {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.68);
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.archive__view--mode>span.active {
+    color: #0ad441;
+}
+
+.widget-area h2 {
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.68);
+    margin: 0 0 20px;
+}
+
+.widget-title {
+    border-bottom: 0.8px solid rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.widget-area ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.widget_recent_entries ul li {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.widget_recent_entries ul li a {
+    display: block;
+    flex: 1 1 auto;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.68);
+    transition: all 0.3s ease;
+}
+
+.widget_recent_entries ul li a:hover {
+    color: #44f674;
+}
+
+.post-date {
+    background-color: #44f674;
+    text-align: center;
+    font-weight: 600;
+    line-height: 100%;
+    flex: 0 0 68px;
+    margin-right: 20px;
+    padding: 15px;
+}
+
+.card {
+    box-shadow: none;
+}
+
+.card.news-card {
+    box-shadow: none;
+    border: none;
+    border-radius: none;
+    margin: 1em;
+    padding: 1em;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.news-card .post_date {
+    position: absolute;
+    background-color: #44f674;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+.pos_infos {
+    display: block;
+    align-self: center;
+}
+
+.pos_infos .entry-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 26px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.pos_infos .entry-title a {
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.pos_infos .entry-title a:hover {
+    color: #44f674;
+}
+
+.pos_infos .entry-details {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.pos_infos .entry-details>span {
+    margin-right: 15px;
+}
+
+.pos_infos .entry-details>span>i {
+    margin-right: 8px;
+}
+
+.pos_infos .entry-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.pagination nav {
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .static__bannertext.flx {
+        height: 450px;
+    }
+
+    .static__bannertext.flx .site__title {
+        font-size: 50px;
+        letter-spacing: 0px;
+    }
+
+    .static__bannertext.flx .content-flx span img {
+        width: 70px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+
+    .static__bannertext.flx .site__title span {
+        font-size: 30px;
+        letter-spacing: 0;
+        line-height: 40px;
+    }
+
+    #recent-posts-2 {
+        margin: 10px;
+    }
+
+    ul.site__nav li {
+        float: left;
+        margin-right: 0px;
+    }
+
+    #posts_content>p {
+        width: 100%;
+        padding: 2em;
+    }
+
+    #posts_content>p>a>img {
+        width: 100%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+    main {
+        margin-top: 100px;
+    }
+}

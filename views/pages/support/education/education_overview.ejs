@@ -3,6 +3,8 @@
 
 <head>
     <%- include ('../../../partials/head') %>
+    <link rel="stylesheet" href="/css/partials/list-sidebar.css">
+    <link rel="stylesheet" href="/css/pages/education_overview.css">
 </head>
 
 <body>
@@ -13,7 +15,7 @@
         <div class="edu-overview-top text-center">
             <div class="edu-overview-top-content">
                 <h1 class="text-white"><%= __('Education Overview') %></h1>
-                <p><%= __('Experience fast execution, tight spreads and unrestricted trading conditions on the award-winning MetaTrader 4 platform') %>.
+                <p><%= __('Experience fast execution, tight spreads and unrestricted trading conditions on the award-winning MetaTrader 4 platform') %>
                 </p>
                 <button type="button" class="btn btn-success btn-lg">START TRADING</button>
             </div>
@@ -30,24 +32,7 @@
             <div class="menu-item "><a href="/support/education/web_tv"><%= __('Web TV') %></a></div>
         </div>
         <div class="edu-overview-content">
-            <div class="right-sidebar">
-                <div class="top shadow">
-                    <img src="/images/vgf-logo-white.png" alt="company-logo" width="200px">
-                    <p><%= __('Access over 200 markets & tight spreads') %></p>
-                    <p><%= __('with a regulated CFD Provider') %> </p>
-                    <button type="button" class="btn btn-success">START TRADING</button>
-                </div>
-                <div class="bottom mt-2 shadow-sm">
-                    <h1><%= __('Contact Us') %></h1>
-                    <p><%= __('We are here 24hrs a day Monday to Sunday') %>.</p>
-                    <h3><a href="" class="text-dark"><i class="fa fa-phone"
-                                style="font-size: 1em ;color: #000;margin-right: 20px;"></i><%= __('Help Center') %></a>
-                    </h3>
-                    <h3><a href="" class="text-dark"><i class="fa fa-envelope-open-o"
-                                style="font-size: 1em ;color: #000  ;margin-right: 20px;"></i><%= __('Email Us') %></a>
-                    </h3>
-                </div>
-            </div>
+            <%- include ('../../../partials/right-sidebar') %>
             <div class="page-content bgcolor1">
                 <h1><%= __('Getting Started') %></h1>
                 <p><%= __('Learn general concepts about the Forex (foreign exchange) market and become familiar with some of the basics of forex. Begin your journey into forex and understand the way in which the forex market operates, the basics of technical and fundamental analysis and what influences the forex market') %>.

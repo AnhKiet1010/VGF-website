@@ -4,5 +4,5 @@ module.exports.gift = function (req, res) {
 }
 
 module.exports.loyalty = function (req, res) {
-    res.render('./pages/promotion/loyalty', { title: 'Loyalty Program || VGF', lang: req.cookies.lang });
+    res.render('./pages/404', { title: 'Loyalty Program || VGF', lang: req.cookies.lang });
 }

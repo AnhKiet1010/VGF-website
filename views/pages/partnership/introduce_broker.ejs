@@ -3,6 +3,7 @@
 
 <head>
     <%- include ('../../partials/head') %>
+    <link rel="stylesheet" href="/css/partials/list-sidebar.css">
 </head>
 
 <body>
@@ -12,67 +13,47 @@
     <main>
         <div class="edu-overview-top text-center">
             <div class="edu-overview-top-content">
-                <h1 class="text-white">Introducing Broker</h1>
-                <p>Partner with a regulated broker that you and your clients can trust! The VGF Introducing
-                    Broker program is designed to remunerate introducers of all sizes with ongoing commissions for the
-                    trading volume of referred clients.</p>
+                <h1 class="text-white"><%= __('Introducing Broker') %></h1>
+                <p><%= __('Partner with a regulated broker that you and your clients can trust! The VGF Introducing Broker program is designed to remunerate introducers of all sizes with ongoing commissions for the trading volume of referred clients.') %>
+                </p>
                 <button type="button" class="btn btn-success btn-lg">START EARNING NOW</button>
             </div>
         </div>
         <div class="edu-overview-content">
-            <div class="right-sidebar">
-                <div class="top shadow">
-                    <img src="/images/vgf-logo-white.png" alt="company-logo" width="200px">
-                    <p>Access over 200 markets & tight spreads</p>
-                    <p>with a regulated CFD Provider </p>
-                    <button type="button" class="btn btn-success">START TRADING</button>
-                </div>
-                <div class="bottom mt-2 shadow-sm">
-                    <h1>Contact Us</h1>
-                    <p>We're here 24hrs a day Monday to Sunday.</p>
-                    <h3><a href="" class="text-dark"><i class="fa fa-phone"
-                                style="font-size: 1em ;color: #000;margin-right: 20px;"></i>Help Center</a>
-                    </h3>
-                    <h3><a href="" class="text-dark"><i class="fa fa-envelope-open-o"
-                                style="font-size: 1em ;color: #000  ;margin-right: 20px;"></i>Email
-                            Us</a></h3>
-                </div>
-            </div>
+            <%- include ('../../partials/right-sidebar') %>
             <div class="page-content bgcolor1">
-                <div class="page-first-text" style="font-size: 1.5em; font-weight: 800;margin-bottom: 1em;;">A low
-                    barrier to entry combined with a highly competitive volume based rebate structure makes VGF
-                    ideal for introducers of all size.
+                <div class="page-first-text" style="font-size: 1.5em; font-weight: 800;margin-bottom: 1em;;">
+                    <%= __('A low barrier to entry combined with a highly competitive volume based rebate structure makes VGF ideal for introducers of all size.') %>
                 </div>
                 <div class="page-content bgcolor2">
-                    <h1>Key features of our Introducing Broker program</h1>
-                    <div class="pre-image-item">An attractive rebate program</div>
-                    <div class="pre-image-item">FSA licensed and regulated Broker</div>
-                    <div class="pre-image-item">Personal IB account managers</div>
-                    <div class="pre-image-item">Simple client onboarding </div>
-                    <div class="pre-image-item">MetaTrader 4 &amp; 5, cTrader, Mobile Trading Platforms</div>
-                    <div class="pre-image-item">Commissions paid into a trading account in real time</div>
-                    <div class="pre-image-item">Marketing material in a variety of different languages</div>
-                    <div class="pre-image-item">Advanced cookie tracking and web reporting</div>
-                    <div class="pre-image-item">Track every click, impression, and registration</div>
+                    <h1><%= __('Key features of our Introducing Broker program') %></h1>
+                    <div class="pre-image-item"><%= __('An attractive rebate program') %></div>
+                    <div class="pre-image-item"><%= __('FSA licensed and regulated Broker') %></div>
+                    <div class="pre-image-item"><%= __('Personal IB account managers') %></div>
+                    <div class="pre-image-item"><%= __('Simple client onboarding ') %></div>
+                    <div class="pre-image-item"><%= __('MetaTrader 4 & 5, cTrader, Mobile Trading Platforms') %></div>
+                    <div class="pre-image-item"><%= __('Commissions paid into a trading account in real time') %></div>
+                    <div class="pre-image-item"><%= __('Marketing material in a variety of different languages') %>
+                    </div>
+                    <div class="pre-image-item"><%= __('Advanced cookie tracking and web reporting') %></div>
+                    <div class="pre-image-item"><%= __('Track every click, impression, and registration') %></div>
                 </div>
                 <div class="page-content bgcolor1">
                     <div class="page-content highlighted-content">
-                        <h1>Professional Introducing Brokers</h1>
-                        <p>A professional Introducing Broker has the added benefit of applying spread and commission
-                            mark-ups to earn additional revenue from their clients trading activity. This program is
-                            specifically designed for Introducers with greater than 10 clients and who provide
-                            additional value/services to their clients.</p>
+                        <h1><%= __('Professional Introducing Brokers') %></h1>
+                        <p><%= __('A professional Introducing Broker has the added benefit of applying spread and commission mark-ups to earn additional revenue from their clients trading activity. This program is specifically designed for Introducers with greater than 10 clients and who provide additional value/services to their clients.') %>
+                        </p>
                         <div class="bold-header" style="
                         font-size: 22px;
                         font-weight: 700;
                         padding: 1em 0;
-                    ">Eligible Professional Introducing Brokers include:</div>
-                        <div class="pre-image-item">Licensed Investment Advisors</div>
-                        <div class="pre-image-item">EA Vendors/Developers</div>
-                        <div class="pre-image-item">Money Managers</div>
-                        <div class="pre-image-item">Website owners</div>
-                        <div class="pre-image-item">Trading Educators</div>
-                        <div class="pre-image-item">Sub IBs</div>
+                    "><%= __('Eligible Professional Introducing Brokers include') %>:</div>
+                        <div class="pre-image-item"><%= __('Licensed Investment Advisors') %></div>
+                        <div class="pre-image-item"><%= __('EA Vendors/Developers') %></div>
+                        <div class="pre-image-item"><%= __('Money Managers') %></div>
+                        <div class="pre-image-item"><%= __('Website owners') %></div>
+                        <div class="pre-image-item"><%= __('Trading Educators') %></div>
+                        <div class="pre-image-item"><%= __('Sub IBs') %></div>
                     </div>
                 </div>
             </div>

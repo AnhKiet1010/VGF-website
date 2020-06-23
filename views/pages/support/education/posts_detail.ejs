@@ -3,6 +3,7 @@
 
 <head>
     <%- include ('../../../partials/head') %>
+    <link rel="stylesheet" href="/css/pages/trading_knowledge.css">
 </head>
 
 <body>
@@ -100,7 +101,9 @@
                                         <%= item.title_en %>
                                         <% } %>
                                     </a>
-                                    <span class="post-date"><%= item.created %></span>
+                                    <div>
+                                        <span class="post-date"><%= item.created %></span>
+                                    </div>
                                 </li>
                                 <% }) %>
                             </ul>

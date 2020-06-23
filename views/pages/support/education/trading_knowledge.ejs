@@ -3,6 +3,7 @@
 
 <head>
     <%- include ('../../../partials/head') %>
+    <link rel="stylesheet" href="/css/pages/trading_knowledge.css">
 </head>
 
 <body>
@@ -63,7 +64,7 @@
                         </header>
                         <div class="row">
                             <% data.forEach(function(item) {%>
-                            <div class="col-lg-6">
+                            <div class="col-sm-6">
                                 <div class="card news-card" style="width: 100%;">
                                     <div class="post_date">
                                         <span class="year"><%= item.created %></span>
@@ -138,8 +139,20 @@
                             <ul class="recentPost">
                                 <% recentPost.forEach(function(item) { %>
                                 <li>
-                                    <a href="/support/education/posts/<%= item._id %>"><%= item.mainTitle %></a>
-                                    <span class="post-date"><%= item.created %></span>
+                                    <a href="/support/education/posts/<%= item._id %>">
+                                        <% if(lang === 'en') { %>
+                                        <%= item.title_en %>
+                                        <% } else if(lang === 'vi') { %>
+                                        <%= item.title_vi %>
+                                        <% } else if(lang === 'cn') { %>
+                                        <%= item.title_cn %>
+                                        <% } else { %>
+                                        <%= item.title_en %>
+                                        <% } %>
+                                    </a>
+                                    <div class="post-date">
+                                        <%= item.created %>
+                                    </div>
                                 </li>
                                 <% }) %>
                             </ul>

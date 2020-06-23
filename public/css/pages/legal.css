@@ -1,0 +1,46 @@
+main {
+    margin-top: 130px;
+}
+
+.media {
+    display: flex;
+}
+
+.media div {
+    margin-left: 1em;
+    margin-top: 0;
+}
+
+.media div h5 {
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+@media (max-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .media {
+        display: block;
+    }
+
+    .media div {
+        margin-top: 1em;
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        padding: 1em;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+    main {
+        margin-top: 110px;
+    }
+}

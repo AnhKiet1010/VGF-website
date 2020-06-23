@@ -1,0 +1,150 @@
+/* Education overview */
+main {
+    margin-top: 100px;
+}
+
+.edu-overview-top {
+    background-image: url("../../images/education-overreview.jpg");
+    background-position: bottom;
+    background-size: cover;
+}
+
+.edu-overview-top-content {
+    padding-top: 3em;
+    text-align: center;
+}
+
+.edu-overview-top-content h1 {
+    font-size: 4em;
+    font-weight: 800;
+}
+
+.edu-overview-top-content p {
+    color: #ddd;
+    font-size: 1.5em;
+    font-weight: lighter;
+    padding: 1em 3em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.edu-overview-top-content button {
+    margin-bottom: 20px;
+}
+
+.edu-overview-navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 1);
+    align-items: center;
+    height: 50px;
+}
+
+.edu-overview-navbar .menu-item a {
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #3c3c3c;
+}
+
+.edu-overview-navbar .menu-item:hover a {
+    color: #fff;
+}
+
+.edu-overview-navbar .menu-item.active a {
+    color: rgb(87, 202, 87);
+    font-size: 1.1em;
+}
+
+.edu-overview-content .right-sidebar .top {
+    width: 18em;
+    background-image: url("../../images/random-bg.jpg");
+    background-size: cover;
+    text-align: center;
+    height: 35em;
+    padding: 3em 1.5em 2em 1.5em;
+}
+
+.edu-overview-content .right-sidebar .top>p {
+    font-size: 1.8em;
+    color: #fff;
+}
+
+.edu-overview-content .right-sidebar .bottom {
+    background-color: #ddd;
+    width: 18em;
+    padding: 2em 1em;
+}
+
+.right-sidebar {
+    float: right;
+    margin: 4em 8em;
+}
+
+.page-content {
+    padding: 80px 40px;
+}
+
+.edu-overview-content .bgcolor1 {
+    background-color: #fff;
+}
+
+.edu-overview-content .bgcolor2 {
+    background-color: #f4f7f5;
+}
+
+.pre-image-item {
+    position: relative;
+    padding-left: 2em;
+    margin-bottom: 0.3em;
+}
+
+.pre-image-item::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    transform: rotate(45deg);
+    border: 1px solid #b5b5b5;
+    background: #80ee78;
+    box-shadow: 0 0 2px 2px #fff inset;
+}
+
+@media (max-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .page-content {
+        padding: 1em;
+    }
+
+    .page-content h1 {
+        font-size: 1.5em;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    .edu-overview-navbar {
+        display: none;
+    }
+
+    .edu-overview-content .right-sidebar {
+        display: none;
+    }
+
+    .edu-overview-top-content h1 {
+        font-size: 2.2em;
+    }
+
+    .edu-overview-top-content p {
+        font-size: 1.4em;
+        font-weight: lighter;
+        padding: 1em;
+        width: 80%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {}

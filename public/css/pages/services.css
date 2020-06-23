@@ -1,0 +1,96 @@
+main {
+    margin-top: 100px;
+}
+
+.need-help-box {
+    padding: 10px 20px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.service-list li {
+    margin-bottom: 10px;
+}
+
+.service-list li a {
+    color: #356799;
+    font-size: 18px;
+}
+
+.service-list li:hover a {
+    color: #1d5996;
+}
+
+.t-lime-colored {
+    font-size: 16px;
+    font-weight: bold;
+    color: #a7c843;
+}
+
+.cards-list__item {
+    padding: 20px 0 10px 0;
+    border-bottom: 0.5px solid #eee;
+}
+
+.page-header__menu_container {
+    width: 100%;
+    background: #0b0a14;
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.t-ul__item {
+    margin-bottom: 1em;
+}
+
+.col-lg-3 a {
+    color: #1d5996;
+    font-weight: 700;
+}
+
+.col-lg-3 a.active {
+    color: rgb(28, 109, 28);
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.market-facts-card {
+    width: 300px;
+    min-width: 300px;
+    min-height: 400px;
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.market-facts-card .facts-item {
+    display: flex;
+    padding: 15px 0 15px 40px;
+    font-size: 14px;
+    font-weight: 900;
+    position: relative;
+    line-height: 26px;
+    border-bottom: 0.5px solid #d4d2d2;
+    color: rgba(11, 10, 20, 0.6);
+}
+
+
+@media (max-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .market-facts-card {
+        margin: 20px auto;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {}

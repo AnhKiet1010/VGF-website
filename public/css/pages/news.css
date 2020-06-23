@@ -1,0 +1,168 @@
+main {
+    margin-top: 160px;
+}
+
+.news-desc img {
+    width: 100%;
+}
+
+.news-desc a {
+    color: blue;
+}
+
+.main-news {
+    padding: 10px 20px;
+}
+
+.news-desc>p {
+    font-size: large;
+    line-height: 1.6em;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.item .item-img-wrapper .thumbWrap {
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 6px;
+    height: 170px;
+}
+
+.thumbWrap img {
+    opacity: 0;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.top-content h4 {
+    color: #000;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.article-info>p>a {
+    color: #000;
+}
+
+.article-img img {
+    border-radius: 10px;
+}
+
+.article-info p:first-child {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.article-info p:first-child:hover a {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.article-info p:nth-child(2) {
+    color: #555;
+    font-size: 14px;
+}
+
+.article-info p:nth-child(3)>span {
+    margin: 0 5px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.article-detail a {
+    color: coral;
+    font-weight: 800;
+}
+
+.aside {
+    margin-bottom: 30px;
+    box-shadow: 0 1px 4px 0 rgba(102, 98, 98, 0.4);
+}
+
+.aside .content {
+    box-sizing: border-box;
+}
+
+h2.title-right {
+    padding: 15px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    background: #192433;
+    margin-bottom: 0px;
+}
+
+.top-broker.bg-white {
+    background: #fff;
+    color: #000;
+}
+
+.top-broker .item-broker-wrap .item-broker {
+    display: flex;
+    padding: 15px;
+    height: 100px;
+}
+
+.top-broker .item-broker-wrap .item-broker img {
+    width: 100%;
+}
+
+.top-broker .item-broker-wrap .item-borker-image {
+    width: 120px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.top-broker .item-broker-wrap .item-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+    -webkit-box-flex: 1;
+    flex: 1 1;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 10px;
+    padding-top: 7px;
+    color: #000;
+    font-size: 14px;
+}
+
+.top-broker .item-broker-wrap .broker-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 0px;
+}
+
+.top-broker .item-broker-wrap .broker-info {
+    color: #ababab;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+@media (max-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .article-title {
+        margin-top: 1em;
+    }
+
+    .brokers {
+        display: none;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {}

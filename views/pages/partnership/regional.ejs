@@ -3,6 +3,7 @@
 
 <head>
     <%- include ('../../partials/head') %>
+    <link rel="stylesheet" href="/css/partials/list-sidebar.css">
 </head>
 
 <body>
@@ -19,24 +20,7 @@
             </div>
         </div>
         <div class="edu-overview-content">
-            <div class="right-sidebar">
-                <div class="top shadow">
-                    <img src="/images/vgf-logo-white.png" alt="company-logo" width="200px">
-                    <p><%= __('Access over 200 markets & tight spreads') %></p>
-                    <p><%= __('with a regulated CFD Provider') %> </p>
-                    <button type="button" class="btn btn-success">START TRADING</button>
-                </div>
-                <div class="bottom mt-2 shadow-sm">
-                    <h1><%= __('Contact Us') %></h1>
-                    <p><%= __('We are here 24hrs a day Monday to Sunday.') %></p>
-                    <h3><a href="" class="text-dark"><i class="fa fa-phone"
-                                style="font-size: 1em ;color: #000;margin-right: 20px;"></i><%= __('Help Center') %></a>
-                    </h3>
-                    <h3><a href="" class="text-dark"><i class="fab fa-envelope-open"
-                                style="font-size: 1em ;color: #000  ;margin-right: 20px;"></i><%= __('Email Us') %></a>
-                    </h3>
-                </div>
-            </div>
+            <%- include ('../../partials/right-sidebar') %>
             <div class="page-content bgcolor1">
                 <div class="page-first-text" style="font-size: 1.5em; font-weight: 800;margin-bottom: 1em;">
                     <%= __('We are one of the largest Forex CFD provider by volume with some of the tightest spreads and best trading conditions for traders globally. Our tight spreads offering will be the driving force behind our regional partner’s success.') %>

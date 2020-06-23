@@ -3,6 +3,7 @@
 
 <head>
     <%- include ('../../../partials/head') %>
+    <link rel="stylesheet" href="/css/pages/help-center-glossary.css">
 </head>
 
 <body>
@@ -12,7 +13,7 @@
     <main>
         <div class="container help-centre-container">
             <% data.forEach(function(item,i) {%>
-            <h1 style="padding: 40px 0;font-size: 48px;margin-top: 40px;text-align:center;">
+            <h1>
                 <% if(lang === 'en') { %>
                 <%= item.text_en %>
                 <% } else if(lang === 'vi') { %>
