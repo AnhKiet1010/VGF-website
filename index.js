@@ -43,6 +43,7 @@ const adminRouter = require('./routes/admin.route');
 const newtRouter = require('./routes/news.route');
 const aboutRouter = require('./routes/about.route');
 const contactRouter = require('./routes/contact.route');
+const policyRouter = require('./routes/policy.route');
 /*
     Default Page
 */
@@ -97,6 +98,10 @@ app.use('/about', aboutRouter);
     Contact
 */
 app.use('/contact', contactRouter);
+/*
+    Policy
+*/
+app.use('/policy', policyRouter);
 /*
     FOR ADMIN
 */
