@@ -4,6 +4,7 @@ main {
 }
 
 .edu-overview-top {
+    /* background-image: url("../../images/education-overreview.jpg"); */
     background-image: url("../../images/education-overreview.jpg");
     background-position: bottom;
     background-size: cover;

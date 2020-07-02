@@ -98,6 +98,37 @@ main {
     box-shadow: 0 0 2px 2px #fff inset;
 }
 
+/* copy trade css */
+.DynamicWrapper {
+    height: 680px;
+    background: #fbfcff;
+    padding-top: 64px;
+}
+
+.DynamicWrapper .dynamic-wrap {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.module-title {
+    line-height: 53px;
+    font-size: 38px;
+}
+
+.DynamicWrapper .dynamic-wrap .list-wrap {
+    height: 364px;
+    box-shadow: 0 3px 22px 0 #ececec;
+    background: #fff;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    flex-direction: row;
+}
+
+.swiper-slide {
+    width: 100px;
+}
 
 @media (max-width: 576px) {}
 
