@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html amp lang="vn">
+<html ⚡ lang="vn">
 
 <head>
     <%- include ('../partials/head') %>
@@ -180,7 +180,8 @@
         <div class="row justify-content-center m-0">
             <div class="col-lg-3 box">
                 <div class="card m-0">
-                    <img src="images/forex.jpg" class="card-img-top" alt="...">
+                    <amp-img src="images/forex.jpg" class="card-img-top" alt="..." width="600" height="400"
+                        layout="responsive"></amp-img>
                     <div class="card-body">
                         <h5 class="card-title">Forex</h5>
                         <p class="card-text text-secondary">
@@ -191,7 +192,8 @@
             </div>
             <div class="col-lg-3 box">
                 <div class="card m-0">
-                    <img src="images/copytrade.jpg" class="card-img-top" alt="...">
+                    <amp-img src="images/copytrade.jpg" class="card-img-top" alt="..." width="600" height="400"
+                        layout="responsive"></amp-img>
                     <div class="card-body">
                         <h5 class="card-title">Copy Trade</h5>
                         <p class="card-text text-secondary">
@@ -202,7 +204,8 @@
             </div>
             <div class="col-lg-3 box">
                 <div class="card m-0">
-                    <img src="images/finance.jpg" class="card-img-top" alt="...">
+                    <amp-img src="images/finance.jpg" class="card-img-top" alt="..." width="600" height="400"
+                        layout="responsive"></amp-img>
                     <div class="card-body">
                         <h5 class="card-title">Finance Training</h5>
                         <p class="card-text text-secondary">
@@ -220,10 +223,13 @@
     <br>
 
     <div class="home_section_c">
-        <video poster="https://www.xatrade.com/skin/index/images/pic_28.jpg" autoplay="" muted="" loop=""
-            class="vidbacking-active-block-back" style="opacity: 1;">
-            <source src="https://www.xatrade.com/skin/index/images/28.mp4" type="video/mp4">
-        </video>
+        <amp-video poster="https://www.xatrade.com/skin/index/images/pic_28.jpg" autoplay="" muted="" loop=""
+            class="vidbacking-active-block-back" style="opacity: 1;" layout="responsive"
+            src="https://www.xatrade.com/skin/index/images/28.mp4" width="2000" height="800">
+            <div fallback>
+                <p>This browser does not support the video element.</p>
+            </div>
+        </amp-video>
         <div class="container hidden text-white video-content">
             <p class="wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
                 <%= __('VGF joins hands with internationally renowned analysis agency Trading Central') %>
@@ -237,8 +243,10 @@
                 <%= __('Let you make the best decision') %>
             </p>
             <p class="p-t-30">
-                <img src="/images/vgf-logo-white.png" class="m-r-15 wow fadeInLeft" data-wow-delay="0.9s"
-                    style="width: 130px; visibility: visible; animation-delay: 0.9s; animation-name: fadeInLeft;">
+                <amp-img src="/images/vgf-logo-white.png" class="m-r-15 wow fadeInLeft" data-wow-delay="0.9s"
+                    width="140" height="60"
+                    style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInLeft;">
+                </amp-img>
             </p>
             <div class="home_section_c_list">
                 <div class="home_section_c_li wow fadeInLeft" data-wow-delay="0.3s"

@@ -1,7 +1,7 @@
 .swiper-slide6 {
     background-color: #1d1951;
     text-align: center;
-    margin-top: 138px;
+    margin-top: 120px;
     padding: 30px;
 }
 
@@ -68,26 +68,30 @@
 }
 
 em[data-v-e89efc46]:first-child {
-    background: linear-gradient(90deg,
-            rgba(26, 33, 77, 0) 0,
-            rgba(26, 33, 77, 0) 40%,
-            #7d8fff,
-            97%,
-            #c4ccff 97%,
-            #c4ccff);
+    background: linear-gradient(
+        90deg,
+        rgba(26, 33, 77, 0) 0,
+        rgba(26, 33, 77, 0) 40%,
+        #7d8fff,
+        97%,
+        #c4ccff 97%,
+        #c4ccff
+    );
     display: inline-block;
     width: 120px;
     height: 3px;
 }
 
 em[data-v-e89efc46]:last-child {
-    background: linear-gradient(270deg,
-            rgba(26, 33, 77, 0) 0,
-            rgba(26, 33, 77, 0) 40%,
-            #7d8fff,
-            97%,
-            #c4ccff 97%,
-            #c4ccff);
+    background: linear-gradient(
+        270deg,
+        rgba(26, 33, 77, 0) 0,
+        rgba(26, 33, 77, 0) 40%,
+        #7d8fff,
+        97%,
+        #c4ccff 97%,
+        #c4ccff
+    );
     display: inline-block;
     width: 120px;
     height: 3px;
@@ -269,7 +273,8 @@ em[data-v-e89efc46]:last-child {
     background-position: -180px -72px;
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
@@ -279,12 +284,13 @@ em[data-v-e89efc46]:last-child {
     }
 
     .block:not(:last-child) {
-        border-bottom: .5px solid #5053a6;
+        border-bottom: 0.5px solid #5053a6;
     }
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (max-width: 992px) {}
+@media (max-width: 992px) {
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) {
