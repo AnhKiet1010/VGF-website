@@ -8,11 +8,11 @@
 <body>
     <div id="nav-header">
         <nav class="navbar navbar-expand-xl navbar-light">
-            <a class="navbar-brand" href="/" id="logo">
+            <a class="" href="/" id="logo">
                 <amp-img src="/images/vgf-logo-white.png" alt="VGF-logo" width="160" height="70" layout="responsive">
-                    <!-- <noscript>
+                    <noscript>
                         <img src="/images/vgf-logo-white.png" width="160" height="70" alt="VGF-logo" />
-                    </noscript> -->
+                    </noscript>
                 </amp-img>
             </a>
             <button class="navbar-toggler mr-3" type="button" data-toggle="collapse"
@@ -108,31 +108,43 @@
                     </li>
                     <li class="nav-item" style="margin-left: 25px; cursor: pointer;">
                         <% if(lang === 'cn') { %>
-                        <amp-img src="/images/china.png" alt="china" width="30" height="30">
+                        <amp-img
+                            src="https://res.cloudinary.com/vgf/image/upload/v1594046453/china-flag-button-square-icon-64_tijkro.png"
+                            alt="china" width="25" height="25" layout="responsive">
                         </amp-img>
                         <% } else if(lang === 'en') { %>
-                        <amp-img src="/images/england.png" alt="england" width="30" height="30">
+                        <amp-img
+                            src="https://res.cloudinary.com/vgf/image/upload/v1594046455/united-kingdom-flag-button-square-icon-64_qmadds.png"
+                            alt="england" width="25" height="25" layout="responsive">
                         </amp-img>
                         <% } else { %>
-                        <amp-img src="/images/vietnam.png" alt="vietnam" width="30" height="30">
+                        <amp-img
+                            src="https://res.cloudinary.com/vgf/image/upload/v1594046458/vietnam-flag-button-square-icon-64_qs1bym.png"
+                            alt="vietnam" width="25" height="25" layout="responsive">
                         </amp-img>
                         <% } %>
                         <ul class="sub-menu">
                             <li>
                                 <a href="/change-lang/en">
-                                    <amp-img src="/images/england.png" alt="england" width="30" height="30"></amp-img>
+                                    <amp-img
+                                        src="https://res.cloudinary.com/vgf/image/upload/v1594046455/united-kingdom-flag-button-square-icon-64_qmadds.png"
+                                        alt="england" width="25" height="25"></amp-img>
                                     <span>English</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/change-lang/vi">
-                                    <amp-img src="/images/vietnam.png" alt="vietnam" width="30" height="30"></amp-img>
+                                    <amp-img
+                                        src="https://res.cloudinary.com/vgf/image/upload/v1594046458/vietnam-flag-button-square-icon-64_qs1bym.png"
+                                        alt="vietnam" width="25" height="25"></amp-img>
                                     <span>Tiếng Việt</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/change-lang/cn">
-                                    <amp-img src="/images/china.png" alt="china" width="30" height="30"></amp-img>
+                                    <amp-img
+                                        src="https://res.cloudinary.com/vgf/image/upload/v1594046453/china-flag-button-square-icon-64_tijkro.png"
+                                        alt="china" width="25" height="25"></amp-img>
                                     <span>简体中文</span>
                                 </a>
                             </li>
@@ -147,7 +159,7 @@
                 layout="responsive"
                 src="https://s.tradingview.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22title%22%3A%22S%26P%20500%22%2C%22proName%22%3A%22INDEX%3ASPX%22%7D%2C%7B%22title%22%3A%22Shanghai%20Composite%22%2C%22proName%22%3A%22INDEX%3AXLY0%22%7D%2C%7B%22title%22%3A%22EUR%2FUSD%22%2C%22proName%22%3A%22FX_IDC%3AEURUSD%22%7D%2C%7B%22title%22%3A%22BTC%2FUSD%22%2C%22proName%22%3A%22BITFINEX%3ABTCUSD%22%7D%2C%7B%22title%22%3A%22ETH%2FUSD%22%2C%22proName%22%3A%22BITFINEX%3AETHUSD%22%7D%5D%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Atrue%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A44%2C%22utm_source%22%3A%22focusmarkets.netprodesign.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D"
                 data-src="https://s.tradingview.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22title%22%3A%22S%26P%20500%22%2C%22proName%22%3A%22INDEX%3ASPX%22%7D%2C%7B%22title%22%3A%22Shanghai%20Composite%22%2C%22proName%22%3A%22INDEX%3AXLY0%22%7D%2C%7B%22title%22%3A%22EUR%2FUSD%22%2C%22proName%22%3A%22FX_IDC%3AEURUSD%22%7D%2C%7B%22title%22%3A%22BTC%2FUSD%22%2C%22proName%22%3A%22BITFINEX%3ABTCUSD%22%7D%2C%7B%22title%22%3A%22ETH%2FUSD%22%2C%22proName%22%3A%22BITFINEX%3AETHUSD%22%7D%5D%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Atrue%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A44%2C%22utm_source%22%3A%22focusmarkets.netprodesign.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D" ">
-                <amp-img layout='fill' src='/images/trading-view.png' placeholder>
+                <amp-img layout='fill' src='https://res.cloudinary.com/vgf/image/upload/v1594046253/trading-view_ikchhl.png' placeholder>
                 </amp-img>
             </amp-iframe>
         </div>
