@@ -23,3 +23,8 @@ module.exports.forexPage = function (req, res) {
     const id = req.params.id;
     res.render('./pages/services/services', { data: 'Forex Market', id: id, title: "Services || VGF", lang: req.cookies.lang });
 }
+
+module.exports.token = function (req, res) {
+    // res.render('./pages/services/token', { title: "VGF Token || VGF", lang: req.cookies.lang });
+    res.render('./pages/404');
+}

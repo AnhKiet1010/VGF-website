@@ -5,6 +5,6 @@ const servicesController = require('../controllers/services.controller');
 
 router.get('/', servicesController.index);
 router.get('/:sub', servicesController.sub);
-// router.get('/forex/:id', servicesController.forexPage);
+router.get('/vgf/token', servicesController.token);
 
 module.exports = router;
