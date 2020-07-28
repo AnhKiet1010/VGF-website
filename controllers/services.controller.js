@@ -25,6 +25,6 @@ module.exports.forexPage = function (req, res) {
 }
 
 module.exports.token = function (req, res) {
-    // res.render('./pages/services/token', { title: "VGF Token || VGF", lang: req.cookies.lang });
-    res.render('./pages/404');
+    res.render('./pages/services/token', { title: "VGF Token || VGF", lang: req.cookies.lang });
+    // res.render('./pages/404');
 }

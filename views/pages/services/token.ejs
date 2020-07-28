@@ -15,31 +15,34 @@
     <main>
         <div class="edu-overview-top text-center">
             <div class="edu-overview-top-content">
-                <h1 class="text-white"><%= __('VGF TOKEN') %></h1>
+                <h1 class="text-white"><%= __('FVT TOKEN') %></h1>
                 <p><%= __('The only token that VGF officially launched') %>
                 </p>
                 <button type="button" class="btn btn-success btn-lg">START TRADING</button>
             </div>
+            <ul data-v-6077c913="" class="nav-anchor" style="top: 0px;" id="nav-fee">
+                <li data-v-6077c913="" class="nav-item active"><a
+                        href="/services/vgf/token#nav-fee"><%= __('Trading Fee Discount') %></a>
+                </li>
+                <li data-v-6077c913="" class="nav-item active"><a
+                        href="/services/vgf/token#activity"><%= __('VGF Event Eligibility') %> </a></li>
+                <li data-v-6077c913="" class="nav-item active"><a
+                        href="/services/vgf/token#destroy"><%= __('More') %></a> </li>
+            </ul>
         </div>
-        <div class="edu-overview-navbar">
-            <div class="menu-item active"><a href="#"><%= __('Trading Fee Discount') %></a>
-            </div>
-            <div class="menu-item"><a href="#"><%= __('VGF Event Eligibility') %></a>
-            </div>
-            <div class="menu-item"><a href="#"><%= __('More') %></a>
-            </div>
-        </div>
-        <div data-v-9cb2189c="" id="nav-fee" class="fees">
+
+        <div data-v-9cb2189c="" class="fees">
             <div data-v-9cb2189c="" class="c-content">
                 <div data-v-9cb2189c="" class="header">
                     <div data-v-9cb2189c="" class="left">
-                        <h3 data-v-9cb2189c="" class="index-c-title" style="color: #fff"> Trading Fee Discount </h3>
-                        <h4 data-v-9cb2189c="" class="sub-title"> The trading fee is discounted based on your HT holding
-                            level. </h4>
+                        <h3 data-v-9cb2189c="" class="index-c-title" style="color: #fff">
+                            <%= __('Trading Fee Discount') %> </h3>
+                        <h4 data-v-9cb2189c="" class="sub-title">
+                            <%= __('The trading fee is discounted based on your FVT holding level') %>. </h4>
                     </div>
                     <div data-v-9cb2189c="" class="right"><a data-v-9cb2189c="" rel="nofollow noopener noreferrer"
-                            target="_blank" href="https://www.huobi.sc/zh-cn/fee/" class="more index-c-link">Learn about
-                            fee rates</a></div>
+                            target="_blank" href="#" class="more index-c-link"><%- __('Learn about fee rates') %></a>
+                    </div>
                 </div>
                 <div data-v-9cb2189c="" class="fee-items">
                     <div data-v-9cb2189c="" class="item-row">
@@ -48,13 +51,15 @@
                                 <div data-v-9cb2189c="" class="desc-content">
                                     <div data-v-9cb2189c="" class="discount"><span class="int">10</span><span
                                             class="float">%</span>OFF</div>
-                                    <div data-v-9cb2189c="" class="type-tip type1"> Low threshold </div>
+                                    <div data-v-9cb2189c="" class="type-tip type1"><%- __('Low threshold') %> </div>
                                 </div>
-                                <div data-v-9cb2189c="" class="text en">10 HT enjoy a <span class="rate">0.18%
-                                    </span>discount of fee rate</div>
+                                <div data-v-9cb2189c="" class="text en">
+                                    <%- __('10 FVT enjoy a <span class="rate">0.18% </span>discount of fee rate') %>
+                                </div>
                             </div>
-                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c="" class="to-buy-btn">Buy
-                                    10HT</span></div>
+                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c=""
+                                    class="to-buy-btn"><%- __('Buy') %>
+                                    10FVT</span></div>
                         </div>
                         <div data-v-9cb2189c="" class="fee-item">
                             <div data-v-9cb2189c="" class="desc-pane">
@@ -63,11 +68,12 @@
                                             class="float">%</span>OFF</div>
                                     <!---->
                                 </div>
-                                <div data-v-9cb2189c="" class="text en">100 HT enjoy a <span class="rate">0.16%
-                                    </span>discount of fee rate</div>
+                                <div data-v-9cb2189c="" class="text en">
+                                    <%- __('100 FVT enjoy a <span class="rate">0.16% </span>discount of fee rate') %>
+                                </div>
                             </div>
-                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c="" class="to-buy-btn">Buy
-                                    100HT</span></div>
+                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c=""
+                                    class="to-buy-btn"><%- __('Buy') %> 100 FVT</span></div>
                         </div>
                         <div data-v-9cb2189c="" class="fee-item">
                             <div data-v-9cb2189c="" class="desc-pane">
@@ -76,11 +82,12 @@
                                             class="float">%</span>OFF</div>
                                     <!---->
                                 </div>
-                                <div data-v-9cb2189c="" class="text en">500 HT enjoy a <span class="rate">0.12%
-                                    </span>discount of fee rate</div>
+                                <div data-v-9cb2189c="" class="text en">
+                                    <%- __('500 FVT enjoy a <span class="rate">0.12% </span>discount of fee rate') %>
+                                </div>
                             </div>
-                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c="" class="to-buy-btn">Buy
-                                    500HT</span></div>
+                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c="" class="to-buy-btn">
+                                    <%- __('Buy') %> 500FVT</span></div>
                         </div>
                         <div data-v-9cb2189c="" class="fee-item">
                             <div data-v-9cb2189c="" class="desc-pane">
@@ -89,11 +96,12 @@
                                             class="float">%</span>OFF</div>
                                     <!---->
                                 </div>
-                                <div data-v-9cb2189c="" class="text en">1000 HT enjoy a <span class="rate">0.09%
-                                    </span>discount of fee rate</div>
+                                <div data-v-9cb2189c="" class="text en">
+                                    <%- __('1000 FVT enjoy a <span class="rate">0.09% </span>discount of fee rate') %>
+                                </div>
                             </div>
-                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c="" class="to-buy-btn">Buy
-                                    1000HT</span></div>
+                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c="" class="to-buy-btn">
+                                    <%- __('Buy') %> 1000FVT</span></div>
                         </div>
                     </div>
                     <div data-v-9cb2189c="" class="item-row">
@@ -104,11 +112,12 @@
                                             class="float">%</span>OFF</div>
                                     <!---->
                                 </div>
-                                <div data-v-9cb2189c="" class="text en">2000 HT enjoy a <span class="rate">0.08%
-                                    </span>discount of fee rate</div>
+                                <div data-v-9cb2189c="" class="text en">
+                                    <%- __('2000 FVT enjoy a <span class="rate">0.08% </span>discount of fee rate') %>
+                                </div>
                             </div>
-                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c="" class="to-buy-btn">Buy
-                                    2000HT</span></div>
+                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c=""
+                                    class="to-buy-btn"><%- __('Buy') %> 2000FVT</span></div>
                         </div>
                         <div data-v-9cb2189c="" class="fee-item">
                             <div data-v-9cb2189c="" class="desc-pane">
@@ -117,35 +126,41 @@
                                             class="float">%</span>OFF</div>
                                     <!---->
                                 </div>
-                                <div data-v-9cb2189c="" class="text en">5000 HT enjoy a <span class="rate">0.07%
-                                    </span>discount of fee rate</div>
+                                <div data-v-9cb2189c="" class="text en">
+                                    <%- __('5000 FVT enjoy a <span class="rate">0.07% </span>discount of fee rate') %>
+                                </div>
                             </div>
-                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c="" class="to-buy-btn">Buy
-                                    5000HT</span></div>
+                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c=""
+                                    class="to-buy-btn"><%- __('Buy') %> 5000FVT</span></div>
                         </div>
                         <div data-v-9cb2189c="" class="fee-item">
                             <div data-v-9cb2189c="" class="desc-pane">
                                 <div data-v-9cb2189c="" class="desc-content">
                                     <div data-v-9cb2189c="" class="discount profession"><span class="int">99</span><span
                                             class="float">.515%</span>OFF</div>
-                                    <div data-v-9cb2189c="" class="type-tip type3"> Professional users </div>
+                                    <div data-v-9cb2189c="" class="type-tip type3"> <%- __('Professional users') %>
+                                    </div>
                                 </div>
-                                <div data-v-9cb2189c="" class="text profession en">Maker down to 0.0097% rate</div>
+                                <div data-v-9cb2189c="" class="text profession en">
+                                    <%- __('Maker down to 0.0097% rate') %></div>
                             </div>
-                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c="" class="to-buy-btn">Buy
-                                    2000HT</span></div>
+                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c=""
+                                    class="to-buy-btn"><%- __('Buy') %> 2000FVT</span></div>
                         </div>
                         <div data-v-9cb2189c="" class="fee-item">
                             <div data-v-9cb2189c="" class="desc-pane">
                                 <div data-v-9cb2189c="" class="desc-content">
                                     <div data-v-9cb2189c="" class="discount profession"><span class="int">99</span><span
                                             class="float">.035%</span>OFF</div>
-                                    <div data-v-9cb2189c="" class="type-tip type3"> Professional users </div>
+                                    <div data-v-9cb2189c="" class="type-tip type3"> <%- __('Professional users') %>
+                                    </div>
                                 </div>
-                                <div data-v-9cb2189c="" class="text profession en">Taker down to 0.0193% rate</div>
+                                <div data-v-9cb2189c="" class="text profession en">
+                                    <%- __('Taker down to 0.0193% rate') %></div>
                             </div>
-                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c="" class="to-buy-btn">Buy
-                                    2000HT</span></div>
+                            <div data-v-9cb2189c="" class="hover-pane"><span data-v-9cb2189c=""
+                                    class="to-buy-btn"><%- __('Buy') %>
+                                    2000FVT</span></div>
                         </div>
                     </div>
                 </div>
@@ -153,17 +168,18 @@
             <div data-v-9cb2189c="" class="el-dialog__wrapper" style="display: none;">
                 <div role="dialog" aria-modal="true" aria-label="Trading Fee Discount" class="el-dialog buy-dialog"
                     style="margin-top: 15vh; width: 480px;">
-                    <div class="el-dialog__header"><span class="el-dialog__title">Trading Fee Discount</span><button
-                            type="button" aria-label="Close" class="el-dialog__headerbtn"><i
+                    <div class="el-dialog__header"><span
+                            class="el-dialog__title"><%- __('Trading Fee Discount') %></span><button type="button"
+                            aria-label="Close" class="el-dialog__headerbtn"><i
                                 class="el-dialog__close el-icon el-icon-close"></i></button></div>
                     <!---->
-                    <div class="el-dialog__footer"><span data-v-9cb2189c="" class="dialog-footer"><button
+                    <div class="el-dialog__footer"><span data-v-9cb2189c="" class="dialog-footer" id="activity"><button
                                 data-v-9cb2189c="" type="button" class="el-button el-button--text">
                                 <!---->
-                                <!----><span>Cancel</span></button><button data-v-9cb2189c="" type="button"
+                                <!----><span><%- __('Cancel') %></span></button><button data-v-9cb2189c="" type="button"
                                 class="el-button el-button--primary">
                                 <!---->
-                                <!----><span>Buy now</span></button></span></div>
+                                <!----><span><%- __('Buy now') %></span></button></span></div>
                 </div>
             </div>
         </div>
@@ -171,93 +187,87 @@
             <div data-v-5048a9d1="" class="c-content">
                 <div data-v-5048a9d1="" class="header">
                     <div data-v-5048a9d1="" class="left">
-                        <h3 data-v-5048a9d1="" class="index-c-title"> Huobi Event Eligibility </h3>
-                        <h4 data-v-5048a9d1="" class="sub-title"> Holding HT to join activities of Huobi. No one enjoy
-                            more privileges than you! </h4>
+                        <h3 data-v-5048a9d1="" class="index-c-title"> <%- __('VGF Event Eligibility') %> </h3>
+                        <h4 data-v-5048a9d1="" class="sub-title">
+                            <%- __('Holding FVT to join activities of VGF. No one enjoy more privileges than you') %>!
+                        </h4>
                     </div>
                     <div data-v-5048a9d1="" class="right"><a data-v-5048a9d1="" rel="nofollow noopener noreferrer"
-                            target="_blank" href="https://support.huobiservice.com/hc/en-us/categories/360000031362"
-                            class="more">View more</a></div>
+                            target="_blank" href="#" class="more"><%- __('View more') %></a></div>
                 </div>
                 <div data-v-5048a9d1="" class="ac-list"><a data-v-5048a9d1="" rel="nofollow noopener noreferrer"
-                        target="_blank" href="https://support.huobiservice.com/hc/en-us/sections/360000083041-Prime"
-                        class="ac-item">
+                        target="_blank" href="#" class="ac-item">
                         <div data-v-5048a9d1="" class="ac-icon"
                             style="background: url('/images/prime-icon.png') center center / 100% 100% no-repeat;">
                         </div>
-                        <h4 data-v-5048a9d1="" class="ac-title"> Huobi Prime </h4>
-                        <p data-v-5048a9d1="" class="ac-desc"> The preferred coin-listing channel of Hoobi prime is a
-                            comprehensive coin-listing service for global high-quality projects, with HT as its ticket,
-                            and only HT can be used to place orders in the event. </p><a data-v-5048a9d1=""
-                            rel="nofollow noopener noreferrer" target="_blank"
-                            href="https://support.huobiservice.com/hc/en-us/sections/360000083041-Prime"
+                        <h4 data-v-5048a9d1="" class="ac-title"> <%- __('VGF Prime') %> </h4>
+                        <p data-v-5048a9d1="" class="ac-desc">
+                            <%- __('The preferred coin-listing channel of VGF prime is a comprehensive coin-listing service for global high-quality projects, with FVT as its ticket, and only FVT can be used to place orders in the event') %>.
+                        </p><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#"
                             class="ac-link"></a>
                     </a>
-                    <a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank"
-                        href="https://support.huobiservice.com/hc/en-us/sections/360000083021-FastTrack"
-                        class="ac-item">
+                    <a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#" class="ac-item">
                         <div data-v-5048a9d1="" class="ac-icon"
                             style="background: url(/images/fash-icon.png) center center / 100% 100% no-repeat;">
                         </div>
-                        <h4 data-v-5048a9d1="" class="ac-title"> Huobi FastTrack </h4>
-                        <p data-v-5048a9d1="" class="ac-desc"> The fast coin-listing channel of FastTrack is a
-                            comprehensive coin-listing service for global high-quality projects, with HT as its ticket,
-                            and only HT can be used to place orders in the event. </p><a data-v-5048a9d1=""
-                            rel="nofollow noopener noreferrer" target="_blank"
-                            href="https://support.huobiservice.com/hc/en-us/sections/360000083021-FastTrack"
+                        <h4 data-v-5048a9d1="" class="ac-title"> <%- __('VGF FastTrack') %> </h4>
+                        <p data-v-5048a9d1="" class="ac-desc">
+                            <%- __('The fast coin-listing channel of FastTrack is a comprehensive coin-listing service for global high-quality projects, with FVT as its ticket, and only FVT can be used to place orders in the event') %>.
+                        </p><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#"
                             class="ac-link"></a>
-                    </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank"
-                        href="https://support.huobiservice.com/hc/en-us/articles/900000541026" class="ac-item">
-                        <div data-v-5048a9d1="" class="ac-icon"
+                    </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#"
+                        class="ac-item">
+                        <div data-v-5048a9d1="" class="ac-icon" id="destroy"
                             style="background: url(/images/bitcoin-icon.png) center center / 100% 100% no-repeat;">
                         </div>
-                        <h4 data-v-5048a9d1="" class="ac-title"> Halving Predictor </h4>
-                        <p data-v-5048a9d1="" class="ac-desc"> The halving predictor event is a commemoration of BTC's
-                            third reduction by Huobi, which additionally sets up a dedicated reward pool for HT holders.
-                        </p><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank"
-                            href="https://support.huobiservice.com/hc/en-us/articles/900000541026" class="ac-link"></a>
-                    </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank"
-                        href="https://support.huobiservice.com/hc/en-us/articles/900000975103" class="ac-item">
+                        <h4 data-v-5048a9d1="" class="ac-title"> <%- __('Halving Predictor') %> </h4>
+                        <p data-v-5048a9d1="" class="ac-desc">
+                            <%- __('The halving predictor event is a commemoration of BTC third reduction by VGF, which additionally sets up a dedicated reward pool for FVT holders') %>.
+                        </p><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#"
+                            class="ac-link"></a>
+                    </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#"
+                        class="ac-item">
                         <div data-v-5048a9d1="" class="ac-icon"
                             style="background: url(/images/khien-icon.png) center center / 100% 100% no-repeat;">
                         </div>
-                        <h4 data-v-5048a9d1="" class="ac-title"> Pizza Day </h4>
-                        <p data-v-5048a9d1="" class="ac-desc"> Pizza day is a celebration of the annual pizza day held
-                            by Huobi Global. In this day, exclusive rewards are set for HT holders. </p><a
-                            data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank"
-                            href="https://support.huobiservice.com/hc/en-us/articles/900000975103" class="ac-link"></a>
+                        <h4 data-v-5048a9d1="" class="ac-title"> <%- __('Pizza Day') %> </h4>
+                        <p data-v-5048a9d1="" class="ac-desc">
+                            <%- __('Pizza day is a celebration of the annual pizza day held by VGF Global. In this day, exclusive rewards are set for FVT holders') %>.
+                        </p><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#"
+                            class="ac-link"></a>
                     </a></div>
                 <div data-v-5048a9d1="" class="equity">
-                    <h3 data-v-5048a9d1="" class="index-c-title"> More </h3>
+                    <h3 data-v-5048a9d1="" class="index-c-title"> <%- __('More') %> </h3>
                     <div data-v-5048a9d1="" class="equity-list"><a data-v-5048a9d1="" rel="nofollow noopener noreferrer"
-                            target="_blank" href="https://www.huobi.sc/en-us/topic/lock-position/"
-                            class="eq-item big-bg" style="background:  #386de9;">
-                            <h4 data-v-5048a9d1="" class="eq-title"> Locking and mining </h4>
-                            <p data-v-5048a9d1="" class="eq-desc"> Lock up HT for mining and get value-added assets.
+                            target="_blank" href="#" class="eq-item big-bg" style="background:  #386de9;">
+                            <h4 data-v-5048a9d1="" class="eq-title"> <%- __('Locking and mining') %> </h4>
+                            <p data-v-5048a9d1="" class="eq-desc">
+                                <%- __('Lock up FVT for mining and get value-added assets') %>.
                             </p>
-                        </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank"
-                            href="https://support.huobiservice.com/hc/en-us/articles/900001399326"
+                        </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#"
                             class="eq-item big-bg" style="background: #6f6def;">
-                            <h4 data-v-5048a9d1="" class="eq-title"> VIP privileges </h4>
-                            <p data-v-5048a9d1="" class="eq-desc"> The daily average holding of 160,000 USDT equivalent
-                                HT can make you a Huobi VIP. </p>
-                        </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank"
-                            href="https://www.huobi.sc/en-us/margin/ht_usdt/" class="eq-item big-bg"
-                            style="background: #c143eb;">
-                            <h4 data-v-5048a9d1="" class="eq-title"> Margin trading </h4>
-                            <p data-v-5048a9d1="" class="eq-desc"> HT can be used for Huobi margin trading, providing
-                                you with a richer trading scenario. </p>
-                        </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank"
-                            href="https://support.huobiservice.com/hc/en-us/articles/900000039866"
+                            <h4 data-v-5048a9d1="" class="eq-title">
+                                <%- __('VIP privileges') %> </h4>
+                            <p data-v-5048a9d1="" class="eq-desc">
+                                <%- __('The daily average holding of 160,000 USDT equivalent  FVT can make you a VGF VIP') %>.
+                            </p>
+                        </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#"
+                            class="eq-item big-bg" style="background: #c143eb;">
+                            <h4 data-v-5048a9d1="" class="eq-title"><%- __('Margin trading') %></h4>
+                            <p data-v-5048a9d1="" class="eq-desc">
+                                <%- __('FVT can be used for VGF margin trading, providing you with a richer trading scenario') %>.
+                            </p>
+                        </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#"
                             class="eq-item big-bg" style="background: #2593f3;">
-                            <h4 data-v-5048a9d1="" class="eq-title"> Cross-margin guarantee deposit </h4>
-                            <p data-v-5048a9d1="" class="eq-desc"> Support HT as a guarantee asset of cross margin to
-                                easily borrow other currencies. </p>
-                        </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank"
-                            href="https://support.huobiservice.com/hc/en-us/articles/360000531901"
+                            <h4 data-v-5048a9d1="" class="eq-title"> <%- __('Cross-margin guarantee deposit') %> </h4>
+                            <p data-v-5048a9d1="" class="eq-desc">
+                                <%- __('Support FVT as a guarantee asset of cross margin to easily borrow other currencies') %>.
+                            </p>
+                        </a><a data-v-5048a9d1="" rel="nofollow noopener noreferrer" target="_blank" href="#"
                             class="eq-item big-bg" style="background: #2f2d9a;">
-                            <h4 data-v-5048a9d1="" class="eq-title"> OTC Merchant Fees </h4>
-                            <p data-v-5048a9d1="" class="eq-desc"> Support HT to deduct merchant trading fees. </p>
+                            <h4 data-v-5048a9d1="" class="eq-title"> <%- __('OTC Merchant Fees') %> </h4>
+                            <p data-v-5048a9d1="" class="eq-desc">
+                                <%- __('Support FVT to deduct merchant trading fees') %>. </p>
                         </a></div>
                 </div>
             </div>
@@ -265,13 +275,13 @@
         <div data-v-cdc706f4="" class="destroy">
             <div data-v-cdc706f4="" class="c-content">
                 <div data-v-cdc706f4="" class="chart">
-                    <h3 data-v-cdc706f4="" class="index-c-title"> Continued destruction of HT, real deflation </h3>
-                    <p data-v-cdc706f4="" class="destroy-desc"> HT destruction refers to repurchase and burning of 20%
-                        HT of Huobi Global and Huobi DM's revenu. Among them, 5% is used to burn the HT of "team
-                        incentive", and the HT of "team incentive" is no longer in the circulation. The mechanism of
-                        destroying HT every month will reduce HT circulation. </p><a data-v-cdc706f4=""
-                        href="https://www.huobi.sc/en-us/ht-destroy/" rel="nofollow noopener noreferrer" target="_blank"
-                        class="view-more index-c-link">View HT destruction plan</a>
+                    <h3 data-v-cdc706f4="" class="index-c-title">
+                        <%- __('Continued destruction of FVT, real deflation') %> </h3>
+                    <p data-v-cdc706f4="" class="destroy-desc">
+                        <%- __('FVT destruction refers to repurchase and burning of 20% FVT of VGF Global and VGF DMs. Among them, 5% is used to burn the FVT of team incentive, and the FVT of team incentive is no longer in the circulation. The mechanism of destroying FVT every month will reduce FVT circulation') %>.
+                    </p><a data-v-cdc706f4="" href="#" rel="nofollow noopener noreferrer" target="_blank"
+                        class="view-more index-c-link">
+                        <%- __('View FVT destruction plan') %></a>
                     <div data-v-cdc706f4="" class="chart-pane">
                         <div data-v-cdc706f4="" id="chart-pane"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
@@ -282,7 +292,8 @@
                                 <path
                                     d="M134 70 L134 50 A80 80 0 0 1 153.9849709736407 206.31986089736807 L147.98872823023055 187.23989567302607 A60 60  0 0 0 134 70 z"
                                     fill="#000000" opacity="0.05"></path>
-                                <circle r="3.5" cx="178.37118691405055" cy="54.10383226719557" fill="#009148"></circle>
+                                <circle r="3.5" cx="178.37118691405055" cy="54.10383226719557" fill="#009148">
+                                </circle>
                                 <path d="M178.37118691405055 54.10383226719557 L196.90634311553453 22 L308 22"
                                     stroke-width="1" stroke="#009148" fill="none"></path>
                                 <path
@@ -291,7 +302,8 @@
                                 <path
                                     d="M144.17273518536214 188.4391442217081 L150.1689779287723 207.5191094460501 A80 80 0 0 1 92.72425597849008 200.7850189492301 L102.04319198386756 183.08876421192258 A60 60  0 0 0 144.17273518536214 188.4391442217081 z"
                                     fill="#000000" opacity="0.05"></path>
-                                <circle r="3.5" cx="121.90157977122533" cy="219.63490162764822" fill="#536e91"></circle>
+                                <circle r="3.5" cx="121.90157977122533" cy="219.63490162764822" fill="#536e91">
+                                </circle>
                                 <path d="M121.90157977122533 219.63490162764822 L175.96171543149217 126 L308 126"
                                     stroke-width="1" stroke="#536e91" fill="none"></path>
                                 <path
@@ -300,7 +312,8 @@
                                 <path
                                     d="M98.50394103640605 181.22497701084708 L89.18500503102857 198.9212317481546 A80 80 0 0 1 129.99999999999997 50 L129.99999999999997 70 A60 60  0 0 0 98.50394103640605 181.22497701084708 z"
                                     fill="#000000" opacity="0.05"></path>
-                                <circle r="3.5" cx="64.39274262775541" cy="191.609153379121" fill="#b3b9c9"></circle>
+                                <circle r="3.5" cx="64.39274262775541" cy="191.609153379121" fill="#b3b9c9">
+                                </circle>
                                 <path d="M64.39274262775541 191.609153379121 L86.55770825873753 230 L308 230"
                                     stroke-width="1" stroke="#b3b9c9" fill="none"></path>
                             </svg></div>
@@ -309,75 +322,71 @@
                                 <div data-v-cdc706f4="" class="num"><span data-v-cdc706f4=""
                                         class="rate">45.15%</span><span data-v-cdc706f4=""
                                         class="total">225,769,000</span></div>
-                                <div data-v-cdc706f4="" class="label"> Circulating total </div>
+                                <div data-v-cdc706f4="" class="label"> <%- __('Circulating total') %> </div>
                             </div>
                             <div data-v-cdc706f4="" class="amount-item">
                                 <div data-v-cdc706f4="" class="num"><span data-v-cdc706f4=""
                                         class="rate">12.56%</span><span data-v-cdc706f4=""
                                         class="total">62,802,548</span></div>
-                                <div data-v-cdc706f4="" class="label"> Gradual destruction of locking </div>
+                                <div data-v-cdc706f4="" class="label"> <%- __('Gradual destruction of locking') %>
+                                </div>
                             </div>
                             <div data-v-cdc706f4="" class="amount-item">
                                 <div data-v-cdc706f4="" class="num"><span data-v-cdc706f4=""
                                         class="rate">42.29%</span><span data-v-cdc706f4=""
                                         class="total">211,428,452</span></div>
-                                <div data-v-cdc706f4="" class="label"> Cumulative destruction </div>
+                                <div data-v-cdc706f4="" class="label"> <%- __('Cumulative destruction') %> </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div data-v-cdc706f4="" class="history">
                     <div data-v-cdc706f4="" class="table-header">
-                        <div data-v-cdc706f4="" class="th"> Circle </div>
-                        <div data-v-cdc706f4="" class="th"> Project </div>
-                        <div data-v-cdc706f4="" class="th"> Quantity </div>
-                        <div data-v-cdc706f4="" class="th"> Address </div>
+                        <div data-v-cdc706f4="" class="th"> <%- __('Circle') %> </div>
+                        <div data-v-cdc706f4="" class="th"> <%- __('Project') %> </div>
+                        <div data-v-cdc706f4="" class="th"> <%- __('Quantity') %> </div>
+                        <div data-v-cdc706f4="" class="th"> <%- __('Address') %> </div>
                     </div>
                     <ul data-v-cdc706f4="" class="table-body">
                         <li data-v-cdc706f4="" class="row">
                             <div data-v-cdc706f4="" class="col"> 2020-06-01to2020-06-30 </div>
-                            <div data-v-cdc706f4="" class="col"> Monthly destruction </div>
+                            <div data-v-cdc706f4="" class="col"><%- __('Monthly destruction') %> </div>
                             <div data-v-cdc706f4="" class="col"> 2416084.00000000 </div>
-                            <div data-v-cdc706f4="" class="col"><a data-v-cdc706f4=""
-                                    href="https://cn.etherscan.com/tx/0x595ba4fb0fb14926c1ff91270a6a507b133011d121fbfc1cec075330551f7271"
+                            <div data-v-cdc706f4="" class="col"><a data-v-cdc706f4="" href="#"
                                     rel="nofollow noopener noreferrer" target="_blank"
-                                    class="address-view index-c-link">View</a></div>
+                                    class="address-view index-c-link"><%- __('View') %></a></div>
                         </li>
                         <li data-v-cdc706f4="" class="row">
                             <div data-v-cdc706f4="" class="col"> 2020-05-01to2020-05-31 </div>
-                            <div data-v-cdc706f4="" class="col"> Monthly destruction </div>
+                            <div data-v-cdc706f4="" class="col"> <%- __('Monthly destruction') %> </div>
                             <div data-v-cdc706f4="" class="col"> 3425781.00000000 </div>
-                            <div data-v-cdc706f4="" class="col"><a data-v-cdc706f4=""
-                                    href="https://cn.etherscan.com/tx/0x8e0f64dcb7c69394548099569c09330cc237ef4447e977f3407e27c8aa1e994e"
+                            <div data-v-cdc706f4="" class="col"><a data-v-cdc706f4="" href="#"
                                     rel="nofollow noopener noreferrer" target="_blank"
-                                    class="address-view index-c-link">View</a></div>
+                                    class="address-view index-c-link"><%- __('View') %></a></div>
                         </li>
                         <li data-v-cdc706f4="" class="row">
                             <div data-v-cdc706f4="" class="col"> 2020-04-01to2020-04-30 </div>
-                            <div data-v-cdc706f4="" class="col"> Monthly destruction </div>
+                            <div data-v-cdc706f4="" class="col"> <%- __('Monthly destruction') %> </div>
                             <div data-v-cdc706f4="" class="col"> 3281481.00000000 </div>
-                            <div data-v-cdc706f4="" class="col"><a data-v-cdc706f4=""
-                                    href="https://cn.etherscan.com/tx/0x246996494aae208e2f3db4b7431e0405023dfda0364365c4dd16345e51a56ebe"
+                            <div data-v-cdc706f4="" class="col"><a data-v-cdc706f4="" href="#"
                                     rel="nofollow noopener noreferrer" target="_blank"
-                                    class="address-view index-c-link">View</a></div>
+                                    class="address-view index-c-link"><%- __('View') %></a></div>
                         </li>
                         <li data-v-cdc706f4="" class="row">
                             <div data-v-cdc706f4="" class="col"> 2020-03-01to2020-03-31 </div>
-                            <div data-v-cdc706f4="" class="col"> Monthly destruction </div>
+                            <div data-v-cdc706f4="" class="col"> <%- __('Monthly destruction') %> </div>
                             <div data-v-cdc706f4="" class="col"> 4835500.00000000 </div>
-                            <div data-v-cdc706f4="" class="col"><a data-v-cdc706f4=""
-                                    href="https://cn.etherscan.com/tx/0xac49f0f489752071e3c4b75fbc16be4ef42f9e6cb645f778911fe3d9e0a30449"
+                            <div data-v-cdc706f4="" class="col"><a data-v-cdc706f4="" href="#"
                                     rel="nofollow noopener noreferrer" target="_blank"
-                                    class="address-view index-c-link">View</a></div>
+                                    class="address-view index-c-link"><%- __('View') %></a></div>
                         </li>
                         <li data-v-cdc706f4="" class="row">
                             <div data-v-cdc706f4="" class="col"> 2020-02-01to2020-02-29 </div>
-                            <div data-v-cdc706f4="" class="col"> Monthly destruction </div>
+                            <div data-v-cdc706f4="" class="col"> <%- __('Monthly destruction') %> </div>
                             <div data-v-cdc706f4="" class="col"> 4213952.00000000 </div>
-                            <div data-v-cdc706f4="" class="col"><a data-v-cdc706f4=""
-                                    href="https://cn.etherscan.com/tx/0xa4f2b920a994dcea2e40e3843b8c5642d4d8ff859aa83a76e451722d3198e3cb"
+                            <div data-v-cdc706f4="" class="col"><a data-v-cdc706f4="" href="#"
                                     rel="nofollow noopener noreferrer" target="_blank"
-                                    class="address-view index-c-link">View</a></div>
+                                    class="address-view index-c-link"><%- __('View') %></a></div>
                         </li>
                     </ul>
                 </div>
