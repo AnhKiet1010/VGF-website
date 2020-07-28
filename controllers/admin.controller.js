@@ -215,8 +215,7 @@ module.exports.getNewsForm = function (req, res) {
 }
 
 module.exports.postNewsForm = function (req, res) {
-    const date = new Date;
-    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + (date.getMinutes().toString().length === 1 ? ('0' + date.getMinutes()) : date.getMinutes());
+    const time = new Date().toLocaleString("vi", { timeZone: "Asia/Ho_Chi_Minh" });;
     const content_en = req.body.content_en;
     const content_vi = req.body.content_vi;
     const content_cn = req.body.content_cn;
@@ -273,7 +272,7 @@ module.exports.getEditForm = async function (req, res) {
 module.exports.postEditForm = async function (req, res) {
     const id = req.params.id;
     const date = new Date;
-    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
+    const time = new Date().toLocaleString("vi", { timeZone: "Asia/Ho_Chi_Minh" });;
     const content_en = req.body.content_en;
     const content_vi = req.body.content_vi;
     const content_cn = req.body.content_cn;
@@ -379,7 +378,7 @@ module.exports.getEditPostsForm = function (req, res) {
 module.exports.postEditPostsForm = async function (req, res) {
     const id = req.params.id;
     const date = new Date;
-    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
+    const time = new Date().toLocaleString("vi", { timeZone: "Asia/Ho_Chi_Minh" });;
     const content_en = req.body.content_en;
     const content_vi = req.body.content_vi;
     const content_cn = req.body.content_cn;
@@ -467,7 +466,7 @@ module.exports.add_question_type = function (req, res) {
 
 module.exports.postAddQuestion = async function (req, res) {
     const date = new Date;
-    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
+    const time = new Date().toLocaleString("vi", { timeZone: "Asia/Ho_Chi_Minh" });;
     const question = new Question({
         mainQuestion: req.body.question_en,
         question_en: req.body.question_en,
@@ -500,7 +499,7 @@ module.exports.getEditQuestionForm = async function (req, res) {
 module.exports.postEditQuestionForm = async function (req, res) {
     const id = req.params.id;
     const date = new Date;
-    const time = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + "-" + date.getHours() + ":" + date.getMinutes();
+    const time = new Date().toLocaleString("vi", { timeZone: "Asia/Ho_Chi_Minh" });;
     const newQuestion = {
         question_en: req.body.question_en,
         question_vi: req.body.question_vi,
