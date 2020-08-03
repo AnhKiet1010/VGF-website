@@ -233,7 +233,7 @@ module.exports.postNewsForm = function (req, res) {
         created: time,
         updated: "No Updated",
         image: req.file ? req.file.filename : '',
-        views: 200
+        views: Math.floor(Math.random() * 201)
     });
     news.save(function (err) {
         if (err) {
