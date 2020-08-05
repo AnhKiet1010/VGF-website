@@ -29,24 +29,24 @@
                 <h4 style="margin-bottom: 1em; color: #54595f;font-weight: 600;">for MetaTrader 4</h4>
                 <div class="list-card-ai row d-flex">
                     <div class="card-ai" style="width: 16rem; padding: .5em 1em 0 1em; text-align: center;">
-                        <h2>VGF Alpha</h2>
+                        <h2>VGF Alpha 0</h2>
                         <img src="/images/vgf-signal.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <a href="#" class="btn btn-outline-dark btn-lg">Read More</a>
+                            <a href="/services/AI_signal#vgf-0" class="btn btn-outline-dark btn-lg">Read More</a>
                         </div>
                     </div>
                     <div class="card-ai" style="width: 16rem; padding: .5em 1em 0 1em; text-align: center;">
                         <h2>Alpha A</h2>
                         <img src="/images/vgf-a-signal.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <a href="#" class="btn btn-outline-dark btn-lg">Read More</a>
+                            <a href="/services/AI_signal#vgf-a" class="btn btn-outline-dark btn-lg">Read More</a>
                         </div>
                     </div>
                     <div class="card-ai" style="width: 16rem; padding: .5em 1em 0 1em; text-align: center;">
                         <h2>Alpha B</h2>
                         <img src="/images/vgf-b-signal.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <a href="#" class="btn btn-outline-dark btn-lg">Read More</a>
+                            <a href="/services/AI_signal#vgf-b" class="btn btn-outline-dark btn-lg">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -55,21 +55,21 @@
                         <h2>Alpha C</h2>
                         <img src="/images/vgf-c-signal.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <a href="#" class="btn btn-outline-dark btn-lg">Read More</a>
+                            <a href="/services/AI_signal#vgf-c" class="btn btn-outline-dark btn-lg">Read More</a>
                         </div>
                     </div>
                     <div class="card-ai" style="width: 16rem; padding: .5em 1em 0 1em; text-align: center;">
                         <h2>Alpha D</h2>
                         <img src="/images/vgf-d-signal.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <a href="#" class="btn btn-outline-dark btn-lg">Read More</a>
+                            <a href="/services/AI_signal#vgf-d" class="btn btn-outline-dark btn-lg">Read More</a>
                         </div>
                     </div>
                     <div class="card-ai" style="width: 16rem; padding: .5em 1em 0 1em; text-align: center;">
                         <h2>Alpha F</h2>
                         <img src="/images/vgf-f-signal.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <a href="#" class="btn btn-outline-dark btn-lg">Read More</a>
+                            <a href="/services/AI_signal#vgf-f" class="btn btn-outline-dark btn-lg">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -100,37 +100,228 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="list-ai-items">
-                <div class="item container">
+            <div class="list-ai-items">
+                <div class="item container" id="vgf-0">
                     <div class="ai-item">
                         <div class="vgf-content">
                             <h1 style="font-size: 3em;font-weight: 700;">VGF Alpha</h1>
-                            <p style="font-size: 1.4em; color: #3c3c3c;font-weight: 700;">Now for only $79 (instead of
-                                $99)
-                            </p>
-                            <p style="font-size: 1.3em">Especially in the market, it is easy to enter a trade. However,
-                                it
-                                is hard to exit your
-                                trade. This indicator is made to recognize the exit point of your trading.
+                            <p style="font-size: 1em">
+                                <%- __('The <span style="color: #ff0000;"><strong>red</strong></span> dotted line indicates that the market is in an uptrend') %>
+                                <br>
+                                <%- __('The <span style="color: #40a240;"><strong>green</strong></span> dotted line indicates that the market is in a downtrend') %>
+                                <br>
+                                <%- __('The <span style="color: #ffc000;"><strong>yellow</strong></span> dotted line indicates that the market is in a sideways phase Sideway') %>
                                 <br>
                                 <br>
+                                <%- __('The <span style="color: #ff0000;"><strong>red</strong></span> dotted line is above the yellow moving average line, indicating that the market is in a strong uptrend, you should enter the buy order.') %>
                                 <br>
-                                <span style="color: #000080;"><strong>↑</strong></span> When a <span
-                                    style="color: #000080;"><strong>Blue arrow</strong></span> appears, exit your
-                                current sell trade. <br>
-                                <span style="color: #ff0000;"><strong>↓</strong></span> When a <span
-                                    style="color: #ff0000;"><strong>Red arrow</strong></span> appears, exit your current
-                                buy
-                                trade.</p>
-                            <br>
-                            <a href="#" class="yt-btn">Watch Video</a>
+                                <%- __('The <span style="color: #40a240;"><strong>green</strong></span> dotted line is below the yellow moving average line, indicating that the market is in a strong downtrend, you should enter the sell order.') %>
+                                <br>
+                                <br>
+                                <%- __('The <span style="color: #ffc000;"><strong>yellow</strong></span> moving average line: is the MA200 line, which is understood as the moving average of the price chain in 200 trading sessions, supporting the identification of a large fluctuation market.') %>
+                                <br>
+                                <%- __('The <span style="color: #2c2255;"><strong>purple</strong></span> trend line indicates the supports line and resistances line to determine entry points.') %>
+                                <br>
+                                <br>
+                                <%- __('The <span style="color: #007bff;"><strong>blue</strong></span> line is the pivot line, the dotted green line is the resistances line, the dotted red line is the supports line, all three lines help determine profit taking point and stop loss point.') %>
+                                <br>
+                                <br>
+                                <%- __('<span style="font-weight: bold">Shaded area</span>: Small fluctuations and very high Spread, you should not trade at this time.') %>
+                                <br>
+                                <br>
+                                <a href="#" class="yt-btn">Watch Video ⬇</a>
                         </div>
                         <div class="ai-item-img">
                             <img src="/images/vgf-signal.png" alt="" width="350px">
                         </div>
                     </div>
                     <div class="video-example">
-                        <iframe width="100%" height="630" src="https://www.youtube.com/embed/jnGDu_J5pC0"
+                        <iframe width="100%" height="630" src="https://www.youtube.com/embed/WhlQDoWekeE"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <hr>
+                <div class="item container" id="vgf-a">
+                    <div class="ai-item">
+                        <div class="vgf-content">
+                            <h1 style="font-size: 3em;font-weight: 700;">VGF Alpha A</h1>
+                            <p style="font-size: 1.3em">
+                            <h3><%- __('<span style="color: #ffc000;"><strong>The upper part of the indicator:</strong></span>') %>
+                            </h3>
+                            <%- __('A white arrow appears and we can enter the buy order') %><br>
+                            <%- __('A <span style="color: #007bff;"><strong>blue</strong></span> arrow appears and we can enter the sell order') %><br>
+                            <%- __('You should enter the order when the arrow starts to appear') %><br>
+                            <br>
+                            <%- __('The <span style="color: #40a240;"><strong>green</strong></span> line we should enter the buy order') %><br>
+                            <%- __('The <span style="color: #ff0000;"><strong>red</strong></span> line we should enter the sell order') %><br>
+                            <br>
+                            <h3><%- __('<span style="color: #ffc000;"><strong>The lower part of the indicator:</strong></span>') %>
+                            </h3>
+                            <%- __('<span style="color: #40a240;"><strong>Green</strong></span> indicates an uptrend') %><br>
+                            <%- __('<span style="color: #ff0000;"><strong>Red</strong></span> indicates a downtrend') %><br>
+                            <br>
+                            <br>
+                            <a href="#" class="yt-btn">Watch Video ⬇</a>
+                        </div>
+                        <div class="ai-item-img">
+                            <img src="/images/vgf-a-signal.png" alt="" width="350px">
+                        </div>
+                    </div>
+                    <div class="video-example">
+                        <iframe width="100%" height="630" src="https://www.youtube.com/embed/R7UG3OEzfvo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <hr>
+                <div class="item container" id="vgf-b">
+                    <div class="ai-item">
+                        <div class="vgf-content">
+                            <h1 style="font-size: 3em;font-weight: 700;">VGF Alpha B</h1>
+                            <p style="font-size: 1.3em">
+                            <h3><%- __('<span style="color: #ffc000;"><strong>The upper part of the indicator:</strong></span>') %>
+                            </h3>
+                            <%- __('The white skull appears and we can enter the buy order') %><br>
+                            <%- __('The <span style="color: #ffc000;"><strong>yellow</strong></span> skull appears and we can enter the sell order.') %><br>
+                            <br>
+                            <h3><%- __('<span style="color: #ffc000;"><strong>The middle and lower part of the indicator:</strong></span>') %>
+                            </h3>
+                            <%- __('<span style="color: #40a240;"><strong>Green</strong></span> color indicates that the market is in a strong uptrend') %><br>
+                            <%- __('<span style="color: #ff0000;"><strong>Red</strong></span> color indicates that the market is in a strong downtrend') %><br>
+                            <%- __('The zero line turns from <span style="color: #ff0000;"><strong>red</strong></span> to <span style="color: #40a240;"><strong>green</strong></span>, we can enter the buy order') %>
+                            <br>
+                            <%- __('The zero line from <span style="color: #40a240;"><strong>green</strong></span> turns <span style="color: #ff0000;"><strong>red</strong></span>, we can enter the sell order') %>
+                            <br>
+                            <br>
+                            <%- __('The lower part of the indicator can set parameters to enhance judgments about market trends.') %>
+                            <br>
+                            <br>
+                            <br>
+                            <a href="#" class="yt-btn">Watch Video ⬇</a>
+                        </div>
+                        <div class="ai-item-img">
+                            <img src="/images/vgf-b-signal.png" alt="" width="350px">
+                        </div>
+                    </div>
+                    <div class="video-example">
+                        <iframe width="100%" height="630px" src="https://www.youtube.com/embed/YjppCSWmVcs"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <hr>
+                <div class="item container" id="vgf-c">
+                    <div class="ai-item">
+                        <div class="vgf-content">
+                            <h1 style="font-size: 3em;font-weight: 700;">VGF Alpha C</h1>
+                            <p style="font-size: 1.3em">
+                            <h3><%- __('<span style="color: #ffc000;"><strong>The upside:</strong></span>') %>
+                            </h3>
+                            <br>
+                            <%- __('The white arrow appears that means we can enter the buy order') %><br>
+                            <%- __('The <span style="color: #40a240;"><strong>green</strong></span> arrow appears that means we can enter the sell order.') %><br>
+                            <%- __('When the <span style="color: #40a240;"><strong>green</strong></span>zone change to <span style="color: #ff0000;"><strong>red</strong></span> zone that means we can enter the buy order in the uptrend.') %><br>
+                            <%- __('When the <span style="color: #ff0000;"><strong>red</strong></span> zone change to <span style="color: #40a240;"><strong>green</strong></span> zone that means we can enter the sell order in the downtrend') %><br>
+                            <br>
+                            <h3><%- __('<span style="color: #ffc000;"><strong>The downside:</strong></span>') %>
+                            </h3>
+                            <br>
+                            <%- __('When the price exceed over-buy line (line 100) then the price has the reversal downtrend') %>
+                            <br>
+                            <%- __('When the price exceed over-sell line (line 100) then the price has the reversal uptrend') %>
+                            <br>
+                            <%- __('These indicators are only suitable for long-time trading investor') %>
+                            <br>
+                            <br>
+                            <br>
+                            <a href="#" class="yt-btn">Watch Video ⬇</a>
+                        </div>
+                        <div class="ai-item-img">
+                            <img src="/images/vgf-c-signal.png" alt="" width="350px">
+                        </div>
+                    </div>
+                    <div class="video-example">
+                        <iframe width="100%" height="630px" src="https://www.youtube.com/embed/MxgmUHH32xY"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <hr>
+                <div class="item container" id="vgf-d">
+                    <div class="ai-item">
+                        <div class="vgf-content">
+                            <h1 style="font-size: 3em;font-weight: 700;">VGF Alpha D</h1>
+                            <p style="font-size: 1.3em">
+                            <h3><%- __('<span style="color: #ffc000;"><strong>The upper part of the indicator:</strong></span>') %>
+                            </h3>
+                            <br>
+                            <%- __('The white arrow appears that means we can enter the buy order') %><br>
+                            <%- __('The <span style="color: #007bff;"><strong>blue</strong></span> arrow appears that means we can enter to sell order.') %><br>
+                            <%- __('When the <span style="color: #40a240;"><strong>yellow</strong></span> line and the <span style="color: #007bff;"><strong>blue</strong></span> striped cloud appear then we can enter the buy order') %><br>
+                            <%- __('The white line and the brown striped cloud appear then we can enter the sell order') %><br>
+                            <br>
+                            <h3><%- __('<span style="color: #ffc000;"><strong>The middle and lower part of indicator:</strong></span>') %>
+                            </h3>
+                            <br>
+                            <%- __('The <span style="color: #40a240;"><strong>green</strong></span> line means the market is strongly uptrend') %>
+                            <br>
+                            <%- __('The <span style="color: #ff0000;"><strong>red</strong></span> line means the market is strongly downtrend') %>
+                            <br>
+                            <%- __('The zero line change from <span style="color: #ff0000;"><strong>red</strong></span> one to <span style="color: #40a240;"><strong>green</strong></span> one then we can enter buy order') %>
+                            <br>
+                            <%- __('The zero line change from <span style="color: #40a240;"><strong>green</strong></span> one to <span style="color: #ff0000;"><strong>red</strong></span> one then we can enter sell order') %>
+                            <br>
+                            <br>
+                            <%- __('The lower part of indicators can set parameters to enhance judgments about market trends') %>
+                            <br>
+                            <br>
+                            <a href="#" class="yt-btn">Watch Video ⬇</a>
+                        </div>
+                        <div class="ai-item-img">
+                            <img src="/images/vgf-d-signal.png" alt="" width="350px">
+                        </div>
+                    </div>
+                    <div class="video-example">
+                        <iframe width="100%" height="630px" src="https://www.youtube.com/embed/vtSFJQCnjfw"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <hr>
+                <div class="item container" id="vgf-f">
+                    <div class="ai-item">
+                        <div class="vgf-content">
+                            <h1 style="font-size: 3em;font-weight: 700;">VGF Alpha F</h1>
+                            <p style="font-size: 1.3em">
+                            <h3><%- __('<span style="color: #ffc000;"><strong>The upper part of the indicator:</strong></span>') %>
+                            </h3>
+                            <br>
+                            <%- __('The white arrow appears that means we can enter the buy order') %><br>
+                            <%- __('The <span style="color: #007bff;"><strong>blue</strong></span> arrow appears that means we can enter to sell order.') %><br>
+                            <br>
+                            <br>
+                            <h3><%- __('<span style="color: #ffc000;"><strong>The lower part of indicator:</strong></span>') %>
+                            </h3>
+                            <br>
+                            <%- __('When the <span style="color: #007bff;"><strong>blue</strong></span> line goes down and cut the white line, cross over the over-buy line (line 100) then the price has the reversal downtrend') %>
+                            <br>
+                            <%- __('When the white line goes up and cut the <span style="color: #007bff;"><strong>blue</strong></span> line, cross over the over-sell (line -100) then the price has the reversal uptrend') %>
+                            <br>
+                            <br>
+                            <a href="#" class="yt-btn">Watch Video ⬇</a>
+                        </div>
+                        <div class="ai-item-img">
+                            <img src="/images/vgf-f-signal.png" alt="" width="350px">
+                        </div>
+                    </div>
+                    <div class="video-example">
+                        <iframe width="100%" height="630" src="https://www.youtube.com/embed/h8xcRXTxBsU"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -265,7 +456,7 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </main>
     <footer>

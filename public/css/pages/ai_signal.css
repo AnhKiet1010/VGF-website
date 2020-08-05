@@ -105,7 +105,7 @@ main {
 }
 
 .vgf-content p {
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
 .ai-item {
@@ -215,10 +215,12 @@ main {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (max-width: 992px) {}
+@media (max-width: 992px) {
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) {
@@ -251,7 +253,6 @@ main {
     .vgf-team-content {
         flex-direction: column;
         align-items: center;
-
     }
 
     .vgf-content h1 {
