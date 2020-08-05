@@ -24,18 +24,18 @@
 
 .swiper-slide {
     width: 100vw;
-    text-align: left;
     background-color: #000;
 }
 
 .content {
     padding: 20px;
+    color: #000;
+    text-align: left;
 }
 
 .content h1 {
     font-size: 110px;
     font-weight: 900;
-    text-align: center;
 }
 
 .content p {
