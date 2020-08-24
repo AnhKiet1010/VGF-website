@@ -77,7 +77,7 @@ app.use('/support', supportRouter);
 /*
     Promotion Page
 */
-app.use('/promotion', promotionRouter);
+// app.use('/promotion', promotionRouter);
 /*
     Partnership Page
 */

@@ -24,7 +24,7 @@
                         <li><a tabindex="-1" href="/services/technology_advisory"><%= __('Technology & Advisory') %></a>
                         </li>
                         <li><a tabindex="-1" href="/services/AI_trading">AI Trading</a></li>
-                        <li><a tabindex="-1" href="/services/portfolio_management"><%= __('Portfolio Management') %></a>
+                        <li><a tabindex="-1" href="/services/IPFS-filecoin"><%= __('IPFS & Filecoin') %></a></li>
                         </li>
                         <li><a tabindex="-1" href="/services/vgf/token"><%= __('Fiva Token') %></a></li>
                         <li><a tabindex="-1" href="/services/finance_training"><%= __('Finance Training') %></a>
@@ -112,6 +112,11 @@
                         <!-- Capital market Page -->
                         <% if(data === 'Capital Markets') { %>
                         <%- include('./partials/capital_market') %>
+                        <% } %>
+
+                        <!-- IPFS Filecoin -->
+                        <% if(data === 'IPFS-filecoin') { %>
+                        <%- include('./partials/IPFS-filecoin') %>
                         <% } %>
                     </div>
                 </div>
