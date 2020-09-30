@@ -52,7 +52,7 @@ $(document).ready(function () {
         opacity: 0,
         ease: Expo.easeInOut
     });
-    TweenMax.staggerFrom(".navbar-nav > li", 1, {
+    TweenMax.staggerFrom(".main-navbar > li", 1, {
         delay: 0.2,
         opacity: 0,
         ease: Expo.easeInOut

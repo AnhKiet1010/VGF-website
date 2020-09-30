@@ -28,3 +28,10 @@ module.exports.token = function (req, res) {
     res.render('./pages/services/token', { title: "VGF Token || VGF", lang: req.cookies.lang });
     // res.render('./pages/404');
 }
+
+module.exports.licenses = function (req, res) {
+
+    const id = req.params.id;
+
+    res.render('./pages/services/licenses' + id, { title: "VGF Token || LICENSES", lang: req.cookies.lang });
+}

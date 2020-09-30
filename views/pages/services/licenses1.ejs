@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('../../partials/head') %>
+    <link rel="stylesheet" href="/css/partials/list-sidebar.css">
+    <link rel="stylesheet" href="/css/pages/education_overview.css">
+    <link rel="stylesheet" href="/css/pages/linceses.css">
+</head>
+
+<body>
+    <header>
+        <%- include ('../../partials/header') %>
+    </header>
+    <main>
+        <div class="edu-overview-top text-center">
+            <div class="edu-overview-top-content">
+                <h1 class="text-white"><%= __('区块链牌照申请') %></h1>
+                <p><%= __('Block Chain License Application') %>
+                </p>
+                <button type="button" class="btn btn-success btn-lg">START TRADING</button>
+            </div>
+        </div>
+        <div class="edu-overview-navbar">
+            <div class="menu-item active">
+                <a href="/services/vgf/licenses/1"><%= __('区块链牌照申请') %></a>
+            </div>
+            <div class="menu-item">
+                <a href="/services/vgf/licenses/2"><%= __('金融牌照申请') %></a>
+            </div>
+            <div class="menu-item">
+                <a href="/services/vgf/licenses/3"><%= __('监管查询') %></a>
+            </div>
+        </div>
+        <div class="container wrap-licenses mt-4 mb-4">
+            <div class="license">
+                <div class="text">
+                    <h1>美国MSB监管</h1>
+                    <span style="color: rgb(66, 165, 246);">——</span>
+                    <h2>Money Services Business</h2>
+                    <a class="btn btn-success" href="#">Learn More</a>
+                </div>
+                <div class="img first">
+                    <img src="//18527882.s21i.faiusr.com/2/ABUIABACGAAgiLHV7QUo-IGqjAUwwAI41QE!300x300.jpg.webp"
+                        class="first">
+                </div>
+            </div>
+            <div class="license">
+                <div class="text">
+                    <h1>爱沙尼亚MTR监管</h1>
+                    <span style="color: rgb(66, 165, 246);">——</span>
+                    <h2>Estonia MTR</h2>
+                    <a class="btn btn-success" href="#">Learn More</a>
+                </div>
+                <div class="img">
+                    <img src="//18527882.s21i.faiusr.com/4/ABUIABAEGAAg3LLV7QUo_N-LgQUw_AE4UA.png.webp" width="380px">
+                </div>
+            </div>
+            <div class="license">
+                <div class="text">
+                    <h1>澳大利亚 AUSTRAC</h1>
+                    <span style="color: rgb(66, 165, 246);">——</span>
+                    <h2>Australia AUSTRAC</h2>
+                    <a class="btn btn-success" href="#">Learn More</a>
+                </div>
+                <div class="img" style="margin: -20px -40px;">
+                    <img src="//18527882.s21i.faiusr.com/4/ABUIABAEGAAg_LjV7QUopPv_4gMw2AQ4rAI!450x450.png.webp">
+                </div>
+            </div>
+            <div class="license">
+                <div class="text">
+                    <h1>瑞士 FINMA SRO</h1>
+                    <span style="color: rgb(66, 165, 246);">——</span>
+                    <h2>Switzerland FINMA SRO</h2>
+                    <a class="btn btn-success" href="#">Learn More</a>
+                </div>
+                <div class="img" style="margin: -20px -40px;">
+                    <img src="//18527882.s21i.faiusr.com/2/ABUIABACGAAg47rV7QUoyMSx_QUwtQQ49AM!400x400.jpg.webp">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <%- include ('../../partials/footer') %>
+    </footer>
+</body>
+
+</html>
