@@ -1,3 +1,4 @@
+const license = require('../models/licenses');
 
 module.exports.index = function (req, res) {
     res.render('./pages/services/services', { data: 'Forex Market', title: "Services || VGF", lang: req.cookies.lang });
@@ -29,9 +30,18 @@ module.exports.token = function (req, res) {
     // res.render('./pages/404');
 }
 
-module.exports.licenses = function (req, res) {
-
+module.exports.licenses = async function (req, res) {
     const id = req.params.id;
 
-    res.render('./pages/services/licenses' + id, { title: "VGF Token || LICENSES", lang: req.cookies.lang });
+    const data = await license.find({ license_type: id }).exec();
+
+    res.render('./pages/services/licenses' + id, { title: "VGF || LICENSES", lang: req.cookies.lang, data });
+}
+
+module.exports.licenseDetail = async function (req, res) {
+    const id = req.params.id;
+
+    const data = await license.findOne({ _id: id }).exec();
+
+    res.render('./pages/services/licenses_detail', { title: "VGF || LICENSES", lang: req.cookies.lang, data });
 }

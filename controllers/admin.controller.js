@@ -11,6 +11,7 @@ const Sub_menu_lv2 = require('../models/sub_menu_lv2');
 const Posts = require('../models/post');
 const Question_type = require('../models/question_type');
 const Question = require('../models/question');
+const License = require('../models/licenses');
 
 module.exports.admin = function (req, res) {
     res.redirect('/admin/news/news_list/1');
@@ -413,7 +414,7 @@ module.exports.deletePosts = function (req, res) {
 
 }
 
-/* 
+/*
             QUESTION
 */
 module.exports.getQuestionForm = function (req, res) {
@@ -517,6 +518,87 @@ module.exports.postEditQuestionForm = async function (req, res) {
 }
 
 module.exports.deleteQuestion = function (req, res) {
+    const id = req.params.id;
+    Question.findOneAndDelete({ _id: id }, function (err) {
+        if (err) {
+            return res.send(err);
+        } else {
+            res.redirect('/admin/list_question/1');
+        }
+    });
+}
+
+// License
+module.exports.licenseForm = function (req, res) {
+    res.render('./admin/license/add_license', { title: "Add License || Admin", activeClass: 9 });
+}
+
+module.exports.postLicenseForm = async function (req, res) {
+    let license = new License({
+        title_en: req.body.title_en,
+        title_vi: req.body.title_vi,
+        title_cn: req.body.title_cn,
+        content_en: req.body.content_en,
+        content_vi: req.body.content_vi,
+        content_cn: req.body.content_cn,
+        license_type: req.body.license_type,
+        image: req.file ? req.file.filename : ''
+    });
+    license.save(function (err) {
+        if (err) {
+            return res.send(err);
+        } else {
+            res.redirect('/admin/license');
+        }
+    });
+}
+
+module.exports.getListLicenses = async function (req, res) {
+    const page = req.params.page || 1;
+    const perPage = 10;
+
+    const data = await License.find({})
+        .sort({ _id: -1 })
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec();
+
+    const count = await License.countDocuments().exec();
+    res.render('./admin/license/list_license', {
+        data: data,
+        count,
+        title: "License Question || Admin",
+        activeClass: 9,
+        current: page,
+        pages: Math.ceil(count / perPage)
+    });
+}
+
+module.exports.getEditLicenseForm = async function (req, res) {
+    const id = req.params.id;
+    const data = await License.findOne({ _id: id }).exec();
+    res.render("./admin/license/edit_license", { title: "Edit License || Admin", data, activeClass: "no have" });
+}
+
+module.exports.getPostLicenseForm = async function (req, res) {
+    const id = req.params.id;
+
+    const newLicense = {
+        title_en: req.body.title_en,
+        title_vi: req.body.title_vi,
+        title_cn: req.body.title_cn,
+        content_en: req.body.content_en,
+        content_vi: req.body.content_vi,
+        content_cn: req.body.content_cn,
+        license_type: req.body.license_type,
+        image: req.file ? req.file.filename : ''
+    }
+
+    await License.findOneAndUpdate({ _id: id }, { ...newLicense }).exec();
+    res.redirect("/admin/license/get_list_license");
+}
+
+module.exports.deleteLicense = function (req, res) {
     const id = req.params.id;
     Question.findOneAndDelete({ _id: id }, function (err) {
         if (err) {

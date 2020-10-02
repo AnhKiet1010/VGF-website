@@ -99,4 +99,18 @@ router.get("/question/edit/:id", requireAuth.requireAuth, adminController.getEdi
 
 router.get('/question/delete/:id', adminController.deleteQuestion);
 
+router.get('/license', adminController.licenseForm);
+
+router.post('/license/postLicenseForm', upload.single('image'), adminController.postLicenseForm);
+
+router.get('/license/get_list_license', adminController.getListLicenses);
+
+router.get('/license/edit/:id', adminController.getEditLicenseForm);
+
+router.post('/license/edit/:id', adminController.getPostLicenseForm);
+
+router.get('/license/delete/:id', adminController.deleteLicense);
+
+
+
 module.exports = router;
