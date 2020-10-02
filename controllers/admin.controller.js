@@ -605,7 +605,7 @@ module.exports.deleteLicense = function (req, res) {
         if (err) {
             return res.send(err);
         } else {
-            res.redirect('/admin/license/list_license');
+            res.redirect('/admin/license/get_list_license');
         }
     });
 }
