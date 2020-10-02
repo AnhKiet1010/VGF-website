@@ -555,13 +555,9 @@ module.exports.postLicenseForm = async function (req, res) {
 }
 
 module.exports.getListLicenses = async function (req, res) {
-    const page = req.params.page || 1;
-    const perPage = 10;
 
     const data = await License.find({})
         .sort({ _id: -1 })
-        .skip((perPage * page) - perPage)
-        .limit(perPage)
         .exec();
 
     const count = await License.countDocuments().exec();
@@ -569,9 +565,7 @@ module.exports.getListLicenses = async function (req, res) {
         data: data,
         count,
         title: "License Question || Admin",
-        activeClass: 9,
-        current: page,
-        pages: Math.ceil(count / perPage)
+        activeClass: 9
     });
 }
 

@@ -41,27 +41,6 @@
                 </p>
             </div>
             <% }) %>
-            <small class="d-block mt-3 text-center">
-                <nav>
-                    <% if(pages > 0) { %>
-                    <ul class="pagination">
-                        <li class="page-item <%= current === "1" ? "disabled" : "" %>" aria-disabled="true"
-                            aria-label="« Previous">
-                            <a class="page-link" href="/admin/news/news_list/<%= Number(current) - 1 %>">‹</a>
-                        </li>
-                        <% for(var i = 1; i <= pages; i++) { %>
-                        <li class="page-item <%= i === Number(current) ? "active" : "" %>">
-                            <a class="page-link" href="/admin/news/news_list/<%= i %>"><%= i %></a>
-                        </li>
-                        <% } %>
-                        <li class="page-item <%= Number(current) === pages ? "disabled" : "" %>" aria-disabled="true"
-                            aria-label="Next ››">
-                            <a class="page-link" href="/admin/news/news_list/<%= Number(current) + 1 %>">›</a>
-                        </li>
-                    </ul>
-                    <% } %>
-                </nav>
-            </small>
         </div>
     </div>
 
