@@ -600,11 +600,11 @@ module.exports.getPostLicenseForm = async function (req, res) {
 
 module.exports.deleteLicense = function (req, res) {
     const id = req.params.id;
-    Question.findOneAndDelete({ _id: id }, function (err) {
+    License.findOneAndDelete({ _id: id }, function (err) {
         if (err) {
             return res.send(err);
         } else {
-            res.redirect('/admin/list_question/1');
+            res.redirect('/admin/license/list_license');
         }
     });
 }
