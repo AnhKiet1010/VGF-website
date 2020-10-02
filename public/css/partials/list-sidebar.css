@@ -65,7 +65,7 @@ main {
     padding: 3em 1.5em 2em 1.5em;
 }
 
-.edu-overview-content .right-sidebar .top>p {
+.edu-overview-content .right-sidebar .top > p {
     font-size: 1.8em;
     color: #fff;
 }
@@ -112,7 +112,8 @@ main {
     box-shadow: 0 0 2px 2px #fff inset;
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
@@ -123,14 +124,20 @@ main {
     .page-content h1 {
         font-size: 1.5em;
     }
+
+    .edu-overview-navbar {
+        display: block;
+        text-align: center;
+        height: auto;
+    }
+
+    .edu-overview-navbar .menu-item {
+        padding: 10px 0;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (max-width: 992px) {
-    .edu-overview-navbar {
-        display: none;
-    }
-
     .edu-overview-content .right-sidebar {
         display: none;
     }
@@ -148,4 +155,5 @@ main {
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+}
