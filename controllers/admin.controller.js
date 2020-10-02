@@ -542,7 +542,8 @@ module.exports.postLicenseForm = async function (req, res) {
         content_vi: req.body.content_vi,
         content_cn: req.body.content_cn,
         license_type: req.body.license_type,
-        image: req.file ? req.file.filename : ''
+        image: req.file ? req.file.filename : '',
+        link: req.body.link
     });
     license.save(function (err) {
         if (err) {

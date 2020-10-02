@@ -9,7 +9,8 @@ const license = new Schema({
     content_vi: String,
     content_cn: String,
     license_type: String,
-    image: String
+    image: String,
+    link: String
 });
 
 module.exports = mongoose.model("license", license);
