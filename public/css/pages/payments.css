@@ -1,0 +1,247 @@
+img {
+    max-width: 100%;
+}
+
+#particles-js {
+    position: static;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    background-image: url("../../images/bg.295.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    z-index: 1000;
+}
+
+.carousel {
+    padding: 25vh 30vh;
+    position: absolute;
+    z-index: 999;
+}
+
+.slider-content h2 {
+    animation-delay: 1s;
+    font-size: 42px;
+    font-weight: 900;
+    font-size: 50px;
+    color: #fff;
+    margin: 0 0 50px;
+    text-shadow: 0 5px 30px rgba(44, 46, 83, 0.3);
+}
+
+.slider-content h3 {
+    font-weight: 400;
+    font-size: 26px;
+    color: #fff;
+    margin: 0 0 50px;
+    animation-delay: 2s;
+    line-height: 36px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.team-area {
+    background: #2c2e53;
+    position: relative;
+}
+
+.container {
+    padding: 30px 0 20px 20px;
+}
+
+.section-heading2 {
+    display: block;
+    margin: 0 0 60px;
+    text-align: center;
+}
+
+.section-heading2 h2 {
+    font-size: 40px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.team-area {
+    background: #2c2e53;
+    position: relative;
+}
+
+.container {
+    padding: 30px 0 20px 20px;
+}
+
+.section-heading2 {
+    display: block;
+    margin: 0 0 60px;
+    text-align: center;
+}
+
+.section-heading2 h2 {
+    font-size: 40px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.team-area.first-area .team-list {
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.team-area .team-list .conte .conte-img {
+    padding: 30px 50px;
+}
+
+.team-area .team-list .conte {
+    position: relative;
+    padding: 45px 45px 0;
+    background: #1a1c35;
+    z-index: 999;
+    border-radius: 15px;
+}
+
+.team-area .team-list:after {
+    position: absolute;
+    height: 100px;
+    background: linear-gradient(to right, rgba(57, 100, 208, 1) 0, rgba(45, 193, 201, 1) 100%);
+    border-radius: 15px;
+    content: "";
+    left: 50px;
+    right: 50px;
+    top: -30px;
+    bottom: 0;
+}
+
+.video-area {
+    background: #1a1c35;
+    position: relative;
+    display: block;
+    padding-bottom: 120px;
+    text-align: center;
+    margin: 0;
+}
+
+.box-with-icon .bwi-icon {
+    display: inline-block;
+    margin-bottom: 21px;
+}
+
+.box-with-icon .bwi-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 21px auto 21px;
+    color: #cacaca;
+}
+
+.bwi-text {
+    color: #8486a6;
+}
+
+.bwi-icon i {
+    font-size: 50px;
+    color: #cacaca;
+}
+
+.sud {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    vertical-align: middle;
+    margin: 0 0 -9px;
+    background: #1a1c35;
+}
+
+.projects {
+    background: #2c2e53;
+}
+
+.features-area .token-con,
+.media-area .token-con {
+    font-size: 20px;
+    margin: 30px 0 0;
+    color: #8486a6;
+}
+
+.projects .project-list {
+    position: relative;
+    display: block;
+    background: #2c2e53;
+    margin: 0 0 38px;
+    padding-top: 14px;
+}
+
+.features-area.projects .project-list .content {
+    height: 400px;
+    display: block;
+    background: #1a1c35;
+    text-align: center;
+    padding: 60px 0 70px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 999;
+    transition: all 0.5s;
+}
+
+.projects .project-list .content span {
+    display: block;
+    height: 95px;
+    margin: 0 0 20px;
+}
+
+.projects .project-list .content h3 {
+    color: #fff;
+    margin: 0;
+    line-height: 28px;
+}
+
+.featured_smalltit {
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 0 5px;
+    color: #8486a6;
+}
+
+.projects .project-list:after {
+    content: "";
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    top: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background: linear-gradient(to right, rgba(57, 100, 208, 1) 0, rgba(45, 193, 201, 1) 100%);
+    z-index: 9;
+}
+
+.projects .project-list .content:hover {
+    transform: translateY(-7px);
+}
+
+.steps-area {
+    background: #1a1c35;
+}
+
+.section-heading {
+    margin: 0 0 60px;
+    display: block;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
+}

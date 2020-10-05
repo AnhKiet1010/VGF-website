@@ -11,6 +11,8 @@ router.get('/:sub', servicesController.sub);
 
 router.get('/vgf/token', servicesController.token);
 
+router.get('/vgf/payments', servicesController.payments);
+
 router.get('/vgf/licenses/:category/:id', servicesController.licenseDetail);
 
 module.exports = router;

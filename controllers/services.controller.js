@@ -45,3 +45,9 @@ module.exports.licenseDetail = async function (req, res) {
 
     res.render('./pages/services/licenses_detail', { title: "VGF || LICENSES", lang: req.cookies.lang, data });
 }
+
+module.exports.payments = async function (req, res) {
+
+    res.render('./pages/services/payments', { title: "VGF || Crypto Payments", lang: req.cookies.lang });
+
+}
