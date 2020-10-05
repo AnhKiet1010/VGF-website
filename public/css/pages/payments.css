@@ -245,3 +245,55 @@ img {
     color: #fff;
     margin: 0;
 }
+
+@media (max-width: 576px) {
+    nav {
+        width: 100vw !important;
+    }
+
+    .section {
+        height: auto !important;
+        padding: 50px 0;
+    }
+
+    #particles-js {
+        height: 100vh !important;
+    }
+
+    .carousel {
+        padding: 20vh 0 27vh !important;
+        text-align: center;
+    }
+
+    .container {
+        padding: 30px 20px !important;
+    }
+
+    .slider-content h2 {
+        font-size: 40px !important;
+    }
+
+    .slider-content h3 {
+        font-size: 20px !important;
+    }
+
+    .buttons a {
+        margin: 20px 10px;
+    }
+
+    .section-heading2 h2 {
+        font-size: 25px !important;
+    }
+
+    .conte {
+        padding: 0 !important;
+    }
+
+    .conte .conte-img {
+        padding: 20px !important;
+    }
+
+    .sud {
+        margin-top: -2px !important;
+    }
+}
