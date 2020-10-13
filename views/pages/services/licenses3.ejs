@@ -36,9 +36,17 @@
             <% data.forEach(function(item) { %>
             <div class="license">
                 <div class="text">
-                    <h1><%- item.title_cn %></h1>
-                    <span style="color: rgb(66, 165, 246);">——</span>
-                    <h2><%- item.title_en %></h2>
+                    <% if(lang === 'cn') { %>
+                        <h1><%- item.title_cn %></h1>
+                        <% } else if(lang === 'vi') { %>
+                        <h1><%- item.title_vi %></h1>
+                        <% } else { %>
+                        <h1><%- item.title_en %></h1>
+                        <% } %>
+                        <span style="color: rgb(66, 165, 246);">——</span>
+                        <% if(lang !== 'en') { %>
+                        <h2><%- item.title_en %></h2>
+                        <% } %>
                     <a class="btn btn-success" href="<%= item.link %>">Learn More</a>
                 </div>
             </div>

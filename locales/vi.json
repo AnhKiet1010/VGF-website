@@ -316,7 +316,7 @@
 	"VGF is used in all types of applications in the global business and ecosystem of VGF and has become an important hub of the ecosystem": "VGF được sử dụng trong tất cả các loại ứng dụng trong hệ thống kinh doanh và sinh thái toàn cầu của VGF và đã trở thành một trung tâm quan trọng của hệ sinh thái",
 	"Benefit": "Lợi Ích",
 	"VGF holders shall enjoy the corresponding benefits of the whole ecosystem of VGF and get ecological sub-token rewards, as well as the valuable promotion brought by sustained repurchase and destruction": "Chủ sở hữu VGF sẽ được hưởng các lợi ích tương ứng của toàn bộ hệ sinh thái của VGF và nhận phần thưởng mã thông báo phụ sinh thái, cũng như khuyến mãi có giá trị do mua lại và phá hủy kéo dài",
-	"Features": "Đặc Tính",
+	"Features": "Điểm đặc trưng",
 	"Introduction of VGT (VGF Token)": "Giới thiệu VGT (Đồng VGF)",
 	"Used for user rewards and platform operation": "Được sử dụng cho phần thưởng người dùng và hoạt động nền tảng",
 	"Reserved as team incentives and subject to a 4-year vesting schedule. 25 M is unlocked each year": "Dành riêng cho các ưu đãi của đội và tuân theo lịch trình 4 năm. 25 M được mở khóa mỗi năm",
@@ -479,7 +479,6 @@
 	"Payments from your merchant account to any number of accounts and keep a detailed record of each transaction": "Thanh toán từ tài khoản thương mại của bạn đến bất kỳ số tài khoản nào và lưu trữ hồ sơ chi tiết của từng giao dịch",
 	"Automate": "Tự Động",
 	"Payments from tedious individual payments to a single one-click payment": "Thanh toán từ các khoản thanh toán cá nhân tẻ nhạt đến khoản thanh toán 1 cú nhấp chuột",
-	"Features": "Điểm đặc trưng",
 	"VIFApay provides businesses with a secure, seamless, and cost-effective method to accept, send, and automate cryptocurrency payments": "VIPApay cung cấp các doanh nghiệp đảm bảo, liền mạch, và phương pháp chi phí hiệu quả để chấp nhận, gởi và tự động thanh toán tiền điện tử",
 	"Easy Implementation": "Dễ dàng thực hiện",
 	"Express setup gets you up-and-running in minutes.Customize it with our easy API and docs": "Hoả tốc thiết lập giúp bạn đăng và chạy trong vài phút. Tuỳ chỉnh nó với API và tài liệu của chúng tôi dễ dàng",
@@ -505,5 +504,13 @@
 	"YOU PAY": "BẠN THANH TOÁN",
 	"We’re <span class=\"cheapernum\">2</span>x Cheaper": "Rẻ hơn gấp <span class=\"cheapernum\">2</span> lần",
 	"Become part of our ever growing community": "Trở thành thành phần cộng đồng ngày càng phát triển của chúng tôi",
-	"JOIN US ON TELEGRAM": "JOIN US ON TELEGRAM"
+	"JOIN US ON TELEGRAM": "JOIN US ON TELEGRAM",
+	"IPFS & Filecoin": "IPFS & Filecoin",
+	"Licenses Application": "Đơn xin cấp phép",
+	"Crypto Payments": "Thanh toán tiền điện tử",
+	"区块链牌照申请": "Đơn đăng ký cấp phép Block Chain",
+	"Block Chain License Application": "Đơn đăng ký cấp phép Block Chain",
+	"金融牌照申请": "Đơn xin giấy phép tài chính",
+	"监管查询": "Yêu cầu về quy định",
+	"Registration Search": "Đăng ký Tìm kiếm"
 }

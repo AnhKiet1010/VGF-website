@@ -475,5 +475,13 @@
 	"The lower part of indicators can set parameters to enhance judgments about market trends": "The lower part of indicators can set parameters to enhance judgments about market trends",
 	"<span style=\"color: #ffc000;\"><strong>The lower part of indicator:</strong></span>": "<span style=\"color: #ffc000;\"><strong>The lower part of indicator:</strong></span>",
 	"When the <span style=\"color: #007bff;\"><strong>blue</strong></span> line goes down and cut the white line, cross over the over-buy line (line 100) then the price has the reversal downtrend": "When the <span style=\"color: #007bff;\"><strong>blue</strong></span> line goes down and cut the white line, cross over the over-buy line (line 100) then the price has the reversal downtrend",
-	"When the white line goes up and cut the <span style=\"color: #007bff;\"><strong>blue</strong></span> line, cross over the over-sell (line -100) then the price has the reversal uptrend": "When the white line goes up and cut the <span style=\"color: #007bff;\"><strong>blue</strong></span> line, cross over the over-sell (line -100) then the price has the reversal uptrend"
+	"When the white line goes up and cut the <span style=\"color: #007bff;\"><strong>blue</strong></span> line, cross over the over-sell (line -100) then the price has the reversal uptrend": "When the white line goes up and cut the <span style=\"color: #007bff;\"><strong>blue</strong></span> line, cross over the over-sell (line -100) then the price has the reversal uptrend",
+	"IPFS & Filecoin": "IPFS & Filecoin",
+	"Licenses Application": "Licenses Application",
+	"Crypto Payments": "Crypto Payments",
+	"区块链牌照申请": "Block Chain License Application",
+	"Block Chain License Application": "Block Chain License Application",
+	"金融牌照申请": "Financial license application",
+	"监管查询": "Registration Search",
+	"Registration Search": "Registration Search"
 }

@@ -15,9 +15,18 @@
     <main>
         <div class="edu-overview-top text-center">
             <div class="edu-overview-top-content">
-                <h1 class="text-white"><%= data.title_cn %></h1>
-                <p><%= data.title_en %>
-                </p>
+                <h1 class="text-white">
+                    <% if(lang === 'cn') { %>
+                    <h1><%- item.title_cn %></h1>
+                    <% } else if(lang === 'vi') { %>
+                    <h1><%- item.title_vi %></h1>
+                    <% } else { %>
+                    <h1><%- item.title_en %></h1>
+                    <% } %>
+                    <span style="color: rgb(66, 165, 246);">——</span>
+                    <% if(lang !== 'en') { %>
+                    <p><%- item.title_en %></p>
+                    <% } %>
                 <a href="/contact" class="btn btn-success btn-lg mb-3">CONTACT US</a>
             </div>
         </div>
@@ -33,7 +42,14 @@
             </div>
         </div>
         <div class="container wrap-licenses mt-4 mb-4">
+            <% if(lang === 'cn') { %>
             <%- data.content_cn %>
+            <% } else if(lang === 'vi') { %>
+            <%- data.content_vi %>
+            <% } else { %>
+            <%- data.content_en %>
+            <% } %>
+            
         </div>
     </main>
     <footer>

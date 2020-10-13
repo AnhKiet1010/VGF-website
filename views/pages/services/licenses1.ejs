@@ -16,7 +16,6 @@
         <div class="edu-overview-top text-center">
             <div class="edu-overview-top-content">
                 <h1 class="text-white"><%= __('区块链牌照申请') %></h1>
-                <p><%= __('Block Chain License Application') %>
                 </p>
                 <a href="/contact" class="btn btn-success btn-lg mb-3">CONTACT US</a>
             </div>
@@ -36,9 +35,17 @@
             <% data.forEach(function(item) { %>
             <div class="license">
                 <div class="text">
+                    <% if(lang === 'cn') { %>
                     <h1><%- item.title_cn %></h1>
+                    <% } else if(lang === 'vi') { %>
+                    <h1><%- item.title_vi %></h1>
+                    <% } else { %>
+                    <h1><%- item.title_en %></h1>
+                    <% } %>
                     <span style="color: rgb(66, 165, 246);">——</span>
+                    <% if(lang !== 'en') { %>
                     <h2><%- item.title_en %></h2>
+                    <% } %>
                     <a class="btn btn-success" href="/services/vgf/licenses/1/<%= item._id %>">Learn More</a>
                 </div>
                 <div class="img">

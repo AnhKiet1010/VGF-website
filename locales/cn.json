@@ -306,7 +306,7 @@
 	"VGF is used in all types of applications in the global business and ecosystem of VGF and has become an important hub of the ecosystem": "FVT应用到VGF集团全球业务与全球生态体系的各类应用中，成为VGF集团生态体系支撑的重要枢纽。",
 	"Benefit": "受益",
 	"VGF holders shall enjoy the corresponding benefits of the whole ecosystem of VGF and get ecological sub-token rewards, as well as the valuable promotion brought by sustained repurchase and destruction": "持有者享受VGF全生态的相应权益。并得到生态子通证奖励，以及享受VGF持续回购销毁带来的稀缺性提升。",
-	"Features": "基本功能",
+	"Features": "特性",
 	"Used for user rewards and platform operation": "用于用户奖励和运营",
 	"Reserved as team incentives and subject to a 4-year vesting schedule. 25 M is unlocked each year": "用于团队奖励，锁定期四年，每年解锁2500万",
 	"Given away for free as a benefit for the purchase of “point cards”. The giveaway is completed now": "用于购买点卡套餐赠送，现已赠完",
@@ -419,7 +419,6 @@
 	"Payments from your merchant account to any number of accounts and keep a detailed record of each transaction": "您的商家帐户可以转账到任意账号，并保留每笔交易的详细记录",
 	"Automate": "自动化",
 	"Payments from tedious individual payments to a single one-click payment": "从繁琐的个人支付到一键单次支付",
-	"Features": "特性",
 	"VIFApay provides businesses with a secure, seamless, and cost-effective method to accept, send, and automate cryptocurrency payments": "VIFApay为企业提供安全，实惠高效的方法来接收，发送和自动化数字货币支付",
 	"Easy Implementation": "容易实现",
 	"Express setup gets you up-and-running in minutes.Customize it with our easy API and docs": "使用我们的简易API和文档来进行快速设置，可让您的应用在几分钟内启动并运行",
@@ -445,5 +444,13 @@
 	"YOU PAY": "支付",
 	"We’re <span class=\"cheapernum\">2</span>x Cheaper": "便宜<span class=\"cheapernum\">2</span>倍",
 	"Become part of our ever growing community": "成为我们不断发展的社区的一部分",
-	"JOIN US ON TELEGRAM": "加入我们的Telegram"
+	"JOIN US ON TELEGRAM": "加入我们的Telegram",
+	"IPFS & Filecoin": "IPFS & Filecoin",
+	"Licenses Application": "牌照申请",
+	"Crypto Payments": "加密支付",
+	"区块链牌照申请": "区块链牌照申请",
+	"Block Chain License Application": "Block Chain License Application",
+	"金融牌照申请": "金融牌照申请",
+	"监管查询": "监管查询",
+	"Registration Search": "Registration Search"
 }
