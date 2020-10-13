@@ -18,6 +18,7 @@ main {
 .edu-overview-top-content h1 {
     font-size: 4em;
     font-weight: 800;
+    margin-bottom: 0px;
 }
 
 .edu-overview-top-content p {
