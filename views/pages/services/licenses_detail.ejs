@@ -17,15 +17,15 @@
             <div class="edu-overview-top-content">
                 <h1 class="text-white">
                     <% if(lang === 'cn') { %>
-                    <h1><%- item.title_cn %></h1>
+                    <h1><%- data.title_cn %></h1>
                     <% } else if(lang === 'vi') { %>
-                    <h1><%- item.title_vi %></h1>
+                    <h1><%- data.title_vi %></h1>
                     <% } else { %>
-                    <h1><%- item.title_en %></h1>
+                    <h1><%- data.title_en %></h1>
                     <% } %>
                     <span style="color: rgb(66, 165, 246);">——</span>
                     <% if(lang !== 'en') { %>
-                    <p><%- item.title_en %></p>
+                    <p><%- data.title_en %></p>
                     <% } %>
                 <a href="/contact" class="btn btn-success btn-lg mb-3">CONTACT US</a>
             </div>
