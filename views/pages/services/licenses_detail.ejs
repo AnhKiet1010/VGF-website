@@ -17,11 +17,11 @@
             <div class="edu-overview-top-content">
                 <h1 class="text-white">
                     <% if(lang === 'cn') { %>
-                    <h1><%- data.title_cn %></h1>
+                    <%- data.title_cn %>
                     <% } else if(lang === 'vi') { %>
-                    <h1><%- data.title_vi %></h1>
+                    <%- data.title_vi %>
                     <% } else { %>
-                    <h1><%- data.title_en %></h1>
+                    <%- data.title_en %>
                     <% } %>
                     <span style="color: rgb(66, 165, 246);">——</span>
                     <% if(lang !== 'en') { %>
@@ -42,12 +42,12 @@
             </div>
         </div>
         <div class="container wrap-licenses mt-4 mb-4">
-            <% if(lang === 'cn') { %>
-            <%- data.content_cn %>
-            <% } else if(lang === 'vi') { %>
+            <% if(lang === 'en') && data.content_en !== '' { %>
+            <%- data.content_en %>
+            <% } else if(lang === 'vi') && data.content_vi !== '' { %>
             <%- data.content_vi %>
             <% } else { %>
-            <%- data.content_en %>
+            <%- data.content_cn %>
             <% } %>
             
         </div>
